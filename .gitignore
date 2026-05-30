@@ -1,0 +1,15 @@
+# Temp scripts
+tmp_update.py
+update_state_qa.py
+it-rotate.py
+it-scan.py
+improve.sh
+MIGRATION-LOG.md
+departments/uxui/_update_state.py
+
+# Machine-generated JSON logs
+logs/*.json
+departments/*/logs/*.json
+
+# Hermes internal
+.hermes/

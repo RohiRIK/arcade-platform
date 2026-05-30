@@ -1,9 +1,0 @@
-{
-  "timestamp": "2026-05-30T02:10:00Z",
-  "department": "uxui",
-  "action": "RESEARCH: prefers-reduced-motion accessibility",
-  "details": "Identified 3 infinite CSS animations (shimmer, skeleton-pulse, loading-slide) plus 2 hover/focus transforms that don't respect prefers-reduced-motion. Documented problem, real-world references (GitHub, Stripe, MDN), animation inventory, and proposed CSS-only fix. Next: design doc with exact selectors.",
-  "artifact": "departments/uxui/research/prefers-reduced-motion.md",
-  "pipelineStage": "research",
-  "nextStep": "design"
-}

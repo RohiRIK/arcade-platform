@@ -1,9 +1,0 @@
-{
-  "timestamp": "2026-05-30T04:11:34Z",
-  "department": "uxui",
-  "cycle": "design",
-  "action": "DESIGN: prefers-reduced-motion accessibility. Single @media block to neutralize all infinite animations and card hover transforms for reduced-motion users. Global animation-duration/transition-duration override pattern (GitHub/MDN approach). Zero JS changes, zero visual regression for default users.",
-  "artifact": "departments/uxui/designs/prefers-reduced-motion.md",
-  "pipelineStage": "designs",
-  "nextStep": "BUILD: Implement the @media (prefers-reduced-motion: reduce) block in index.html"
-}

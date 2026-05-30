@@ -1,9 +1,0 @@
-{
-  "department": "uxui",
-  "timestamp": "2026-05-29T16:11:00Z",
-  "pipelineStage": "design",
-  "topic": "CSS Custom Properties (Design Tokens)",
-  "action": "Wrote design doc for CSS custom properties refactor. Mapped all ~50 hardcoded values in UI chrome CSS to var() tokens. Defined :root block with 22 tokens. Scoped: UI CSS only, not game canvas JS. Zero visual change refactor.",
-  "artifact": "departments/uxui/designs/css-custom-properties.md",
-  "nextStep": "BUILD: Apply the design doc — add :root block, replace all hardcoded values with var() references, rebuild Docker, verify."
-}
