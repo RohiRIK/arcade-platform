@@ -1,0 +1,7 @@
+{
+  "name": "Breakout",
+  "description": "Break all the bricks with a bouncing ball.",
+  "version": "1.0.0",
+  "category": "classic",
+  "color": "#f97316"
+}

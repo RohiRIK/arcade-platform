@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-29T02:15:50Z",
+  "department": "uxui",
+  "pipelineStage": "research",
+  "topic": "keyboard-focus-accessibility",
+  "action": "Wrote research doc for keyboard & focus accessibility improvements",
+  "rationale": "Mobile touch support pipeline is complete (research → design → build done). Identified keyboard/focus accessibility as the next priority from the styleguide's documented gaps: 'No focus/keyboard-nav styles beyond browser defaults'. Game cards are also not keyboard-accessible (div onclick with no tabindex/role).",
+  "output": "departments/uxui/research/keyboard-focus-accessibility.md",
+  "nextStep": "Design phase — write design doc with exact CSS selectors, focus-visible styles, and HTML attribute changes"
+}

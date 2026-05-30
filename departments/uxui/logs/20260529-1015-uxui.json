@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-29T10:15:00Z",
+  "department": "uxui",
+  "stage": "build-log",
+  "summary": "Retroactive build log for mobile touch controls + Space Invaders touch support",
+  "details": {
+    "mobileTouchControls": {
+      "status": "shipped",
+      "pipeline": "research/mobile-touch-support.md → designs/mobile-touch-support.md → BUILD",
+      "implemented": [
+        "Responsive canvas scaling (max-width: 100%, height: auto)",
+        "Touch D-pad for Snake/Tetris (4-way grid layout)",
+        "Vertical D-pad for Pong (up/down only)",
+        "Horizontal D-pad for Breakout (left/right only)",
+        "Restart button (🔄) visible during gameplay",
+        "Touch-to-keydown event synthesis (touchstart + mousedown)",
+        "CSS: .touch-controls shown via @media (max-width: 768px), (pointer: coarse)",
+        "CSS: .touch-btn 60x60px, card-bg, accent active state, 8px radius",
+        "CSS: .touch-dpad grid layout, .touch-dpad-vertical, .touch-dpad-horizontal flex layouts",
+        "Mobile header adjustments (1.8rem h1, 1rem padding)"
+      ],
+      "filesChanged": ["frontend/public/index.html"],
+      "linesOfCode": "~80 CSS + ~30 JS + ~5 HTML"
+    },
+    "spaceInvadersTouchSupport": {
+      "status": "shipped",
+      "description": "Added space-invaders case to renderTouchControls()",
+      "layout": "Horizontal D-pad (left/right) + FIRE button (🔫, 80px wide)",
+      "keyMapping": "left→ArrowLeft, right→ArrowRight, fire→' ' (Space)",
+      "filesChanged": ["frontend/public/index.html"],
+      "line": "250-251"
+    },
+    "designDocUpdated": true,
+    "designDocPath": "departments/uxui/designs/mobile-touch-support.md"
+  },
+  "escalationCleared": "Missing build log — now written. False escalation resolved.",
+  "nextSteps": [
+    "Touch-hold repeat for continuous movement (Pong/Breakout)",
+    "Swipe gestures for Snake"
+  ]
+}

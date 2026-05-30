@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T17:00:52Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "23rd board meeting. Gate 2 COMPLETE: 12/12 assessments, CTO blocker cleared. Directed PM to begin Gate 3 execution plan. Gate 4 vote scheduled for next meeting.",
+      "artifact": "departments/board/minutes/20260530-1700.md"
+    }
+  ],
+  "nextStep": "Gate 4 pivot vote at next meeting (19:00Z) once PM delivers Gate 3 execution plan."
+}

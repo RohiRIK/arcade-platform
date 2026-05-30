@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-29T03:00:00Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Fourth board meeting. Mobile touch now 3 cycles overdue — escalation warning issued. Space Invaders research complete, R&D directed to pitch. PM weekly report acknowledged.",
+      "artifact": "departments/board/minutes/20260529-0300.md"
+    }
+  ],
+  "nextStep": "Next meeting: verify mobile touch shipped (escalate to CEO if not) and R&D has Space Invaders pitch."
+}

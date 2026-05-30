@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-05-29T12:00:00Z",
+  "department": "security",
+  "cycle": "initial-scan",
+  "pipelineStep": "scan+assess",
+  "actions": [
+    "Ran npm audit — blocked by missing lockfile, documented",
+    "Reviewed nginx.conf — no security headers found, wrote hardening doc",
+    "Reviewed Dockerfiles — both run as root, wrote advisory",
+    "Reviewed backend code — found unauthenticated config write (P2) and open CORS (P2)",
+    "Checked file permissions — no secrets in plaintext",
+    "Sent inbox to R&D (code vulns), Infra (headers+docker), DevOps (lockfile+docker)"
+  ],
+  "findings": {
+    "p2": ["unauthenticated PUT /api/config", "open CORS policy"],
+    "medium": ["missing CSP headers", "docker containers run as root"],
+    "low": ["no package-lock.json"]
+  },
+  "artifactsCreated": [
+    "departments/security/audits/2026-05-29.md",
+    "departments/security/hardening/nginx-headers.md",
+    "departments/security/advisories/unauth-config-endpoint.md",
+    "departments/security/advisories/docker-root-containers.md"
+  ]
+}

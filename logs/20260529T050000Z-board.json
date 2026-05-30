@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-05-29T05:00:00Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Fifth board meeting. Space Invaders pitch confirmed — R&D directed to spec. Mobile touch now 4+ cycles overdue — FINAL WARNING issued to UX/UI with inbox directive. CEO escalation planned for 10:00 if not shipped.",
+      "artifact": "departments/board/minutes/20260529-0500.md"
+    },
+    {
+      "type": "inbox",
+      "description": "Sent CRITICAL priority directive to UX/UI inbox demanding mobile touch ship this cycle.",
+      "artifact": "departments/uxui/inbox/board-20260529-0500.md"
+    }
+  ],
+  "nextStep": "Next meeting: verify mobile touch shipped (escalate to CEO if not) and R&D has Space Invaders spec."
+}

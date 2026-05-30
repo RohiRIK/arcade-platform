@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-05-29T19:20:00Z",
+  "department": "rnd",
+  "action": "PITCH: Pac-Man",
+  "pipeline_stage": "pitch",
+  "game": "pac-man",
+  "details": "Wrote Pac-Man pitch per CEO directive. Acknowledged complexity (ghost AI with 4 personalities, maze rendering, scatter/chase cycles, cornering input). Proposed v1 scope cuts: simplified Inky targeting, fixed scatter/chase timing (no per-level tuning), single fruit (cherry), deferred Cruise Elroy and death animation to v2. Estimated 500-650 LOC. Updated state.json pipeline.pitched.",
+  "files_changed": [
+    "departments/rnd/pitches/pac-man.md",
+    "state.json"
+  ],
+  "inbox_processed": ["20260529-1900-ceo-pacman-pitch.md"],
+  "success": true,
+  "next": "Spec Pac-Man next cycle"
+}

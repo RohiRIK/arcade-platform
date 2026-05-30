@@ -1,0 +1,7 @@
+{
+  "name": "Pac-Man",
+  "description": "Navigate the maze, eat all dots, and outsmart four ghosts with unique personalities.",
+  "version": "1.0.0",
+  "category": "classic",
+  "color": "#ffff00"
+}

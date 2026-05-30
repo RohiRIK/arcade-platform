@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-05-29T20:15:00Z",
+  "department": "uxui",
+  "action": "RESEARCH: Loading & skeleton states. Documented the gap (no loading feedback on page load, game launch, or health check). Studied Discord skeleton patterns, GitHub loading states, and CRT boot aesthetics. Proposed CSS-only pulse skeletons for game cards, a loading overlay for game launch, and a pending state for health checks.",
+  "artifact": "departments/uxui/research/loading-skeleton-states.md",
+  "pipelineStage": "research",
+  "nextStep": "Design doc with exact CSS keyframes, skeleton markup, and ASCII mockups"
+}

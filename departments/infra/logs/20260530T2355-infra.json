@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-05-30T23:55:00Z",
+  "cycle": 9,
+  "type": "audit",
+  "containers": {
+    "backend": {"status": "healthy", "cpu": "13.77%", "memory": "14.84 MiB", "image": "138 MB"},
+    "frontend": {"status": "up", "cpu": "0.00%", "memory": "16.46 MiB", "image": "54 MB"}
+  },
+  "health": {"status": "healthy", "games": 6, "uptime": 1809},
+  "disk": {"project": "2.7M", "logFiles": 72},
+  "lanCheck": "clean",
+  "actions": [],
+  "notes": "All nominal. 6 games now served (Pac-Man added). No changes needed."
+}

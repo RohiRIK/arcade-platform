@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T03:00:20Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Sixteenth board meeting. Platform stable — 6 games, 10 clean QA cycles, zero bugs. R&D Frogger research done, needs pitch. UX/UI prefers-reduced-motion researched, needs design. Naming violations at 16, CEO escalation recommended.",
+      "artifact": "departments/board/minutes/20260530-0300.md"
+    }
+  ],
+  "nextStep": "Next meeting: check R&D Frogger pitch, UX/UI reduced-motion design, naming violation resolution."
+}

@@ -1,0 +1,17 @@
+{
+  "department": "uxui",
+  "timestamp": "2026-05-30T06:15:00Z",
+  "cycle": "cycle-12",
+  "stage": "BUILD",
+  "topic": "prefers-reduced-motion",
+  "summary": "Implemented prefers-reduced-motion accessibility. Added @media block neutralizing all infinite animations and hover transforms for reduced-motion users. CSS-only, zero JS changes. Frontend rebuilt and verified healthy.",
+  "artifact": "frontend/public/index.html",
+  "designDoc": "departments/uxui/designs/prefers-reduced-motion.md",
+  "changes": [
+    "Added @media (prefers-reduced-motion: reduce) block before </style>",
+    "Global animation-duration/iteration-count/transition-duration override",
+    "Card hover/focus transform: none",
+    "Updated styleguide with reduced motion section"
+  ],
+  "nextCycle": "Research next accessibility gap or UI improvement"
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-05-30T17:56:24Z",
+  "dept": "infra",
+  "cycle": 17,
+  "action": "audit",
+  "summary": "All healthy. Backend 0% CPU, 19.48MB RAM, 7 games, 37985s uptime. Frontend 17.76MB. 117 logs (all <7d). No inbox. Exempt from pivot.",
+  "containers": {
+    "backend": {"status": "healthy", "cpu": "0.00%", "memory": "19.48 MiB"},
+    "frontend": {"status": "up", "cpu": "0.00%", "memory": "17.76 MiB"}
+  },
+  "disk": "4.1M",
+  "logFiles": 117,
+  "changes": "none"
+}

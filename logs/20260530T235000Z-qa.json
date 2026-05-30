@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-05-30T23:50:00Z",
+  "department": "qa",
+  "pipelineStage": "execute-tests",
+  "actions": [
+    "GET /api/games — 6 games returned",
+    "Game list page — 6 cards displayed, matches API",
+    "Breakout canvas 600x400 — PASS",
+    "Pac-Man canvas 600x400, maze/ghosts/dots/pellets/HUD — PASS (NEW)",
+    "Pong canvas 600x400 — PASS",
+    "Snake canvas 600x400 — PASS",
+    "Space Invaders canvas 600x400 — PASS",
+    "Tetris canvas 600x400 — PASS",
+    "LAN check — zero hardcoded localhost references",
+    "Console errors — zero",
+    "Created Pac-Man test plan",
+    "Previous P1 bugs verified fixed"
+  ],
+  "artifacts": [
+    "departments/qa/test-plans/pac-man.md",
+    "departments/qa/regression/2026-05-30-cycle9.md",
+    "departments/qa/screenshots/current/pac-man.png"
+  ],
+  "result": "PASS — all 6 games verified, no regressions, no new bugs"
+}

@@ -1,0 +1,19 @@
+{
+  "department": "it",
+  "cycle": 11,
+  "timestamp": "2026-05-30T08:45:00Z",
+  "type": "scan",
+  "summary": "Cycle 11 scan: 82 logs valid JSON, 16 naming violations (stable, no new in 3 cycles). recentChanges at 37/50. No orphans. All structural checks pass.",
+  "checks": {
+    "stateJsonSchema": "PASS",
+    "systemMdExistence": "PASS",
+    "inboxDirectories": "PASS",
+    "logFileValidity": "PASS (82 files)",
+    "logNamingViolations": 16,
+    "scriptPermissions": "PASS",
+    "orphanFiles": 0,
+    "recentChangesSize": "37/50"
+  },
+  "fixes": [],
+  "artifact": "departments/it/scans/2026-05-30-cycle11.md"
+}

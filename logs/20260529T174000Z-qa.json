@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-29T17:40:00Z",
+  "department": "qa",
+  "pipelineStage": "execute-tests",
+  "actions": [
+    "Ran E2E smoke test cycle 2",
+    "Found P1: JS syntax error in renderGames — stray backtick from UX/UI keyboard accessibility commit broke entire script block",
+    "Fixed: removed stray backtick on line 167 of frontend/public/index.html",
+    "Rebuilt frontend container",
+    "Verified all 5 games render cards and load with canvas (Snake, Pong, Breakout, Space Invaders, Tetris)",
+    "Verified CSP bug fix (relative /api URLs work, 5 games returned)",
+    "LAN accessibility check: no hardcoded localhost in frontend source",
+    "Updated test plan notes for Space Invaders and Tetris (removed stale P1 references)",
+    "Wrote regression log for cycle 2"
+  ],
+  "artifacts": [
+    "departments/qa/bug-reports/frontend-js-syntax-2026-05-29.md",
+    "departments/qa/regression/2026-05-29-cycle2.md",
+    "departments/qa/screenshots/current/game-list.png",
+    "departments/qa/screenshots/current/snake.png",
+    "departments/qa/screenshots/current/pong.png",
+    "departments/qa/screenshots/current/breakout.png",
+    "departments/qa/screenshots/current/space-invaders.png",
+    "departments/qa/screenshots/current/tetris.png"
+  ],
+  "bugsFound": [
+    {
+      "id": "frontend-js-syntax-2026-05-29",
+      "severity": "P1",
+      "status": "fixed",
+      "description": "Stray backtick in renderGames template literal broke all JS — zero games rendered"
+    }
+  ],
+  "bugsVerified": [
+    {
+      "id": "frontend-csp-2026-05-29",
+      "status": "verified-fixed",
+      "description": "CSP + cross-origin fetch — now uses relative /api with nginx proxy"
+    }
+  ]
+}

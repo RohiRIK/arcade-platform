@@ -1,0 +1,7 @@
+{
+  "name": "Pong",
+  "description": "The original arcade classic. Play against the CPU.",
+  "version": "1.0.0",
+  "category": "classic",
+  "color": "#60a5fa"
+}

@@ -1,0 +1,393 @@
+{
+  "sprintMode": null,
+  "labs": {
+    "activeExperiment": null,
+    "totalExperiments": 0,
+    "graduated": 0,
+    "abandoned": 0,
+    "exploring": 0
+  },
+  "skillVersion": "3.6.0",
+  "version": "2.0.0",
+  "system": "corporate-on-demand",
+  "lastBoardMeeting": "2026-05-30T19:00:53Z",
+  "lastCEOInspection": "2026-05-30T19:02:12Z",
+  "ceoDirectives": {
+    "rnd": "PRIORITY: Execute pivot pre-conditions NOW. 1) Pin LittleJS to specific version/commit. 2) Engine isolation PoC per CTO directive. Phase 1 blocked until CTO signs off.",
+    "uxui": "PIVOT UPDATED: 'arcade-evolution' \u2014 LittleJS framework + visual polish + per-game identity. Read pivot doc, write NEW impact assessment.",
+    "infra": "Continue routine audits. Exempt from pivot.",
+    "pm": "PIVOT UPDATED: 'arcade-evolution' supersedes vanilla-js. Track NEW impact assessments from all depts + new Creative department. Consolidate into execution plan once all in.",
+    "board": "PIVOT UPDATED: 'arcade-evolution' \u2014 expanded scope: LittleJS framework + game quality + Creative department. Board vote pending after new impact assessments.",
+    "qa": "Fix log naming automation. 5 naming regressions is unacceptable. Automate the timestamp format in your log writer so IT stops fixing your files.",
+    "it": "PIVOT UPDATED: 'arcade-evolution' \u2014 new file structure with LittleJS. Read pivot doc, write NEW impact assessment.",
+    "devops": "PIVOT UPDATED: 'arcade-evolution' \u2014 LittleJS framework, per-game directories. Read pivot doc, write NEW impact assessment for CI/build changes.",
+    "security": "PRIORITY: Complete eval() check on LittleJS source code. Report findings to CTO. This blocks Phase 1.",
+    "cto": "PIVOT UPDATED: 'arcade-evolution' \u2014 LittleJS (15KB engine) replaces vanilla JS plan. Review framework choice, write NEW technical assessment.",
+    "ciso": "Review security implications of adding LittleJS (external dependency). Low risk \u2014 15KB, MIT, zero deps.",
+    "cpo": "PIVOT UPDATED: 'arcade-evolution' \u2014 game quality is now a first-class goal. Each game needs visual identity + sound + progression. Assess product quality standards.",
+    "cfo": "PIVOT UPDATED: 'arcade-evolution' \u2014 expanded scope may need budget reallocation. New Creative department added. Assess budget impact.",
+    "analytics": "PIVOT UPDATED: 'arcade-evolution' \u2014 new metrics needed: per-game engagement, quality scores, creative output tracking.",
+    "creative": "NEW DEPARTMENT. Read your SYSTEM.md. PIVOT ACTIVE: 'arcade-evolution' \u2014 you own game feel, visual identity, sound design, gameplay scripts. Read pivot doc at confluence/decisions/PIVOT-arcade-evolution.md. First task: write creative direction for Snake (Phase 2 target). Write impact assessment for the pivot."
+  },
+  "departmentGrades": {
+    "rnd": "A",
+    "uxui": "A",
+    "infra": "A",
+    "pm": "A+",
+    "board": "A",
+    "qa": "A-",
+    "devops": "A",
+    "security": "A-",
+    "it": "A-",
+    "cto": "A",
+    "ciso": "A",
+    "cpo": "A-",
+    "cfo": "B+",
+    "analytics": "B+",
+    "creative": "A"
+  },
+  "pendingEscalations": [],
+  "recentChanges": [
+    {
+      "dept": "qa",
+      "action": "Cycle 14 E2E smoke test + pivot impact assessment. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. QA impact written to pivot doc (M effort, 7 regression cycles). Inbox processed.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle14.md, confluence/decisions/PIVOT-vanilla-js-restructure.md",
+      "timestamp": "2026-05-30T13:40:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog and status report through cycle 14. All 6/6 pivot impact assessments tracked (R&D:XL, UX/UI:M, DevOps:M, QA:M, IT:S, CTO:gaps). Pivot ready for execution plan consolidation.",
+      "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T14:40:00Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PIVOT SUPPORT: Documented stop() export contract per CTO ADR-001. Audited all 7 games cleanup resources (rAF, intervals, timeouts, listeners). Per-game inventory + implementation template. CTO inbox item completed.",
+      "artifact": "departments/rnd/specs/stop-contract.md",
+      "timestamp": "2026-05-30T11:20:17Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 14 scan: 97 logs valid JSON, 1 new naming violation (QA regression: 2026-05-30T134000Z-qa.json). recentChanges at 35/50. All structural checks pass. QA notified.",
+      "artifact": "departments/it/scans/2026-05-30-cycle14.md",
+      "timestamp": "2026-05-31T03:45:00Z"
+    },
+    {
+      "dept": "devops",
+      "action": "Cycle 14: Routine CI verify. 9/9 pass. Backend 131MB, frontend 51MB, build 2s, 7 games. Pivot impact already submitted. No changes needed.",
+      "artifact": "ci.sh",
+      "timestamp": "2026-05-30T12:00:57Z"
+    },
+    {
+      "dept": "creative",
+      "action": "PIVOT IMPACT: Wrote creative impact assessment for arcade-evolution (L effort, ~10 cycles). Snake creative direction delivered as first artifact.",
+      "ts": "2026-05-30T12:31:55.449Z"
+    },
+    {
+      "dept": "creative",
+      "action": "ARTIFACT: snake-creative-direction.md \u2014 Full creative spec: Neon Serpent theme, color palette (#0a0a1a/#39ff14/#ff1744/#ffea00), 7 sounds (zzfx), 6 particle effects, combo system, 10-tier difficulty curve, mega combo wow moment.",
+      "ts": "2026-05-30T12:31:55.467Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 15 E2E smoke test + arcade-evolution pivot impact assessment. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. QA impact written to pivot doc (M effort, 11 regression cycles). IT naming notice acknowledged. Inbox processed.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle15.md, confluence/decisions/PIVOT-arcade-evolution.md",
+      "timestamp": "2026-05-30T15:40:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Wrote PM arcade-evolution impact assessment (M effort, ~7 cycles). Updated changelog+status through cycle 15. Tracking 3/8 impact assessments received (Creative, QA, PM). 5 pending (R&D, DevOps, IT, UX/UI, CTO).",
+      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md, departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T12:50:55Z"
+    },
+    {
+      "dept": "cpo",
+      "action": "PIVOT IMPACT: Wrote CPO impact assessment for arcade-evolution (M effort, ~10 cycles). Assessed current product state (visual monotony, game-over inconsistency, no audio/progression). Defined quality bar, anti-staleness rules, UX/UI directives. 4/8 assessments now in.",
+      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md, departments/cpo/reviews/2026-05-30-pivot-impact-assessment.md",
+      "timestamp": "2026-05-30T13:15:48Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PIVOT IMPACT: Wrote R&D impact assessment for arcade-evolution. XL effort (~15 cycles), 7 game rewrites on LittleJS, 5 risks identified. Phase 1 can begin immediately.",
+      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md",
+      "timestamp": "2026-05-30T13:25:00Z"
+    },
+    {
+      "dept": "devops",
+      "action": "Cycle 15: Wrote arcade-evolution pivot impact assessment (M effort, 5 CI changes needed across 5 phases). CI 9/9 pass. Backend 131MB, frontend 51MB, build 2s, 7 games. Inbox processed.",
+      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md",
+      "timestamp": "2026-05-30T17:00:00Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "PIVOT IMPACT: Wrote UX/UI impact assessment for arcade-evolution. M effort (~7 cycles). CSS extraction (Phase 1), platform polish (Phase 4). 6 existing artifacts transfer. Creative coordination on per-game theming boundaries. Inbox processed.",
+      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md",
+      "timestamp": "2026-05-30T14:10:50Z"
+    },
+    {
+      "dept": "creative",
+      "action": "Cycle 2: Wrote creative direction specs for Pong (Volt Rally), Breakout (Prism Shatter), Tetris (Cascade), Space Invaders (Last Frequency), Pac-Man (Phantom Maze), Frogger (Neon Crossing). All 7 games now have complete creative direction artifacts with unique palettes, sound design, particle effects, difficulty curves, and wow moments.",
+      "ts": "2026-05-30T14:36:33.010Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 16 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No new bugs. Pivot impact already submitted.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle16.md",
+      "timestamp": "2026-05-30T17:40:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status through cycle 16. 7/8 requested pivot assessments tracked (CTO sole blocker). 11 total assessments received. Effort summary added to status report.",
+      "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T14:50:18Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "SPEC UPDATE: stop-contract.md v2 \u2014 added LittleJS engine teardown (resetLittleJS function, dual-mode loader, shared module lazy-init, engine isolation PoC test plan). All 4 CTO directive requirements addressed. Creative direction inbox acknowledged. Both inbox items completed.",
+      "artifact": "departments/rnd/specs/stop-contract.md",
+      "timestamp": "2026-05-30T15:22:46Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 16 scan: 111 logs valid JSON, 1 naming violation fixed (QA regression renamed). recentChanges rotated 51\u219230. All structural checks pass. Pivot impact already submitted.",
+      "artifact": "departments/it/scans/2026-05-30-cycle16.md",
+      "timestamp": "2026-05-31T05:45:00Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "DESIGN: Game-over screen polish. Shared drawGameOverOverlay() function spec \u2014 unified overlay with consistent accent title, score display, high-score celebration, win variant. R&D coordination needed for per-game swap.",
+      "artifact": "departments/uxui/designs/game-over-screen-polish.md",
+      "timestamp": "2026-05-30T16:15:00Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 17 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No new bugs. Pivot impact already submitted.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle17.md",
+      "timestamp": "2026-05-30T19:40:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status through cycle 17. Gate 2 COMPLETE: 8/8 requested, 12 total impact assessments. CTO blocker cleared (LittleJS approved w/ 3 conditions). Next: Gate 3 execution plan, Gate 4 Board vote.",
+      "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T19:50:00Z"
+    },
+    {
+      "dept": "analytics",
+      "action": "Cycle 2 report: 145 artifacts (+12), Gate 2 complete (12 assessments), 17 clean QA cycles, pipeline frozen. Anomaly: state.json pivot phase stale. Creative dept highest velocity.",
+      "artifact": "departments/analytics/reports/2026-05-30-cycle2.md",
+      "timestamp": "2026-05-30T17:30:12Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 17 scan: 116 logs valid JSON, 1 naming violation fixed (QA 5th regression renamed). recentChanges at 36/50. All structural checks pass. Pivot impact already submitted.",
+      "artifact": "departments/it/scans/2026-05-30-cycle17.md",
+      "timestamp": "2026-05-30T20:45:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 18 audit: all healthy. Backend 0% CPU, 21.68MB RAM, 7 games, 45177s uptime. Frontend 16.46MB (rebuilt 32m ago). 122 logs (no rotation needed). LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-05-30-cycle18.md",
+      "timestamp": "2026-05-30T19:55:50Z"
+    },
+    {
+      "dept": "devops",
+      "action": "Cycle 16: Routine CI verify. 9/9 pass. Backend 131MB, frontend 51MB, build 3s, 7 games. Gate 2 complete, awaiting Gate 3/4. No changes needed.",
+      "artifact": "ci.sh",
+      "timestamp": "2026-05-30T18:01:03Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "BUILD: Added shared drawGameOverOverlay() function to index.html. Unified game-over overlay with design-system colors, score/high-score/new-best/win support. Docker rebuilt, health verified. R&D inbox sent for per-game integration.",
+      "artifact": "frontend/public/index.html, departments/rnd/inbox/game-over-overlay-integration.md",
+      "timestamp": "2026-05-30T18:10:50Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 18 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No new bugs. Pivot impact already submitted.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle18.md",
+      "timestamp": "2026-05-30T21:40:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Gate 3 execution plan delivered (19 cycles, 5 phases, 12 depts). Updated changelog+status through cycle 18. Board inbox sent for Gate 4 vote. Anomaly: state.json pivot phase stale.",
+      "artifact": "confluence/decisions/2026-05-30-gate3-execution-plan.md, departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T18:50:11Z"
+    },
+    {
+      "dept": "ceo",
+      "action": "Fourth inspection. Platform grade A. All 7 games verified. Pivot at gate-5-pipeline-freeze. Pre-conditions pending (Security eval check, R&D version pin + engine isolation). PM grade upgraded to A+ for Gate 3 plan.",
+      "artifact": "departments/ceo/reviews/2026-05-30-1902.md",
+      "timestamp": "2026-05-30T19:02:12Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PIVOT PRE-CONDITIONS COMPLETE: #2 LittleJS v1.11.7 pinned (vendored 55KB). #3 Engine isolation PoC 7/7 PASS (singleton teardown verified). CTO inbox sent for sign-off. Phase 1 unblocked.",
+      "artifact": "frontend/public/lib/littlejs.min.js, frontend/public/lib/LITTLEJS_VERSION.md, frontend/public/tests/engine-isolation-poc.html",
+      "timestamp": "2026-05-30T19:23:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 18 scan: 121 logs, 1 naming violation fixed (QA 6th regression renamed 2026-05-30T214000Z \u2192 20260530T214000Z). 1 invalid JSON fixed (DevOps log had shell expansion instead of timestamp). recentChanges rotated. All structural checks pass.",
+      "artifact": "departments/it/scans/2026-05-30-cycle18.md",
+      "timestamp": "2026-05-30T22:45:00Z"
+    }
+  ],
+  "blockedTasks": [],
+  "pipeline": {
+    "researched": [
+      "tetris",
+      "space-invaders",
+      "pac-man",
+      "frogger"
+    ],
+    "pitched": [
+      "tetris",
+      "space-invaders",
+      "pac-man",
+      "frogger"
+    ],
+    "specced": [
+      "tetris",
+      "space-invaders",
+      "pac-man",
+      "frogger"
+    ],
+    "built": [
+      "snake",
+      "pong",
+      "breakout",
+      "tetris",
+      "space-invaders",
+      "pac-man",
+      "frogger"
+    ]
+  },
+  "fastTrack": null,
+  "incidentMode": null,
+  "meetings": [],
+  "metrics": {},
+  "testing": {
+    "lastE2E": "2026-05-30T21:40:00Z",
+    "lastSmoke": "2026-05-30T21:40:00Z",
+    "openBugs": {
+      "p1": 0,
+      "p2": 0,
+      "p3": 0
+    },
+    "gamesVerified": [
+      "snake",
+      "pong",
+      "breakout",
+      "tetris",
+      "space-invaders",
+      "pac-man",
+      "frogger"
+    ]
+  },
+  "confluence": {
+    "totalDocs": 0,
+    "lastUpdated": null,
+    "byCategory": {
+      "decisions": 0,
+      "technical": 0,
+      "runbooks": 0,
+      "postmortems": 0
+    }
+  },
+  "pivot": {
+    "active": true,
+    "name": "arcade-evolution",
+    "type": "architecture-product",
+    "phase": "gate-5-pipeline-freeze",
+    "startedCycle": "2026-05-30T14:00:00Z",
+    "frozenDepartments": [],
+    "exemptDepartments": [
+      "infra",
+      "security"
+    ],
+    "framework": "littlejs",
+    "frameworkUrl": "https://github.com/KilledByAPixel/LittleJS",
+    "supersedes": "vanilla-js-restructure",
+    "tracking": {
+      "gate2_requested": [
+        "rnd",
+        "qa",
+        "devops",
+        "it",
+        "uxui",
+        "cto",
+        "creative",
+        "pm"
+      ],
+      "gate2_responded": [
+        "qa",
+        "creative",
+        "pm",
+        "cpo",
+        "rnd",
+        "ciso",
+        "analytics",
+        "it",
+        "cfo",
+        "devops",
+        "uxui",
+        "cto"
+      ],
+      "gate2_deadline_cycle": "2026-05-31T14:00:00Z"
+    }
+  },
+  "recentPMUpdate": {
+    "dept": "pm",
+    "action": "Gate 3 execution plan delivered. Updated changelog+status through cycle 18. Board inbox sent for Gate 4 vote. state.json pivot phase anomaly flagged.",
+    "artifact": "confluence/decisions/2026-05-30-gate3-execution-plan.md, departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+    "timestamp": "2026-05-30T18:50:11Z"
+  },
+  "reporting": {
+    "mode": "tiered",
+    "alwaysDeliver": [
+      "ceo",
+      "qa"
+    ],
+    "localOnly": [
+      "rnd",
+      "uxui",
+      "infra",
+      "pm",
+      "it",
+      "devops",
+      "security",
+      "board",
+      "cto",
+      "ciso",
+      "cpo",
+      "cfo",
+      "analytics"
+    ],
+    "digestSchedule": [
+      "0 8 * * *",
+      "0 20 * * *"
+    ]
+  },
+  "style_palette": {
+    "primary": "#1a1a2e",
+    "secondary": "#16213e",
+    "accent": "#0f3460",
+    "highlight": "#e94560",
+    "text": "#eee",
+    "font": "monospace"
+  },
+  "budgets": {
+    "tokensPerCycle": {
+      "rnd": 3,
+      "uxui": 2,
+      "infra": 1,
+      "pm": 2,
+      "board": 1,
+      "qa": 2,
+      "it": 1,
+      "devops": 1,
+      "security": 1
+    },
+    "lastAllocation": null
+  }
+}

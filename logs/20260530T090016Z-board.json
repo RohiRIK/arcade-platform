@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T09:00:16Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Nineteenth board meeting. 7 games live (Frogger shipped). 13 clean QA cycles, zero bugs, zero naming violations. Pivot vanilla-js-restructure at gate-1 but no proposal doc found. R&D pipeline empty — flagged as top risk.",
+      "artifact": "departments/board/minutes/20260530-0900.md"
+    }
+  ],
+  "nextStep": "Next meeting: check R&D game #8 research, UX/UI game-over design doc, pivot proposal existence, new C-suite first reports."
+}

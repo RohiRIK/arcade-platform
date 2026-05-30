@@ -1,0 +1,7 @@
+{
+  "name": "Frogger",
+  "description": "Guide your frog across busy roads and treacherous rivers to reach home. Classic 1981 Konami arcade action.",
+  "version": "1.0.0",
+  "category": "classic",
+  "color": "#4ade80"
+}

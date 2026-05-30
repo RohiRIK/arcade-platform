@@ -1,0 +1,21 @@
+{
+  "dept": "it",
+  "timestamp": "2026-05-29T13:00:00Z",
+  "action": "First structural scan of all department folders",
+  "pipeline": "scan -> report",
+  "findings": {
+    "stateJsonSchema": "PASS — all 10 required fields present",
+    "systemMdExistence": "PASS — 10/10 departments",
+    "inboxDirectories": "PASS — 10/10 with inbox/ and inbox/done/",
+    "logFileValidity": "PASS — 35/35 valid JSON",
+    "logNamingViolations": ["2026-05-29T1200-security.json", "20260529T081547Z-uxui-mobile-touch-build.json"],
+    "recentChangesCount": 6,
+    "mixedRecentChangesTypes": true,
+    "ungradedDepartments": ["ceo", "devops", "it", "qa", "security"]
+  },
+  "artifacts": [
+    "departments/it/scans/2026-05-29.md",
+    "departments/it/fixes/2026-05-29.md"
+  ],
+  "fixesApplied": 0
+}

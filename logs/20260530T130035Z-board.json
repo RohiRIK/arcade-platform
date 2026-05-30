@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T13:00:35Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "21st board meeting. Pivot updated to arcade-evolution (supersedes vanilla-js-restructure). Gate 2 at 3/8 — QA, Creative, PM submitted. 5 pending: R&D, DevOps, IT, UX/UI, CTO. Deadline 2026-05-31T14:00Z. 7 games, 15 clean QA cycles, zero bugs.",
+      "artifact": "departments/board/minutes/20260530-1300.md"
+    }
+  ],
+  "nextStep": "Next meeting: check Gate 2 progress (target 8/8 assessments). If complete, advance to Gate 3 (PM execution plan)."
+}

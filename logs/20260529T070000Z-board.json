@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-05-29T07:00:00Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Sixth board meeting. Space Invaders spec confirmed — R&D directed to build. UX/UI mobile touch now 5+ cycles overdue, final warning ignored — CEO escalation queued in state.json for 10:00 inspection.",
+      "artifact": "departments/board/minutes/20260529-0700.md"
+    },
+    {
+      "type": "escalation",
+      "description": "Added UX/UI mobile touch critical escalation to state.json pendingEscalations.",
+      "artifact": "state.json"
+    }
+  ],
+  "nextStep": "Next meeting: verify Space Invaders build and CEO inspection outcome on UX/UI escalation."
+}

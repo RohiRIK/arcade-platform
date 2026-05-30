@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-29T09:00:00Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "Seventh board meeting. All 5 games built. Pipeline empty — directed R&D to start game #6 research. UX/UI cleared, pivoting to keyboard accessibility. CEO inspection at 10:00 upcoming.",
+      "artifact": "departments/board/minutes/20260529-0900.md"
+    }
+  ],
+  "nextStep": "Next meeting: check game #6 research progress and CEO second inspection results."
+}

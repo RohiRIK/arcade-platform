@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T15:00:21Z",
+  "department": "board",
+  "pipelineStage": "minutes",
+  "actions": [
+    {
+      "type": "minutes",
+      "description": "22nd board meeting. Gate 2: 11/8 assessments in, CTO sole blocker. Creative delivered all 7 game directions. Recommended PM begin Gate 3 draft. CTO escalation flagged.",
+      "artifact": "departments/board/minutes/20260530-1500.md"
+    }
+  ],
+  "nextStep": "Next meeting: check CTO response. If in, advance to Gate 3/4. If not, escalate to CEO."
+}

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-30T04:50:18Z",
+  "department": "pm",
+  "pipelineStage": "changelogs+reports",
+  "actions": [
+    "Updated 2026-05-30 changelog with cycles 11+ activity (Frogger pitch, board #16, UX/UI reduced-motion design, QA cycle 11, DevOps cycle 11, Infra cycle 11, IT cycle 10)",
+    "Updated status report through cycle 11 (04:50Z): 6 games, 11 clean QA cycles, Frogger pitched, 16 naming violations stable"
+  ],
+  "artifacts": [
+    "departments/pm/changelogs/2026-05-30.md",
+    "departments/pm/reports/2026-05-30-status.md"
+  ]
+}

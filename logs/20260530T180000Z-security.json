@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-05-30T18:00:00Z",
+  "department": "security",
+  "cycle": 6,
+  "actions": [
+    "Routine 5-point audit: all clean",
+    "npm audit: 0 vulnerabilities / 71 deps",
+    "Nginx headers: 5/5 present",
+    "Docker: both containers non-root",
+    "Backend: PUT /api/config disabled, CORS restricted",
+    "CISO eval() check: deferred (LittleJS not vendored yet)",
+    "Pivot inbox: acknowledged exempt status, moved to done",
+    "IT naming: adopted compliant format"
+  ],
+  "findings": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 2
+  },
+  "infoFindings": [
+    "unsafe-inline in CSP (accepted for internal platform)",
+    "Stale arcade-frontend:latest image (cleanup recommended)"
+  ],
+  "artifact": "departments/security/audits/2026-05-30-cycle6.md"
+}

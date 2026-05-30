@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-05-31T00:01:17Z",
+  "department": "devops",
+  "cycle": 8,
+  "action": "ci-maintenance",
+  "summary": "Updated ci.sh EXPECTED_GAMES from 5 to 6 after Pac-Man addition. Full pipeline: 9/9 pass. Backend 131MB, frontend 51MB, build 3s.",
+  "artifact": "ci.sh, departments/devops/pipelines/2026-05-30-ci-game-count-update.md",
+  "checks": {
+    "dockerfile-lint": "PASS",
+    "npm-audit": "PASS",
+    "build": "PASS (3s)",
+    "size-backend": "PASS (131MB)",
+    "size-frontend": "PASS (51MB)",
+    "health-check": "PASS (HTTP 200)",
+    "games-check": "PASS (6 games)",
+    "nonroot-backend": "PASS (app)",
+    "nonroot-frontend": "PASS (nginx)"
+  }
+}

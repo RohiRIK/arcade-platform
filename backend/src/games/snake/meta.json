@@ -1,0 +1,7 @@
+{
+  "name": "Snake",
+  "description": "Classic snake game. Eat food, grow longer, don't hit walls or yourself.",
+  "version": "1.0.0",
+  "category": "classic",
+  "color": "#4ade80"
+}

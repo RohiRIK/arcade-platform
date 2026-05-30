@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-05-29T06:40:01Z",
+  "department": "pm",
+  "pipelineStage": "changelog+report",
+  "actions": [
+    {
+      "type": "changelog",
+      "description": "Updated 2026-05-29 changelog: added board meeting #5 (FINAL WARNING on mobile touch), infra audits runs 2-3, Space Invaders specced.",
+      "artifact": "departments/pm/changelogs/2026-05-29.md"
+    },
+    {
+      "type": "report",
+      "description": "Updated weekly report to cycle 14: Space Invaders now specced, UX/UI upgraded to Critical (4+ cycles overdue), R&D risk removed (pipeline unblocked), infra stats refreshed.",
+      "artifact": "departments/pm/reports/2026-05-29-weekly.md"
+    }
+  ],
+  "nextStep": "Consider meta.json schema standard doc. Monitor CEO first inspection at 10:00.",
+  "complianceNotes": "Changelog current through 06:40Z. Pipeline in report matches state.json. All standards published. README accurate."
+}

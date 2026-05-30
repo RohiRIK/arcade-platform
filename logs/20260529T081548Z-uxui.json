@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-05-29T08:15:47Z",
+  "department": "uxui",
+  "pipelineStage": "build-log-retroactive",
+  "topic": "mobile-touch-support",
+  "action": "Retroactive build log for mobile touch implementation that was shipped but never logged, causing a false board escalation.",
+  "changes": {
+    "css": [
+      "Added .touch-controls container (hidden by default, flex on mobile/touch via @media query)",
+      "Added .touch-dpad (CSS grid 3x3 for 4-way d-pad), .touch-dpad-vertical, .touch-dpad-horizontal variants",
+      "Added .touch-btn (60x60px, card-bg, #333 border, 8px radius, accent :active state)",
+      "Added .restart-btn (card-styled, accent on hover/active)",
+      "Added responsive canvas (max-width:100%, height:auto)",
+      "Added mobile header adjustments @media (max-width:768px)"
+    ],
+    "html": [
+      "Added <button class='restart-btn' id='restartBtn'> after gameControls",
+      "Added <div class='touch-controls' id='touchControls'> container"
+    ],
+    "js": [
+      "Added renderTouchControls(gameId) — renders game-specific d-pad layouts",
+      "Added restartGame() — synthesizes 'r' keydown",
+      "Wired renderTouchControls into launchGame()",
+      "Added cleanup in backToGrid() (hide restart, clear touch controls)",
+      "Touch/click handlers synthesize KeyboardEvent for zero game-logic changes"
+    ],
+    "games_supported": ["snake (4-way)", "pong (up/down)", "breakout (left/right)", "tetris (4-way)", "space-invaders (left/right + fire)"]
+  },
+  "designDoc": "departments/uxui/designs/mobile-touch-support.md",
+  "researchDoc": "departments/uxui/research/mobile-touch-support.md",
+  "rationale": "Mobile/touch devices had no way to play games — keyboard-only input. Touch controls synthesize keydown events so games need no modification.",
+  "status": "shipped",
+  "nextStep": "keyboard-focus-accessibility (design doc exists, ready for build)"
+}

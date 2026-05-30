@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LittleJS Engine Isolation PoC</title>
+  <style>
+    body { background: #1a1a2e; color: #eee; font-family: monospace; padding: 20px; }
+    .pass { color: #4ade80; }
+    .fail { color: #e94560; }
+    #results { white-space: pre-wrap; }
+    canvas { display: block; width: 600px; height: 400px; margin: 10px 0; border: 1px solid #333; }
+  </style>
+</head>
+<body>
+<h1>Engine Isolation PoC — LittleJS v1.11.7</h1>
+<p>Pre-condition #3: Verify singleton teardown works correctly.</p>
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+<div id="results">Running tests...</div>
+
+<script src="../lib/littlejs.min.js"></script>
+<script>
+// Engine Isolation Proof-of-Concept Test
+// Tests that LittleJS can be initialized, torn down, and re-initialized
+// without state leakage between game instances.
+
+const results = [];
+const canvas = document.getElementById('gameCanvas');
+const output = document.getElementById('results');
+
+function log(msg, pass) {
+  results.push({ msg, pass });
+}
+
+function getListenerCount() {
+  // Approximate: count by tracking additions
+  return window.__listenerCount || 0;
+}
+
+// Track event listeners
+let listenerBaseline = 0;
+const origAdd = document.addEventListener.bind(document);
+const origRemove = document.removeEventListener.bind(document);
+window.__listenerCount = 0;
+document.addEventListener = function(type, fn, opts) {
+  window.__listenerCount++;
+  return origAdd(type, fn, opts);
+};
+document.removeEventListener = function(type, fn, opts) {
+  window.__listenerCount--;
+  return origRemove(type, fn, opts);
+};
+
+// resetLittleJS function (from stop-contract.md spec)
+function resetLittleJS() {
+  // Clear all engine objects
+  if (typeof engineObjects !== 'undefined') {
+    engineObjects.length = 0;
+  }
+
+  // Reset camera
+  if (typeof setCameraPos === 'function') {
+    setCameraPos(vec2());
+    setCameraScale(1);
+  }
+
+  // Reset frame
+  if (typeof frame !== 'undefined') {
+    frame = 0;
+  }
+
+  // Clear input state
+  if (typeof clearInput === 'function') {
+    clearInput();
+  } else if (typeof inputData !== 'undefined') {
+    inputData.length = 0;
+  }
+
+  // Destroy WebGL overlay if present
+  if (typeof glCanvas !== 'undefined' && glCanvas) {
+    glCanvas.remove();
+    glContext = null;
+    glCanvas = null;
+  }
+
+  // Cancel engine's own rAF
+  if (typeof engineFrameId !== 'undefined' && engineFrameId) {
+    cancelAnimationFrame(engineFrameId);
+    engineFrameId = null;
+  }
+}
+
+async function runTests() {
+  listenerBaseline = window.__listenerCount;
+
+  // === TEST 1: Init LittleJS, create 50 objects (Game A) ===
+  try {
+    // LittleJS uses engineInit with callbacks
+    let initResolve;
+    const initPromise = new Promise(r => initResolve = r);
+
+    // Simulate Game A: create objects after engine init
+    const gameInitA = () => {
+      for (let i = 0; i < 50; i++) {
+        new EngineObject(vec2(i, 0), vec2(1, 1));
+      }
+      log(`Step 1: Created 50 engineObjects (Game A). Count: ${engineObjects.length}`,
+          engineObjects.length === 50);
+      initResolve();
+    };
+
+    engineInit(gameInitA, () => {}, () => {}, () => {}, () => {}, []);
+    await initPromise;
+    await new Promise(r => setTimeout(r, 200)); // Let a few frames run
+
+    // === TEST 2: Call stop() + resetLittleJS() ===
+    resetLittleJS();
+    log(`Step 2: resetLittleJS() called. engineObjects.length: ${engineObjects.length}`,
+        engineObjects.length === 0);
+
+    // === TEST 3: Verify no rAF running ===
+    await new Promise(r => setTimeout(r, 100));
+    const frameAfterReset = frame;
+    await new Promise(r => setTimeout(r, 200));
+    const frameAfterWait = frame;
+    const noRAF = frameAfterReset === frameAfterWait;
+    log(`Step 3: Frame count stable after reset (${frameAfterReset} → ${frameAfterWait})`, noRAF);
+
+    // === TEST 4: Verify listeners back to baseline ===
+    const currentListeners = window.__listenerCount;
+    const listenersClean = currentListeners <= listenerBaseline + 2; // small tolerance
+    log(`Step 4: Listener count (baseline: ${listenerBaseline}, current: ${currentListeners})`, listenersClean);
+
+    // === TEST 5: Re-init LittleJS, create 10 objects (Game B) ===
+    let initResolve2;
+    const initPromise2 = new Promise(r => initResolve2 = r);
+
+    const gameInitB = () => {
+      for (let i = 0; i < 10; i++) {
+        new EngineObject(vec2(i, 0), vec2(1, 1));
+      }
+      log(`Step 5: Re-init with 10 objects (Game B). Count: ${engineObjects.length}`,
+          engineObjects.length === 10);
+      initResolve2();
+    };
+
+    engineInit(gameInitB, () => {}, () => {}, () => {}, () => {}, []);
+    await initPromise2;
+    await new Promise(r => setTimeout(r, 100));
+
+    // === TEST 6: Verify count is 10, not 60 ===
+    log(`Step 6: No leakage from Game A. engineObjects: ${engineObjects.length}`,
+        engineObjects.length === 10);
+
+    // === TEST 7: Stop LittleJS, test legacy canvas drawing ===
+    resetLittleJS();
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#4ade80';
+    ctx.fillRect(10, 10, 100, 50);
+    ctx.fillStyle = '#eee';
+    ctx.font = '16px monospace';
+    ctx.fillText('Legacy canvas works!', 20, 42);
+    const pixel = ctx.getImageData(50, 30, 1, 1).data;
+    const canvasWorks = pixel[1] > 200; // green channel high
+    log(`Step 7: Legacy canvas renders after LittleJS teardown`, canvasWorks);
+
+  } catch (e) {
+    log(`ERROR: ${e.message}`, false);
+  }
+
+  // === RENDER RESULTS ===
+  let text = '\n=== ENGINE ISOLATION PoC RESULTS ===\n\n';
+  let allPass = true;
+  results.forEach((r, i) => {
+    const status = r.pass ? 'PASS' : 'FAIL';
+    if (!r.pass) allPass = false;
+    text += `[${status}] ${r.msg}\n`;
+  });
+  text += `\n${'='.repeat(40)}\n`;
+  text += allPass ? '✅ ALL TESTS PASSED — Engine isolation verified.\n' :
+                    '❌ SOME TESTS FAILED — See above.\n';
+  text += `\nLittleJS version: v1.11.7 (pinned)\n`;
+  text += `Date: ${new Date().toISOString()}\n`;
+
+  output.innerHTML = text.replace(/\[PASS\]/g, '<span class="pass">[PASS]</span>')
+                         .replace(/\[FAIL\]/g, '<span class="fail">[FAIL]</span>');
+
+  // Also log to console for automated checking
+  console.log(text);
+  console.log(JSON.stringify({ allPass, results: results.length, passed: results.filter(r=>r.pass).length }));
+}
+
+// Run after small delay
+setTimeout(runTests, 500);
+</script>
+</body>
+</html>
