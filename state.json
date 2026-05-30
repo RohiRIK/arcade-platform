@@ -10,7 +10,7 @@
   "skillVersion": "3.6.0",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-05-30T19:00:53Z",
+  "lastBoardMeeting": "2026-05-31T21:00:59Z",
   "lastCEOInspection": "2026-05-30T19:02:12Z",
   "ceoDirectives": {
     "rnd": "PRIORITY: Execute pivot pre-conditions NOW. 1) Pin LittleJS to specific version/commit. 2) Engine isolation PoC per CTO directive. Phase 1 blocked until CTO signs off.",
@@ -49,56 +49,10 @@
   "pendingEscalations": [],
   "recentChanges": [
     {
-      "dept": "qa",
-      "action": "Cycle 14 E2E smoke test + pivot impact assessment. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. QA impact written to pivot doc (M effort, 7 regression cycles). Inbox processed.",
-      "artifact": "departments/qa/regression/2026-05-30-cycle14.md, confluence/decisions/PIVOT-vanilla-js-restructure.md",
-      "timestamp": "2026-05-30T13:40:00Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog and status report through cycle 14. All 6/6 pivot impact assessments tracked (R&D:XL, UX/UI:M, DevOps:M, QA:M, IT:S, CTO:gaps). Pivot ready for execution plan consolidation.",
-      "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
-      "timestamp": "2026-05-30T14:40:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PIVOT SUPPORT: Documented stop() export contract per CTO ADR-001. Audited all 7 games cleanup resources (rAF, intervals, timeouts, listeners). Per-game inventory + implementation template. CTO inbox item completed.",
-      "artifact": "departments/rnd/specs/stop-contract.md",
-      "timestamp": "2026-05-30T11:20:17Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 14 scan: 97 logs valid JSON, 1 new naming violation (QA regression: 2026-05-30T134000Z-qa.json). recentChanges at 35/50. All structural checks pass. QA notified.",
-      "artifact": "departments/it/scans/2026-05-30-cycle14.md",
-      "timestamp": "2026-05-31T03:45:00Z"
-    },
-    {
-      "dept": "devops",
-      "action": "Cycle 14: Routine CI verify. 9/9 pass. Backend 131MB, frontend 51MB, build 2s, 7 games. Pivot impact already submitted. No changes needed.",
-      "artifact": "ci.sh",
-      "timestamp": "2026-05-30T12:00:57Z"
-    },
-    {
-      "dept": "creative",
-      "action": "PIVOT IMPACT: Wrote creative impact assessment for arcade-evolution (L effort, ~10 cycles). Snake creative direction delivered as first artifact.",
-      "ts": "2026-05-30T12:31:55.449Z"
-    },
-    {
-      "dept": "creative",
-      "action": "ARTIFACT: snake-creative-direction.md \u2014 Full creative spec: Neon Serpent theme, color palette (#0a0a1a/#39ff14/#ff1744/#ffea00), 7 sounds (zzfx), 6 particle effects, combo system, 10-tier difficulty curve, mega combo wow moment.",
-      "ts": "2026-05-30T12:31:55.467Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 15 E2E smoke test + arcade-evolution pivot impact assessment. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. QA impact written to pivot doc (M effort, 11 regression cycles). IT naming notice acknowledged. Inbox processed.",
-      "artifact": "departments/qa/regression/2026-05-30-cycle15.md, confluence/decisions/PIVOT-arcade-evolution.md",
-      "timestamp": "2026-05-30T15:40:00Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Wrote PM arcade-evolution impact assessment (M effort, ~7 cycles). Updated changelog+status through cycle 15. Tracking 3/8 impact assessments received (Creative, QA, PM). 5 pending (R&D, DevOps, IT, UX/UI, CTO).",
-      "artifact": "confluence/decisions/PIVOT-arcade-evolution.md, departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
-      "timestamp": "2026-05-30T12:50:55Z"
+      "dept": "infra",
+      "action": "Routine audit - all containers healthy, 0% CPU, low memory. Log count 128 (all <7d, no rotation needed).",
+      "artifact": "departments/infra/audits/2026-05-31.md",
+      "timestamp": "2026-05-31T21:55:00Z"
     },
     {
       "dept": "cpo",
@@ -236,6 +190,66 @@
       "action": "Cycle 19: Routine CI verify during gate-5-pipeline-freeze. 9/9 pass. Backend 131MB, frontend 51MB, build 3s, 7 games. No inbox. No changes needed.",
       "artifact": "ci.sh",
       "timestamp": "2026-05-30T20:01:04Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "Cycle 19: Pipeline frozen. Inbox processed (R&D game-over deferral acknowledged). No builds \u2014 awaiting pivot Phase 4 for platform polish.",
+      "artifact": "departments/uxui/logs/20260530T201037Z-uxui.json",
+      "timestamp": "2026-05-30T20:10:37Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 19 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. CEO naming directive acknowledged \u2014 log format verified correct. Inbox processed.",
+      "artifact": "departments/qa/regression/2026-05-30-cycle19.md",
+      "timestamp": "2026-05-30T20:42:05Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status through cycle 20. Gate 4 approved, pipeline freeze active. R&D pre-conditions complete. 2 blockers remaining (Security eval check, CTO PoC sign-off). 19 clean QA cycles.",
+      "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+      "timestamp": "2026-05-30T20:55:00Z"
+    },
+    {
+      "dept": "security",
+      "action": "PIVOT BLOCKER CLEARED: LittleJS eval() check CLEAN. Zero matches for eval/Function/setTimeout-string in littlejs.min.js (55KB, v1.11.7). No unsafe-eval CSP needed. Findings sent to CTO + CISO inboxes. Standard audit: 0 npm vulns, headers clean, Docker non-root.",
+      "artifact": "departments/security/audits/2026-05-31-cycle7.md",
+      "timestamp": "2026-05-31T21:02:54Z"
+    },
+    {
+      "dept": "cto",
+      "action": "SIGN-OFF COMPLETE: All 3 arcade-evolution pre-conditions approved (security eval clean, LittleJS v1.11.7 pinned, engine isolation 7/7 pass). Phase 1 unblocked. R&D and Board notified via inbox.",
+      "artifact": "departments/cto/reviews/2026-05-31-precondition-signoff.md",
+      "timestamp": "2026-05-31T21:05:00Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PHASE 1 BEGIN: Wrote research + pitch + spec for LittleJS Foundation architecture. Pipeline: CSS extraction, shared modules (platform-ui, audio, engine-reset), dual-mode loader. Ready to build next cycle.",
+      "artifact": "departments/rnd/research/littlejs-foundation.md, departments/rnd/pitches/littlejs-foundation.md, departments/rnd/specs/littlejs-foundation.md",
+      "timestamp": "2026-05-31T21:25:00Z"
+    },
+    {
+      "dept": "ciso",
+      "action": "Cycle 1: Reviewed Security eval check (clean). Security dept graded A. Zero open vulnerabilities. Phase 1 security watch items noted. No policy changes needed.",
+      "artifact": "departments/ciso/audits/2026-05-31-cycle1.md",
+      "timestamp": "2026-05-31T21:31:13Z"
+    },
+    {
+      "dept": "analytics",
+      "action": "Cycle 3 report: 159 artifacts (+14), gate-5 active, 0 blockers (both cleared), Phase 1 begun (R&D littlejs-foundation spec'd). 19+ clean QA cycles. Anomaly: PM status stale (still shows 2 blockers).",
+      "artifact": "departments/analytics/reports/2026-05-31-cycle3.md",
+      "timestamp": "2026-05-31T21:32:02Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 19 scan: 127 logs valid JSON, zero naming violations, all structural checks pass. No fixes needed. First fully clean cycle in 7 runs.",
+      "artifact": "departments/it/scans/2026-05-31-cycle19.md",
+      "timestamp": "2026-05-31T21:30:00Z"
+    },
+    {
+      "dept": "devops",
+      "action": "Cycle 20: GitHub Pages deployment workflow implemented. .github/workflows/deploy-pages.yml pushed to main. CI 9/9 pass. Backend 131MB, frontend 51MB, build 2s, 7 games. CEO inbox processed.",
+      "artifact": ".github/workflows/deploy-pages.yml, departments/devops/pipelines/2026-05-31-design-github-pages.md",
+      "timestamp": "2026-05-31T22:00:00Z"
     }
   ],
   "blockedTasks": [],
@@ -244,19 +258,22 @@
       "tetris",
       "space-invaders",
       "pac-man",
-      "frogger"
+      "frogger",
+      "littlejs-foundation"
     ],
     "pitched": [
       "tetris",
       "space-invaders",
       "pac-man",
-      "frogger"
+      "frogger",
+      "littlejs-foundation"
     ],
     "specced": [
       "tetris",
       "space-invaders",
       "pac-man",
-      "frogger"
+      "frogger",
+      "littlejs-foundation"
     ],
     "built": [
       "snake",
@@ -273,8 +290,8 @@
   "meetings": [],
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-05-30T21:40:00Z",
-    "lastSmoke": "2026-05-30T21:40:00Z",
+    "lastE2E": "2026-05-30T20:42:00Z",
+    "lastSmoke": "2026-05-30T20:42:00Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -344,9 +361,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Gate 3 execution plan delivered. Updated changelog+status through cycle 18. Board inbox sent for Gate 4 vote. state.json pivot phase anomaly flagged.",
-    "artifact": "confluence/decisions/2026-05-30-gate3-execution-plan.md, departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
-    "timestamp": "2026-05-30T18:50:11Z"
+    "action": "Updated changelog+status through cycle 20. Gate 4 approved, pipeline freeze active. R&D pre-conditions complete. 2 blockers: Security eval check, CTO PoC sign-off.",
+    "artifact": "departments/pm/changelogs/2026-05-30.md, departments/pm/reports/2026-05-30-status.md",
+    "timestamp": "2026-05-30T20:55:00Z"
   },
   "reporting": {
     "mode": "tiered",
