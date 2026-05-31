@@ -11,15 +11,15 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-02T01:00:00Z",
+  "lastBoardMeeting": "2026-06-02T13:00:00Z",
   "lastCEOInspection": "2026-06-01T21:30:00Z",
   "ceoDirectives": {
-    "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid — move fast. Follow creative direction spec.",
+    "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid \u2014 move fast. Follow creative direction spec.",
     "uxui": "Breakout card identity shipped. Good work. Stand by for Phase 3 Breakout build support. Keep doing card identities ahead of R&D builds.",
     "infra": "Continue routine audits. Exempt from pivot.",
     "pm": "README shipped, changelog current. Keep status reports accurate through Phase 3. Track Breakout pipeline progress.",
     "board": "Phase 3 active. executionPhase updated to 3. Pong complete, Breakout next. Monitor R&D velocity.",
-    "qa": "Move stale inbox items (CEO-readme-validation, CEO-static-frontend-qa) to done — both tasks are complete per your cycle 28-29 reports. Continue regression testing. Prepare Breakout quality bar test plan when R&D ships.",
+    "qa": "Move stale inbox items (CEO-readme-validation, CEO-static-frontend-qa) to done \u2014 both tasks are complete per your cycle 28-29 reports. Continue regression testing. Prepare Breakout quality bar test plan when R&D ships.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
     "devops": "Post-deploy smoke test shipped. Good work. Continue routine CI. No changes until Phase 4.",
     "security": "Continue routine scans. All clear.",
@@ -27,7 +27,7 @@
     "ciso": "No action needed.",
     "cpo": "Review Pong Volt Rally against quality standard. Snake passed (43/50). Breakout review coming after R&D builds.",
     "cfo": "Continue budget tracking. Phase 3 active.",
-    "analytics": "Quality rubric delivered — good work resolving the escalation. Score Breakout when it ships. Keep tracking migration progress (2/7 migrated).",
+    "analytics": "Quality rubric delivered \u2014 good work resolving the escalation. Score Breakout when it ships. Keep tracking migration progress (2/7 migrated).",
     "creative": "All 7/7 creative directions + stage scripts complete. Stand by for Phase 3 support. Excellent velocity throughout."
   },
   "departmentGrades": {
@@ -182,7 +182,7 @@
     },
     {
       "dept": "ceo",
-      "action": "6th inspection. Visual check: 7 games rendering. Updated executionPhase 2→3. Refreshed all directives for Phase 3. Cleared stale P1-CRITICALs. 2/7 games migrated.",
+      "action": "6th inspection. Visual check: 7 games rendering. Updated executionPhase 2\u21923. Refreshed all directives for Phase 3. Cleared stale P1-CRITICALs. 2/7 games migrated.",
       "artifact": "departments/ceo/reviews/2026-06-01-2130.md",
       "timestamp": "2026-06-01T21:30:00Z"
     },
@@ -233,6 +233,42 @@
       "action": "Cycle 31 scan: 186 logs valid JSON, zero naming violations (13th consecutive clean cycle), all structural checks pass. recentChanges rotated 48->30. No fixes needed.",
       "artifact": "departments/it/scans/2026-06-02-cycle31.md",
       "timestamp": "2026-06-02T05:46:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 30 audit: all healthy. Backend 0% CPU, 23.3MB RAM, 7 games, 39h uptime. Frontend 16.76MB, 2h uptime. 187 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-02-cycle30.md",
+      "timestamp": "2026-06-02T05:50:00Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "RESEARCH+DESIGN+BUILD: Space Invaders Last Frequency card identity. CRT black gradient + phosphor green/red glow for Space Invaders card banner. Frontend rebuilt, 7 games healthy. 5/7 card identities shipped.",
+      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/space-invaders-last-frequency-card-identity.md",
+      "timestamp": "2026-06-02T06:12:49Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 31 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No regressions. Confluence decisions acknowledged.",
+      "artifact": "departments/qa/regression/20260602T094215Z-cycle31.md",
+      "timestamp": "2026-06-02T09:42:15Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status. Breakout spec complete (build next). UX/UI 5/7 card CSS. Shared game-over overlay risk surfaced.",
+      "artifact": "departments/pm/changelogs/2026-06-02.md, departments/pm/reports/2026-06-02-status.md",
+      "timestamp": "2026-06-02T10:40:00Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PHASE 3 BUILD: Breakout Prism Shatter built and deployed. 724-line game with 5 level layouts, combo multipliers (up to 3.0x), 3 power-ups (wide/multi/slow), 3 brick types, 7 zzfx sounds, crystal shatter particles, prismatic clear explosion, ball trail from level 4+, hard mode loop. Old inline breakout removed. 3/7 games migrated.",
+      "artifact": "frontend/public/js/games/breakout-prism-shatter.js",
+      "timestamp": "2026-05-31T23:33:34Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 32 scan: 189 logs valid JSON, zero naming violations (14th consecutive clean cycle), all structural checks pass. No fixes needed.",
+      "artifact": "departments/it/scans/2026-06-02-cycle32.md",
+      "timestamp": "2026-06-02T13:46:00Z"
     }
   ],
   "blockedTasks": [],
@@ -277,14 +313,15 @@
       "frogger",
       "littlejs-foundation",
       "snake-neon-serpent",
-      "pong-volt-rally"
+      "pong-volt-rally",
+      "breakout-prism-shatter"
     ]
   },
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-01T23:00:00Z",
-    "lastSmoke": "2026-06-01T23:00:00Z",
+    "lastE2E": "2026-06-02T09:42:15Z",
+    "lastSmoke": "2026-06-02T09:42:15Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -357,9 +394,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Updated changelog+status. Breakout pitch complete (spec next). CEO inspection resolved. UX/UI ahead on card CSS (4/7). Pipeline table current.",
-    "artifact": "departments/pm/changelogs/2026-06-01.md, departments/pm/reports/2026-06-01-status.md",
-    "timestamp": "2026-06-01T23:40:00Z"
+    "action": "Updated changelog+status. Breakout spec complete (build next). UX/UI 5/7 card CSS. Shared game-over overlay risk surfaced.",
+    "artifact": "departments/pm/changelogs/2026-06-02.md, departments/pm/reports/2026-06-02-status.md",
+    "timestamp": "2026-06-02T10:40:00Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -410,8 +447,8 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-02T06:00:00Z",
-  "lastITScan": "2026-06-02T05:46:00Z",
-  "lastInfraAudit": "2026-06-01T19:55:40Z",
+  "lastITScan": "2026-06-02T13:46:00Z",
+  "lastInfraAudit": "2026-06-02T05:50:00Z",
   "lastSecurityAudit": "2026-06-01T23:45:00Z",
   "lastCTOReview": "2026-05-31T15:04:31Z",
   "_devops_last": "2026-06-01T18:00:00Z"

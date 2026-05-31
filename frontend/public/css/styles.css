@@ -157,6 +157,10 @@ select:focus-visible, input:focus-visible { border-color: var(--accent); outline
   background: linear-gradient(135deg, #0a0e14 0%, #1a1a2e 100%) !important;
   text-shadow: 0 0 20px #00bcd4, 0 0 40px rgba(255, 193, 7, 0.25);
 }
+.game-card[data-game="space-invaders"] .banner {
+  background: linear-gradient(135deg, #020408 0%, #1a1a2e 100%) !important;
+  text-shadow: 0 0 20px #00ff88, 0 0 40px rgba(255, 23, 68, 0.25);
+}
 
 /* --- prefers-reduced-motion Accessibility --- */
 @media (prefers-reduced-motion: reduce) {

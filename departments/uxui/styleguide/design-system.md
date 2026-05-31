@@ -106,5 +106,22 @@
 - Card hover/focus: `transform: none` (shadow preserved)
 - Pattern: animations "complete" instantly so `animationend` events still fire
 
+## Per-Game Card Identities
+
+Each game card banner has a unique gradient + glow from its Creative direction:
+
+| Game | Gradient | Glow (text-shadow) |
+|------|----------|--------------------|
+| Snake | `#0a2a0a → #1a1a2e` (dark green) | `#4ade80` green |
+| Pong | `#050510 → #1a1a2e` (deep blue-black) | `#00e5ff` cyan + `#ff6d00` orange |
+| Breakout | `#0d0015 → #1a1a2e` (deep purple-black) | `#e040fb` magenta + `#7c4dff` purple |
+| Tetris | `#0a0e14 → #1a1a2e` (dark steel) | `#00bcd4` cyan + `#ffc107` gold |
+| Space Invaders | `#020408 → #1a1a2e` (CRT black) | `#00ff88` phosphor green + `#ff1744` red |
+| Frogger | *pending* | *pending* |
+| Pac-Man | *pending* | *pending* |
+
+All use 135deg angle, `!important` override on background, consistent structure.
+
 ## Current Gaps
 - No touch-hold repeat for continuous movement (Pong/Breakout)
+- 2/7 card identities remaining (Frogger, Pac-Man)
