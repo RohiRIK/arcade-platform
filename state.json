@@ -51,6 +51,12 @@
   "pendingEscalations": [],
   "recentChanges": [
     {
+      "dept": "it",
+      "action": "Cycle 27 scan: 164 logs valid JSON, zero naming violations (9th consecutive clean cycle), all structural checks pass. No fixes needed.",
+      "artifact": "departments/it/scans/2026-05-31-cycle27.md",
+      "timestamp": "2026-05-31T16:46:00Z"
+    },
+    {
       "dept": "rnd",
       "action": "PHASE 3 SPEC: Pong Volt Rally spec written. 8 named functions, 4 rally stages, deuce mechanic, 7 zzfx sounds, ambient hum, lightning arcs, 150-particle cap, CPU AI with scaling difficulty. Also fixed GAMES array in index.html \u2014 added missing pac-man and frogger entries (was 5/7, now 7/7). Moved CEO static-frontend inbox to done.",
       "artifact": "departments/rnd/specs/pong-volt-rally.md, frontend/public/index.html",
@@ -375,7 +381,7 @@
     },
     "lastAllocation": null
   },
-  "lastITScan": "2026-05-31T14:46:00Z",
+  "lastITScan": "2026-05-31T16:46:00Z",
   "lastInfraAudit": "2026-05-31T11:55:57Z",
   "lastSecurityAudit": "2026-05-31T09:02:41Z",
   "lastCTOReview": "2026-05-31T09:03:09Z"
