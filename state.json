@@ -11,7 +11,7 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-05-31T19:00:11Z",
+  "lastBoardMeeting": "2026-06-02T01:00:00Z",
   "lastCEOInspection": "2026-06-01T21:30:00Z",
   "ceoDirectives": {
     "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid — move fast. Follow creative direction spec.",
@@ -50,95 +50,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 PITCH: Breakout Prism Shatter pitch written. 5 levels, 3 power-up types, combo system, 7 zzfx sounds, crystal shatter particles, prismatic clear explosion. Ready for spec next cycle.",
-      "artifact": "departments/rnd/pitches/breakout-prism-shatter.md",
-      "timestamp": "2026-06-01T21:25:00Z"
-    },
-    {
-      "dept": "creative",
-      "action": "Cycle 7: No action needed. All 7/7 creative directions + 7/7 stage scripts complete. Snake built by R&D. Awaiting Phase 3 kickoff (Pong next). No inbox tasks.",
-      "ts": "2026-05-31T08:31:11.737Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 24 E2E + Snake Neon Serpent regression. All 7 games pass (canvas 600x400). Snake rewrite verified: loads, renders, R restart works, game over on collision. LAN clean. Zero console errors. No regressions. Test plan written.",
-      "artifact": "departments/qa/regression/20260531T103000Z-cycle24.md",
-      "timestamp": "2026-05-31T10:30:00Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status for Phase 2 COMPLETE milestone. Snake Neon Serpent shipped+verified. Freeze lifted. Phase 3 next.",
-      "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
-      "timestamp": "2026-05-31T08:50:54Z"
-    },
-    {
-      "dept": "security",
-      "action": "Cycle 9 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. Snake Neon Serpent code scanned clean. Zero open vulnerabilities.",
-      "artifact": "departments/security/audits/2026-05-31-cycle9.md",
-      "timestamp": "2026-05-31T09:02:41Z"
-    },
-    {
-      "dept": "cto",
-      "action": "Snake Neon Serpent integration review APPROVED. Cleanup verified (rAF, listeners, AudioContext, oscillator, timeout). Engine isolation PASS. 746 lines, 150-particle cap. Phase 2 complete from CTO. Ready for Phase 3.",
-      "artifact": "departments/cto/reviews/2026-05-31-snake-neon-serpent-integration.md",
-      "timestamp": "2026-05-31T09:03:09Z"
-    },
-    {
-      "dept": "analytics",
-      "action": "Cycle 6 report: 201 artifacts (+15), Phase 2 COMPLETE (Snake shipped+verified+CTO approved), Phase 3 started (pong-volt-rally research). 1/7 games migrated. Quality rubric pending.",
-      "artifact": "departments/analytics/reports/2026-05-31-cycle6.md",
-      "timestamp": "2026-05-31T09:30:30Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 25 scan: 155 logs valid JSON, zero naming violations (7th consecutive clean cycle), all structural checks pass. recentChanges rotated 50->31. No fixes needed.",
-      "artifact": "departments/it/scans/2026-05-31-cycle25.md",
-      "timestamp": "2026-05-31T09:46:02Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 24 audit: all healthy. Backend 0% CPU, 23.34MB RAM, 7 games, 27h uptime. Frontend 16.96MB (rebuilt 2h ago). 156 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-05-31-cycle24.md",
-      "timestamp": "2026-05-31T09:55:30Z"
-    },
-    {
-      "dept": "devops",
-      "action": "Cycle 25: Routine CI verify during gate-6-phased-execution Phase 2. 9/9 pass. Backend 131MB, frontend 51MB, build 3s, 7 games. No inbox. Awaiting Phase 4 for CI updates.",
-      "artifact": "ci.sh",
-      "timestamp": "2026-05-31T12:00:00Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "RESEARCH+DESIGN+BUILD: Pong Volt Rally card identity. Dark electric-blue gradient + dual cyan/orange glow for Pong card banner. Frontend rebuilt, 7 games healthy.",
-      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/pong-volt-rally-card-identity.md",
-      "timestamp": "2026-05-31T10:14:50Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 25 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. No new bugs. Confluence decisions acknowledged.",
-      "artifact": "departments/qa/regression/20260531T104314Z-cycle25.md",
-      "timestamp": "2026-05-31T10:43:14Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 PITCH: Pong Volt Rally pitch written. 4-stage rally progression, deuce mechanic, 7 zzfx sounds + ambient hum, lightning arcs, overcharge mode, 8 named functions. Ready for spec next cycle.",
-      "artifact": "departments/rnd/pitches/pong-volt-rally.md",
-      "timestamp": "2026-05-31T11:20:21Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 26 scan: 159 logs valid JSON, zero naming violations (8th consecutive clean cycle), all structural checks pass. recentChanges at 36/50. No fixes needed.",
-      "artifact": "departments/it/scans/2026-05-31-cycle26.md",
-      "timestamp": "2026-05-31T14:46:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 25 audit: all healthy. Backend 0% CPU, 22.79MB RAM, 7 games, 29h uptime. Frontend 16.93MB (rebuilt 2h ago). 160 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-05-31-cycle25.md",
-      "timestamp": "2026-05-31T11:55:57Z"
-    },
     {
       "dept": "creative",
       "action": "Cycle 8: No action needed. All 7/7 creative directions + 7/7 stage scripts complete. Phase 3 Pong Volt Rally in R&D pipeline (pitch done, referencing creative spec). Standing by for Phase 3 support.",
@@ -280,6 +191,48 @@
       "action": "Cycle 30 scan: 179 logs valid JSON, zero naming violations (12th consecutive clean cycle), all structural checks pass. recentChanges at 38/50. No fixes needed.",
       "artifact": "departments/it/scans/2026-06-01-cycle30.md",
       "timestamp": "2026-06-01T22:46:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 29 audit: all healthy. Backend 0% CPU, 22.41MB RAM, 7 games, 37h uptime. Frontend 17.29MB, 2h uptime. 180 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle29.md",
+      "timestamp": "2026-06-01T19:55:40Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status. Breakout pitch complete (spec next). CEO inspection resolved. UX/UI ahead on card CSS (4/7).",
+      "artifact": "departments/pm/changelogs/2026-06-01.md, departments/pm/reports/2026-06-01-status.md",
+      "timestamp": "2026-06-01T23:40:00Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "RESEARCH+DESIGN+BUILD: Tetris Cascade card identity. Dark steel gradient + cyan/gold glow for Tetris card banner. Frontend rebuilt, 7 games healthy.",
+      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/tetris-cascade-card-identity.md",
+      "timestamp": "2026-06-01T20:10:10Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 30 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. README validated (0 banned words). Changelog loads. Moved stale inbox items to done per CEO directive. No regressions.",
+      "artifact": "departments/qa/regression/20260601T230000Z-cycle30.md",
+      "timestamp": "2026-06-01T23:00:00Z"
+    },
+    {
+      "dept": "security",
+      "action": "Cycle 11 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. Pong Volt Rally code scanned clean (658 lines, 0 unsafe patterns). Zero open vulnerabilities.",
+      "artifact": "departments/security/audits/2026-06-01-cycle11.md",
+      "timestamp": "2026-06-01T23:45:00Z"
+    },
+    {
+      "dept": "cpo",
+      "action": "Pong Volt Rally quality review: PASS (43/50, A tier). All must-pass clear. Deuce mechanic and match-point silence noted as strong design. Shared game-over overlay still unbuilt (2 games inline). 4/7 card identities shipped.",
+      "artifact": "departments/cpo/reviews/2026-06-01-pong-volt-rally-quality-review.md",
+      "timestamp": "2026-06-02T00:00:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 31 scan: 186 logs valid JSON, zero naming violations (13th consecutive clean cycle), all structural checks pass. recentChanges rotated 48->30. No fixes needed.",
+      "artifact": "departments/it/scans/2026-06-02-cycle31.md",
+      "timestamp": "2026-06-02T05:46:00Z"
     }
   ],
   "blockedTasks": [],
@@ -311,7 +264,8 @@
       "frogger",
       "littlejs-foundation",
       "snake-neon-serpent",
-      "pong-volt-rally"
+      "pong-volt-rally",
+      "breakout-prism-shatter"
     ],
     "built": [
       "snake",
@@ -329,8 +283,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-01T18:42:45Z",
-    "lastSmoke": "2026-06-01T18:42:45Z",
+    "lastE2E": "2026-06-01T23:00:00Z",
+    "lastSmoke": "2026-06-01T23:00:00Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -403,9 +357,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Changelog+status for Jun 1. Breakout research done, pitch next. Analytics rubric delivered. CEO inspection 37h overdue (9th flag).",
+    "action": "Updated changelog+status. Breakout pitch complete (spec next). CEO inspection resolved. UX/UI ahead on card CSS (4/7). Pipeline table current.",
     "artifact": "departments/pm/changelogs/2026-06-01.md, departments/pm/reports/2026-06-01-status.md",
-    "timestamp": "2026-06-01T21:00:00Z"
+    "timestamp": "2026-06-01T23:40:00Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -455,9 +409,10 @@
     },
     "lastAllocation": null
   },
-  "lastITScan": "2026-06-01T22:46:00Z",
-  "lastInfraAudit": "2026-05-31T17:55:12Z",
-  "lastSecurityAudit": "2026-05-31T15:03:53Z",
+  "lastCFOReport": "2026-06-02T06:00:00Z",
+  "lastITScan": "2026-06-02T05:46:00Z",
+  "lastInfraAudit": "2026-06-01T19:55:40Z",
+  "lastSecurityAudit": "2026-06-01T23:45:00Z",
   "lastCTOReview": "2026-05-31T15:04:31Z",
   "_devops_last": "2026-06-01T18:00:00Z"
 }
