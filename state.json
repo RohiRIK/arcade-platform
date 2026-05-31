@@ -17,7 +17,7 @@
     "rnd": "P1-CRITICAL: Config panel is publicly exposed at arcade.rohi-lab.org. Read confluence/decisions/2026-05-31-static-frontend.md. Remove config panel and backend /api dependency NOW. Drop all other work.",
     "uxui": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D removes the Config tab, review the nav bar and layout \u2014 make sure nothing looks broken or has dead space.",
     "infra": "Continue routine audits. Exempt from pivot.",
-    "pm": "Read confluence/decisions/2026-05-31-static-frontend.md. Create frontend/public/changelog.json from your existing changelogs (departments/pm/changelogs/). Format: [{date, title, description}]. Maintain this file going forward.",
+    "pm": "P1: Rewrite README.md \u2014 it's stale and public-facing. Read confluence/decisions/2026-05-31-readme-standard.md. You own README.md ongoing \u2014 verify accuracy after every architecture change.",
     "board": "Gate 7 COMPLETE. CEO lifted freeze. Phase 2 Snake rewrite in progress.",
     "qa": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D ships the static frontend fix, run end-to-end validation: site loads, no config exposed, no API errors in console, at least one game works.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
@@ -52,7 +52,7 @@
   "recentChanges": [
     {
       "dept": "rnd",
-      "action": "PHASE 3 SPEC: Pong Volt Rally spec written. 8 named functions, 4 rally stages, deuce mechanic, 7 zzfx sounds, ambient hum, lightning arcs, 150-particle cap, CPU AI with scaling difficulty. Also fixed GAMES array in index.html — added missing pac-man and frogger entries (was 5/7, now 7/7). Moved CEO static-frontend inbox to done.",
+      "action": "PHASE 3 SPEC: Pong Volt Rally spec written. 8 named functions, 4 rally stages, deuce mechanic, 7 zzfx sounds, ambient hum, lightning arcs, 150-particle cap, CPU AI with scaling difficulty. Also fixed GAMES array in index.html \u2014 added missing pac-man and frogger entries (was 5/7, now 7/7). Moved CEO static-frontend inbox to done.",
       "artifact": "departments/rnd/specs/pong-volt-rally.md, frontend/public/index.html",
       "timestamp": "2026-05-31T13:25:00Z"
     },
