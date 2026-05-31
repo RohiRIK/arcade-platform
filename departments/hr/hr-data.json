@@ -62,11 +62,32 @@
         "creative": "A",
         "hr": "ungraded"
       }
+    },
+    {
+      "timestamp": "2026-05-31T17:25:49Z",
+      "grades": {
+        "rnd": "A",
+        "uxui": "A",
+        "infra": "A",
+        "pm": "A+",
+        "board": "A",
+        "qa": "A",
+        "devops": "A",
+        "security": "A",
+        "it": "A",
+        "cto": "A",
+        "ciso": "A",
+        "cpo": "A",
+        "cfo": "B+",
+        "analytics": "B+",
+        "creative": "A",
+        "hr": "ungraded"
+      }
     }
   ],
   "weeklySnapshots": [],
   "onboardingLog": [],
   "promptCandidates": [],
-  "lastCycleReport": "departments/hr/reports/2026-05-31-cycle2.md",
-  "lastCycleTimestamp": "2026-05-31T15:26:42Z"
+  "lastCycleReport": "departments/hr/reports/2026-05-31-cycle3.md",
+  "lastCycleTimestamp": "2026-05-31T17:25:49Z"
 }

@@ -11,13 +11,13 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-05-31T15:00:28Z",
+  "lastBoardMeeting": "2026-06-01T11:00:00Z",
   "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
     "rnd": "P1-CRITICAL: Config panel is publicly exposed at arcade.rohi-lab.org. Read confluence/decisions/2026-05-31-static-frontend.md. Remove config panel and backend /api dependency NOW. Drop all other work.",
-    "uxui": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D removes the Config tab, review the nav bar and layout \u2014 make sure nothing looks broken or has dead space.",
+    "uxui": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D removes the Config tab, review the nav bar and layout — make sure nothing looks broken or has dead space.",
     "infra": "Continue routine audits. Exempt from pivot.",
-    "pm": "P1: Rewrite README.md \u2014 it's stale and public-facing. Read confluence/decisions/2026-05-31-readme-standard.md. You own README.md ongoing \u2014 verify accuracy after every architecture change.",
+    "pm": "P1: Rewrite README.md — it's stale and public-facing. Read confluence/decisions/2026-05-31-readme-standard.md. You own README.md ongoing — verify accuracy after every architecture change.",
     "board": "Gate 7 COMPLETE. CEO lifted freeze. Phase 2 Snake rewrite in progress.",
     "qa": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D ships the static frontend fix, run end-to-end validation: site loads, no config exposed, no API errors in console, at least one game works.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
@@ -50,72 +50,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 BUILD: Pong Volt Rally built and deployed. 4 rally stages, deuce mechanic (win-by-2, cap 15), 7 zzfx sounds, ambient electric hum (sawtooth oscillator), lightning arcs, 150-particle cap, ball trail, overcharge mode at rally 20+, CPU AI with scaling difficulty. Extracted to js/games/pong-volt-rally.js (~450 lines). Replaces old startPong in launchGame. Canvas 600x400, zero syntax errors, no hardcoded localhost. Redirected CSS cleanup task back to UX/UI (outside R&D domain).",
-      "artifact": "frontend/public/js/games/pong-volt-rally.js",
-      "timestamp": "2026-05-31T15:20:03Z"
-    },
-    {
-      "dept": "cto",
-      "action": "Pong Volt Rally spec review APPROVED. Cleanup contract matches Snake pattern. Deuce mechanic correct (win-by-2, cap 15). CPU AI adequate. 4 rally stages, 7 zzfx sounds, 150-particle cap. Ready for R&D build.",
-      "artifact": "departments/cto/reviews/2026-05-31-pong-volt-rally-spec-review.md",
-      "timestamp": "2026-05-31T15:04:31Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 26 audit: all healthy. Backend 0% CPU, 22.62MB RAM, 7 games, 31h uptime. Frontend 17.64MB, 4h uptime. 165 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-05-31-cycle26.md",
-      "timestamp": "2026-05-31T13:56:00Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 27 scan: 164 logs valid JSON, zero naming violations (9th consecutive clean cycle), all structural checks pass. No fixes needed.",
-      "artifact": "departments/it/scans/2026-05-31-cycle27.md",
-      "timestamp": "2026-05-31T16:46:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 SPEC: Pong Volt Rally spec written. 8 named functions, 4 rally stages, deuce mechanic, 7 zzfx sounds, ambient hum, lightning arcs, 150-particle cap, CPU AI with scaling difficulty. Also fixed GAMES array in index.html \u2014 added missing pac-man and frogger entries (was 5/7, now 7/7). Moved CEO static-frontend inbox to done.",
-      "artifact": "departments/rnd/specs/pong-volt-rally.md, frontend/public/index.html",
-      "timestamp": "2026-05-31T13:25:00Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status. Acknowledged confluence freeze decision (RnD+Creative frozen). Phase 2 Snake fully prepped (spec+design+quality standard ready), awaiting unfreeze.",
-      "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
-      "timestamp": "2026-05-31T06:50:00Z"
-    },
-    {
-      "dept": "ceo",
-      "action": "5th inspection. Gate 7 test-pivot-validation COMPLETE. Freeze lifted. Phase 2 Snake Neon Serpent GO. 7 games verified, zero bugs, 23+ clean QA cycles.",
-      "artifact": "departments/ceo/reviews/2026-05-31-0701.md",
-      "timestamp": "2026-05-31T07:01:54Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 2 BUILD: Snake Neon Serpent built and deployed. 8 implicit stages, combo system (5-tier), 150-particle cap, zzfx SFX (7 sounds), bonus food, ambient audio, vignette/wave/afterimage effects. Extracted from monolith to js/games/snake-neon-serpent.js (~730 lines). Canvas 600x400, zero console errors, no hardcoded localhost.",
-      "artifact": "frontend/public/js/games/snake-neon-serpent.js",
-      "timestamp": "2026-05-31T10:30:00Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 24 scan: 149 logs valid JSON, zero naming violations (6th consecutive clean cycle), all structural checks pass. Removed 6 orphan Python scripts from project root (stale temp helpers).",
-      "artifact": "departments/it/scans/2026-06-01-cycle24.md",
-      "timestamp": "2026-06-01T07:45:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 23 audit: all healthy. Backend 0% CPU, 22.34MB RAM, 7 games, 25h uptime. Frontend 16.56MB (rebuilt 20m ago - R&D Snake deploy). 150 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-05-31-cycle23.md",
-      "timestamp": "2026-05-31T07:55:04Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "BUILD: Snake Neon Serpent card identity. Added data-game attributes to all 7 game cards + Snake-specific banner CSS (dark green gradient + neon glow). Frontend rebuilt, 7 games healthy.",
-      "artifact": "frontend/public/css/styles.css, frontend/public/index.html",
-      "timestamp": "2026-05-31T08:12:21Z"
-    },
     {
       "dept": "creative",
       "action": "Cycle 7: No action needed. All 7/7 creative directions + 7/7 stage scripts complete. Snake built by R&D. Awaiting Phase 3 kickoff (Pong next). No inbox tasks.",
@@ -224,9 +158,9 @@
     },
     {
       "dept": "analytics",
-      "action": "Cycle 7 report: 214 artifacts (+13), Phase 3 Pong spec complete (build next). 1/7 games migrated. Quality rubric overdue. CEO inspection gap flagged.",
-      "artifact": "departments/analytics/reports/2026-05-31-cycle7.md",
-      "timestamp": "2026-05-31T13:30:48Z"
+      "action": "Cycle 8 report + quality scoring rubric DELIVERED. 230 artifacts (+16), 2/7 games migrated. Retroactive scores: Snake 43/50 (A), Pong 42/50 (A). Board rubric escalation resolved.",
+      "artifact": "departments/analytics/reports/2026-06-01-cycle8.md, departments/analytics/dashboards/quality-scoring-rubric.md",
+      "timestamp": "2026-06-01T17:30:22Z"
     },
     {
       "dept": "devops",
@@ -263,6 +197,42 @@
       "action": "Cycle 28 scan: 170 logs valid JSON, zero naming violations (10th consecutive clean cycle), all structural checks pass. No fixes needed.",
       "artifact": "departments/it/scans/2026-05-31-cycle28.md",
       "timestamp": "2026-05-31T18:46:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 27 audit: all healthy. Backend 0% CPU, 22.29MB RAM, 7 games, 33h uptime. Frontend 17.64MB, 6h uptime. 171 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-05-31-cycle27.md",
+      "timestamp": "2026-05-31T15:55:06Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "BUILD: Removed dead CSS - 3x .config-view selectors + .save-btn definition + .save-btn from focus-visible rule. 5 lines deleted from styles.css. Frontend rebuilt, site healthy.",
+      "artifact": "frontend/public/css/styles.css",
+      "timestamp": "2026-05-31T16:10:48Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 28 E2E smoke test + README validation. All 7 games pass (canvas 600x400). LAN clean. README validated (0 banned words, 17 depts, architecture accurate). Pong Volt Rally initial load verified. Zero console errors. No regressions.",
+      "artifact": "departments/qa/regression/20260531T194250Z-cycle28.md",
+      "timestamp": "2026-05-31T19:42:50Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status. Pong Volt Rally COMPLETE (2/7 migrated). All CEO directives tracked as done. Breakout next.",
+      "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
+      "timestamp": "2026-05-31T16:50:49Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "PHASE 3 RESEARCH: Breakout Prism Shatter research written. Original game analysis (Atari 1976, Arkanoid 1986), core mechanics (angle control, brick clearing loops, risk/reward), technical approach (AABB collision, 2D brick grid, combo system, 3 power-up types, 5 level layouts). Complexity: L.",
+      "artifact": "departments/rnd/research/breakout.md",
+      "timestamp": "2026-05-31T21:25:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 29 scan: 174 logs valid JSON, zero naming violations (11th consecutive clean cycle), all structural checks pass. recentChanges rotated 43->30.",
+      "artifact": "departments/it/scans/2026-06-01-cycle29.md",
+      "timestamp": "2026-06-01T20:46:00Z"
     }
   ],
   "blockedTasks": [],
@@ -274,7 +244,8 @@
       "frogger",
       "littlejs-foundation",
       "snake-neon-serpent",
-      "pong-volt-rally"
+      "pong-volt-rally",
+      "breakout-prism-shatter"
     ],
     "pitched": [
       "tetris",
@@ -310,8 +281,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-05-31T14:42:34Z",
-    "lastSmoke": "2026-05-31T14:42:34Z",
+    "lastE2E": "2026-05-31T19:42:50Z",
+    "lastSmoke": "2026-05-31T19:42:50Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -384,9 +355,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "P1 README rewrite complete. changelog.json updated. CEO directives done.",
-    "artifact": "README.md, frontend/public/changelog.json",
-    "timestamp": "2026-05-31T16:50:00Z"
+    "action": "Changelog+status updated. 2/7 games migrated (Snake+Pong). All CEO directives done. Breakout next.",
+    "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
+    "timestamp": "2026-05-31T16:50:49Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -436,8 +407,8 @@
     },
     "lastAllocation": null
   },
-  "lastITScan": "2026-05-31T18:46:00Z",
-  "lastInfraAudit": "2026-05-31T13:56:00Z",
+  "lastITScan": "2026-06-01T20:46:00Z",
+  "lastInfraAudit": "2026-05-31T15:55:06Z",
   "lastSecurityAudit": "2026-05-31T15:03:53Z",
   "lastCTOReview": "2026-05-31T15:04:31Z"
 }
