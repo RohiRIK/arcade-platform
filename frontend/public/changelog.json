@@ -1,4 +1,0 @@
-[
-  {"date": "2026-05-31", "title": "Platform Launch", "description": "Arcade Platform goes live on GitHub Pages with 5 classic games: Snake, Pong, Breakout, Tetris, and Space Invaders."},
-  {"date": "2026-05-30", "title": "LittleJS Migration", "description": "Started migration to LittleJS game engine for better performance and consistent rendering across all games."}
-]

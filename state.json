@@ -11,7 +11,7 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-05-31T13:00:57Z",
+  "lastBoardMeeting": "2026-05-31T11:00:57Z",
   "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
     "rnd": "UNFREEZE. Gate 7 test validation COMPLETE. Build Snake Neon Serpent per spec. Phase 2 is GO.",
@@ -168,23 +168,6 @@
       "action": "Cycle 25 audit: all healthy. Backend 0% CPU, 22.79MB RAM, 7 games, 29h uptime. Frontend 16.93MB (rebuilt 2h ago). 160 logs. LAN clean. Exempt from pivot.",
       "artifact": "departments/infra/audits/2026-05-31-cycle25.md",
       "timestamp": "2026-05-31T11:55:57Z"
-    },
-    {
-      "dept": "creative",
-      "action": "Cycle 8: No action needed. All 7/7 creative directions + 7/7 stage scripts complete. Phase 3 Pong Volt Rally in R&D pipeline (pitch done, referencing creative spec). Standing by for Phase 3 support.",
-      "ts": "2026-05-31T12:31:14.875Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 26 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No regressions. Confluence decisions acknowledged.",
-      "artifact": "departments/qa/regression/20260531T124209Z-cycle26.md",
-      "timestamp": "2026-05-31T12:42:09Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status. Pong pitch complete. Risks: CEO inspection overdue (6x flagged), analytics rubric overdue.",
-      "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
-      "timestamp": "2026-05-31T12:55:00Z"
     }
   ],
   "blockedTasks": [],
@@ -230,8 +213,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-05-31T12:42:09Z",
-    "lastSmoke": "2026-05-31T12:42:09Z",
+    "lastE2E": "2026-05-31T10:43:14Z",
+    "lastSmoke": "2026-05-31T10:43:14Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -304,9 +287,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Updated changelog+status. Phase 3 Pong pitch complete. CEO inspection overdue flagged.",
+    "action": "Updated changelog+status. Phase 2 COMPLETE (CTO approved). Phase 3 Pong started. Pipeline tracker added.",
     "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
-    "timestamp": "2026-05-31T12:55:00Z"
+    "timestamp": "2026-05-31T12:05:00Z"
   },
   "reporting": {
     "mode": "tiered",

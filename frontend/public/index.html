@@ -9,11 +9,12 @@
 <body>
 <div class="header">
   <h1>🕹️ ARCADE</h1>
-  <p>Arcade Platform</p>
+  <p>Local Network Arcade Platform</p>
   <div class="health-bar" id="health"><span class="status-checking">⏳ Checking...</span></div>
   <div class="nav">
     <button class="active" onclick="showSection('games')">Games</button>
     <button onclick="showSection('logs')">Changelog</button>
+    <button onclick="showSection('config')">Config</button>
   </div>
 </div>
 <div class="content">
@@ -34,6 +35,15 @@
     <div class="touch-controls" id="touchControls"></div>
   </div>
   <div class="logs-view" id="logsView"></div>
+  <div class="config-view" id="configView">
+    <h2>Self-Improvement Config</h2>
+    <label><input type="checkbox" id="cfgEnabled" checked> Enabled</label>
+    <label>Mode</label>
+    <select id="cfgMode"><option value="apply">Apply Changes</option><option value="analyze">Analyze Only</option></select>
+    <label>Scope (comma-separated)</label>
+    <input type="text" id="cfgScope" value="games,ui,infra,docs" style="width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);padding:0.4rem;border-radius:var(--radius-sm);">
+    <button class="save-btn" onclick="saveConfig()">Save Config</button>
+  </div>
 </div>
 
 <script src="lib/littlejs.min.js"></script>
@@ -44,20 +54,29 @@
 <script src="js/main.js"></script>
 
 <script>
+const API = '/api';
 const ICONS = { snake: '🐍', pong: '🏓', breakout: '🧱', tetris: '🟪', 'space-invaders': '👾', 'pac-man': '🟡', frogger: '🐸' };
 
-const GAMES = [
-  {id:'snake',name:'Snake',description:'Classic snake game. Eat food, grow longer, don\'t hit walls or yourself.',version:'1.0.0',color:'#4ade80'},
-  {id:'pong',name:'Pong',description:'The original arcade classic. Play against the CPU.',version:'1.0.0',color:'#60a5fa'},
-  {id:'breakout',name:'Breakout',description:'Break all the bricks with a bouncing ball.',version:'1.0.0',color:'#f97316'},
-  {id:'tetris',name:'Tetris',description:'Stack falling tetrominoes, clear lines, chase high scores.',version:'1.0.0',color:'#a000f0'},
-  {id:'space-invaders',name:'Space Invaders',description:'Defend Earth from waves of descending aliens. Classic 1978 arcade action.',version:'1.0.0',color:'#22c55e'}
-];
-
-function init() {
-  renderGames(GAMES);
-  document.getElementById('health').innerHTML =
-    `<span class="ok">● Online</span><span>${GAMES.length} games</span>`;
+async function init() {
+  try {
+    const [games, health] = await Promise.all([
+      fetch(API+'/games').then(r=>r.json()),
+      fetch(API+'/health').then(r=>r.json())
+    ]);
+    renderGames(games);
+    document.getElementById('health').innerHTML =
+      `<span class="ok">● ${health.status}</span><span>${health.games} games</span><span>Uptime: ${Math.floor(health.uptime)}s</span>`;
+  } catch(e) {
+    document.getElementById('health').innerHTML = '<span style="color:#e94560">● Backend offline</span>';
+    // Render fallback
+    renderGames([
+      {id:'snake',name:'Snake',description:'Classic snake game. Eat food, grow longer, don\'t hit walls or yourself.',version:'1.0.0',color:'#4ade80'},
+      {id:'pong',name:'Pong',description:'The original arcade classic. Play against the CPU.',version:'1.0.0',color:'#60a5fa'},
+      {id:'breakout',name:'Breakout',description:'Break all the bricks with a bouncing ball.',version:'1.0.0',color:'#f97316'},
+      {id:'tetris',name:'Tetris',description:'Stack falling tetrominoes, clear lines, chase high scores.',version:'1.0.0',color:'#a000f0'},
+      {id:'space-invaders',name:'Space Invaders',description:'Defend Earth from waves of descending aliens. Classic 1978 arcade action.',version:'1.0.0',color:'#22c55e'}
+    ]);
+  }
 }
 
 function renderGames(games) {
@@ -74,25 +93,49 @@ function renderGames(games) {
 }
 
 function showSection(s) {
-  document.querySelectorAll('.nav button').forEach((b,i) => b.classList.toggle('active', ['games','logs'][i]===s));
+  document.querySelectorAll('.nav button').forEach((b,i) => b.classList.toggle('active', ['games','logs','config'][i]===s));
   document.getElementById('gameGrid').style.display = s==='games'?'grid':'none';
   document.getElementById('gameView').style.display = 'none';
   document.getElementById('logsView').style.display = s==='logs'?'block':'none';
+  document.getElementById('configView').style.display = s==='config'?'block':'none';
   if(s==='logs') loadLogs();
+  if(s==='config') loadConfig();
 }
 
 async function loadLogs() {
   try {
-    const text = await fetch('changelog.json').then(r=>r.json());
-    document.getElementById('logsView').innerHTML = text.length ? text.map(l => `
+    const logs = await fetch(API+'/logs').then(r=>r.json());
+    document.getElementById('logsView').innerHTML = logs.length ? logs.map(l => `
       <div class="log-entry">
-        <h4>${l.date || ''} — ${l.title || 'Update'}</h4>
-        <p>${l.description || ''}</p>
+        <h4>${l.action||'Improvement Cycle'}</h4>
+        <span class="ts">${l.timestamp||''}</span>
+        <pre>${JSON.stringify(l,null,2)}</pre>
       </div>
-    `).join('') : '<p style="color:#888;text-align:center">No changelog entries yet.</p>';
+    `).join('') : '<p style="color:#888;text-align:center">No improvement logs yet.</p>';
   } catch(e) {
-    document.getElementById('logsView').innerHTML = '<p style="color:#888;text-align:center">No changelog entries yet.</p>';
+    document.getElementById('logsView').innerHTML = '<p style="color:#e94560">Could not load logs</p>';
   }
+}
+
+async function loadConfig() {
+  try {
+    const c = await fetch(API+'/config').then(r=>r.json());
+    document.getElementById('cfgEnabled').checked = c.selfImprovement?.enabled ?? true;
+    document.getElementById('cfgMode').value = c.selfImprovement?.mode || 'apply';
+    document.getElementById('cfgScope').value = (c.selfImprovement?.scope||[]).join(',');
+  } catch(e) {}
+}
+
+async function saveConfig() {
+  const body = { selfImprovement: {
+    enabled: document.getElementById('cfgEnabled').checked,
+    mode: document.getElementById('cfgMode').value,
+    scope: document.getElementById('cfgScope').value.split(',').map(s=>s.trim()).filter(Boolean)
+  }};
+  try {
+    await fetch(API+'/config', { method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
+    alert('Config saved');
+  } catch(e) { alert('Failed to save'); }
 }
 
 // Game launcher
