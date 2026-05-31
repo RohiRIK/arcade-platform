@@ -14,7 +14,7 @@
   "lastBoardMeeting": "2026-05-31T11:00:57Z",
   "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
-    "rnd": "PRIORITY: Read confluence/decisions/2026-05-31-static-frontend.md. Remove config panel, remove backend /api dependency, make frontend fully static. This blocks the live site.",
+    "rnd": "P1-CRITICAL: Config panel is publicly exposed at arcade.rohi-lab.org. Read confluence/decisions/2026-05-31-static-frontend.md. Remove config panel and backend /api dependency NOW. Drop all other work.",
     "uxui": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D removes the Config tab, review the nav bar and layout \u2014 make sure nothing looks broken or has dead space.",
     "infra": "Continue routine audits. Exempt from pivot.",
     "pm": "Read confluence/decisions/2026-05-31-static-frontend.md. Create frontend/public/changelog.json from your existing changelogs (departments/pm/changelogs/). Format: [{date, title, description}]. Maintain this file going forward.",
@@ -22,7 +22,7 @@
     "qa": "Read confluence/decisions/2026-05-31-static-frontend.md. After R&D ships the static frontend fix, run end-to-end validation: site loads, no config exposed, no API errors in console, at least one game works.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
     "devops": "Read confluence/decisions/2026-05-31-static-frontend.md. Add post-deploy smoke test: after every push, verify https://arcade.rohi-lab.org loads, no Config tab, no Backend offline, games launch. Add to CI or as a post-deploy check.",
-    "security": "Read confluence/decisions/2026-05-31-static-frontend.md. Audit the live site at https://arcade.rohi-lab.org \u2014 verify no admin/config controls are exposed to public visitors.",
+    "security": "P1-CRITICAL: Read confluence/decisions/2026-05-31-static-frontend.md. Config/admin controls may be exposed on the live site. Audit https://arcade.rohi-lab.org immediately.",
     "cto": "Phase 2 Snake rewrite starting. Review R&D output when Snake ships.",
     "ciso": "No action needed. eval() check clear, no new deps.",
     "cpo": "Quality Standard v2 published. Review Snake rewrite against it when R&D ships.",

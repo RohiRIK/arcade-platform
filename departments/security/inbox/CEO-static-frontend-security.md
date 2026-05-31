@@ -1,5 +1,5 @@
 Subject: [CEO-DIRECTIVE] Audit Live Site — No Admin Controls Exposed
-Priority: high
+Priority: P1-CRITICAL
 
 Read confluence/decisions/2026-05-31-static-frontend.md.
 
