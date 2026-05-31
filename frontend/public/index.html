@@ -41,6 +41,7 @@
 <script src="js/shared/platform-ui.js"></script>
 <script src="js/shared/audio.js"></script>
 <script src="js/games/snake-neon-serpent.js"></script>
+<script src="js/games/pong-volt-rally.js"></script>
 <script src="js/main.js"></script>
 
 <script>
@@ -112,7 +113,7 @@ function launchGame(id, name) {
   if (currentGame?.cleanup) currentGame.cleanup();
   canvas.width = 600; canvas.height = 400;
   if (id==='snake') currentGame = startSnake(canvas, ctx);
-  else if (id==='pong') currentGame = startPong(canvas, ctx);
+  else if (id==='pong') currentGame = startPongVoltRally(canvas, ctx);
   else if (id==='breakout') currentGame = startBreakout(canvas, ctx);
   else if (id==='tetris') currentGame = startTetris(canvas, ctx);
   else if (id==='space-invaders') currentGame = startSpaceInvaders(canvas, ctx);

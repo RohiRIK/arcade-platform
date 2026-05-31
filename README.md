@@ -1,55 +1,76 @@
 # 🕹️ Arcade Platform
 
-Local-network arcade platform with self-improvement capabilities.
+A browser-based arcade with 7 classic games, built and maintained by 17 autonomous AI departments.
 
-## Quick Start
-
-```bash
-docker compose up -d --build
-```
-
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:3001/api
-- **Health**: http://localhost:3001/api/health
+**▶ Play now:** [arcade.rohi-lab.org](https://arcade.rohi-lab.org)
 
 ## Games
-- 🐍 Snake — Arrow keys, R to restart
-- 🏓 Pong — Arrow Up/Down vs CPU
-- 🧱 Breakout — Arrow Left/Right, R to restart
-- 🟦 Tetris — Arrow keys to move/rotate, Down to soft drop, R to restart
-- 👾 Space Invaders — Arrow Left/Right to move, Space to shoot, R to restart
-- 🟡 Pac-Man — Arrow keys to navigate maze, eat dots, avoid ghosts, R to restart
-- 🐸 Frogger — Arrow keys to cross road and river, reach 5 homes, R to restart
+
+| Game | Controls |
+|------|----------|
+| 🐍 Snake (Neon Serpent) | Arrow keys, R to restart |
+| 🏓 Pong | Arrow Up/Down vs CPU, R to restart |
+| 🧱 Breakout | Arrow Left/Right, R to restart |
+| 🟦 Tetris | Arrow keys to move/rotate, Down to soft drop, R to restart |
+| 👾 Space Invaders | Arrow Left/Right to move, Space to shoot, R to restart |
+| 🟡 Pac-Man | Arrow keys to navigate maze, R to restart |
+| 🐸 Frogger | Arrow keys to cross road and river, R to restart |
 
 ## Architecture
-- **Frontend**: Static HTML/JS served by nginx (port 3000)
-- **Backend**: Node.js/Express API (port 3001) — game registry, health, logs, config
-- **Self-improvement**: Hermes cron job runs every 2h, analyzes and improves the platform
 
-## Config
-Edit `backend/config.json` or use the web UI Config tab:
-- `enabled`: toggle self-improvement
-- `mode`: `apply` (make changes) or `analyze` (report only)
-- `scope`: array of `games`, `ui`, `infra`, `docs`
+- **Static site** hosted on GitHub Pages — no server, no API
+- **LittleJS** game engine (migration in progress — Snake complete, Pong next)
+- **GitHub Actions** for CI/CD (auto-deploy on push to `main`)
+- Games are vanilla JS on HTML5 Canvas (600×400)
 
-## Department Structure
-This platform is maintained by autonomous departments on a 2-hour cycle:
+## How It Works
 
-| Dept | Role | Artifacts |
-|------|------|-----------|
-| **Board** | Strategy, coordination, risk | `departments/board/minutes/` |
-| **R&D** | Research, pitch, spec, build games | `departments/rnd/` |
-| **Infra** | Docker, monitoring, ops | `departments/infra/` |
-| **UX/UI** | Design system, UI improvements | `departments/uxui/` |
-| **PM** | Docs, changelogs, standards | `departments/pm/` |
-| **CEO** | Oversight, grading, directives | `departments/ceo/` |
+This platform is built and evolved by **17 autonomous AI departments** running on staggered 2-hour cron cycles. Each department has a defined role, pipeline, and communication protocol. The CEO inspects output and sets direction. Departments coordinate through inbox messages and shared state.
 
-Cross-department communication via inbox files. State coordination via `state.json`.
+| Dept | Role |
+|------|------|
+| **CEO** | Oversight, grading, directives |
+| **CTO** | Architecture review, technical standards |
+| **CPO** | Product quality enforcement |
+| **CFO** | Budget tracking, resource allocation |
+| **CISO** | Security policy, compliance |
+| **Board** | Strategy, coordination, risk synthesis |
+| **R&D** | Research, pitch, spec, build games |
+| **UX/UI** | Design system, UI, CSS, accessibility |
+| **QA** | Testing, regression, quality bar |
+| **DevOps** | CI/CD pipelines, deployment |
+| **Infra** | Monitoring, container health |
+| **Security** | Vulnerability scanning, audits |
+| **IT** | File structure, naming compliance, scans |
+| **PM** | Documentation, changelogs, standards |
+| **Analytics** | Metrics, artifact tracking, reports |
+| **Creative** | Game feel, sound design, visual identity |
+| **HR** | (Provisioned) |
+
+## Current Pivot: Arcade Evolution
+
+Migrating all 7 games from a monolith to modular LittleJS-powered rewrites with creative polish (sound, particles, progression, unique identity per game). Phase 2 (Snake) complete. Phase 3 (Pong) in progress.
+
+## Tech Stack
+
+- [LittleJS](https://github.com/KilledByAPixel/LittleJS) — 15KB game engine
+- GitHub Pages — static hosting
+- GitHub Actions — CI/CD
+- zzfx — procedural sound effects
+
+## Project Structure
+
+| Path | Purpose |
+|------|---------|
+| `frontend/public/` | Static site (HTML, CSS, JS, games) |
+| `departments/*/` | Department workspaces (SYSTEM.md, inbox, logs) |
+| `confluence/` | Decisions, technical docs, runbooks |
+| `state.json` | Shared coordination state |
 
 ## Adding a Game
-See `departments/pm/standards/game-submission.md` for the full checklist. Summary:
-1. Complete the R&D pipeline: research → pitch → spec
-2. Create `backend/src/games/<name>/meta.json`
-3. Add game logic to `frontend/public/index.html` (or as separate JS)
-4. Register in the ICONS map and launchGame switch
-5. Rebuild: `docker compose up -d --build`
+
+See `departments/pm/standards/game-submission.md` for the full checklist. Games go through the R&D pipeline: research → pitch → spec → build → QA regression.
+
+## License
+
+MIT

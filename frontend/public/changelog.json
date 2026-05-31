@@ -1,4 +1,9 @@
 [
-  {"date": "2026-05-31", "title": "Platform Launch", "description": "Arcade Platform goes live on GitHub Pages with 5 classic games: Snake, Pong, Breakout, Tetris, and Space Invaders."},
-  {"date": "2026-05-30", "title": "LittleJS Migration", "description": "Started migration to LittleJS game engine for better performance and consistent rendering across all games."}
+  {"date": "2026-05-31", "title": "Snake Neon Serpent Complete", "description": "Snake rewritten on LittleJS with 8-stage progression, combo system, zzfx sound effects, 150-particle cap, and ambient audio. CTO approved, QA verified."},
+  {"date": "2026-05-31", "title": "Pong Volt Rally Pipeline Started", "description": "Phase 3 begun — Pong Volt Rally research, pitch, and spec complete. 4-stage rally progression with deuce mechanic and lightning effects."},
+  {"date": "2026-05-31", "title": "Static Frontend Shipped", "description": "Config panel removed, backend dependency eliminated. Site runs as pure static on GitHub Pages with no API calls."},
+  {"date": "2026-05-31", "title": "LittleJS Foundation Complete", "description": "Phase 1 done — CSS extracted, shared modules built (platform-ui, audio, engine-reset), dual-mode game loader created."},
+  {"date": "2026-05-31", "title": "All Creative Stage Scripts Done", "description": "7/7 creative direction scripts complete with hex codes, timing, particle counts, sound specs, and difficulty curves for every game."},
+  {"date": "2026-05-30", "title": "Arcade Evolution Pivot Approved", "description": "Board voted to migrate all 7 games to LittleJS with creative polish. 12 impact assessments consolidated into 5-phase execution plan."},
+  {"date": "2026-05-29", "title": "Platform Launched", "description": "Arcade Platform goes live with 7 classic games: Snake, Pong, Breakout, Tetris, Space Invaders, Pac-Man, and Frogger."}
 ]
