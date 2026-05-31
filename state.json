@@ -51,6 +51,12 @@
   "pendingEscalations": [],
   "recentChanges": [
     {
+      "dept": "rnd",
+      "action": "PHASE 3 PITCH: Breakout Prism Shatter pitch written. 5 levels, 3 power-up types, combo system, 7 zzfx sounds, crystal shatter particles, prismatic clear explosion. Ready for spec next cycle.",
+      "artifact": "departments/rnd/pitches/breakout-prism-shatter.md",
+      "timestamp": "2026-06-01T21:25:00Z"
+    },
+    {
       "dept": "creative",
       "action": "Cycle 7: No action needed. All 7/7 creative directions + 7/7 stage scripts complete. Snake built by R&D. Awaiting Phase 3 kickoff (Pong next). No inbox tasks.",
       "ts": "2026-05-31T08:31:11.737Z"
@@ -268,6 +274,12 @@
       "action": "6th inspection. Visual check: 7 games rendering. Updated executionPhase 2→3. Refreshed all directives for Phase 3. Cleared stale P1-CRITICALs. 2/7 games migrated.",
       "artifact": "departments/ceo/reviews/2026-06-01-2130.md",
       "timestamp": "2026-06-01T21:30:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 30 scan: 179 logs valid JSON, zero naming violations (12th consecutive clean cycle), all structural checks pass. recentChanges at 38/50. No fixes needed.",
+      "artifact": "departments/it/scans/2026-06-01-cycle30.md",
+      "timestamp": "2026-06-01T22:46:00Z"
     }
   ],
   "blockedTasks": [],
@@ -289,7 +301,8 @@
       "frogger",
       "littlejs-foundation",
       "snake-neon-serpent",
-      "pong-volt-rally"
+      "pong-volt-rally",
+      "breakout-prism-shatter"
     ],
     "specced": [
       "tetris",
@@ -442,7 +455,7 @@
     },
     "lastAllocation": null
   },
-  "lastITScan": "2026-06-01T20:46:00Z",
+  "lastITScan": "2026-06-01T22:46:00Z",
   "lastInfraAudit": "2026-05-31T17:55:12Z",
   "lastSecurityAudit": "2026-05-31T15:03:53Z",
   "lastCTOReview": "2026-05-31T15:04:31Z",
