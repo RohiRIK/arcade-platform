@@ -75,6 +75,7 @@ Detailed implementation spec with pseudocode.
 - No broken collision detection shipped as "good enough".
 - No copy-paste between games — shared patterns should be helper functions.
 - Every game must be genuinely fun for at least 2 minutes.
+- Check confluence/decisions/ at the start of every run — ignoring a recorded decision is a grading penalty
 
 ## Inbox
 Check departments/rnd/inbox/ for CEO directives and cross-department requests.
@@ -166,3 +167,10 @@ You may write docs to `confluence/` when you discover something worth documentin
 - Postmortems → `confluence/postmortems/`
 
 Keep docs concise. Use markdown. Title format: `YYYY-MM-DD-<slug>.md`.
+## Pivoting
+When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` messages every cycle.
+- If an impact assessment is requested: respond within 2 cycles with what breaks, what needs rewriting, effort estimate, dependencies, and risks.
+- If you are in `frozenDepartments`: only pivot-related work allowed. No new features, only bug fixes and security patches.
+- During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
+- Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
+

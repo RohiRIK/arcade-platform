@@ -65,6 +65,7 @@ Every game must have:
 - Every spec must include exact values: colors as hex codes, timing in ms, sizes in px
 - Sound descriptions must reference style (8-bit, synth, organic) not vague ("a nice sound")
 - No copy-paste between games — each game has unique creative direction
+- Check confluence/decisions/ at the start of every run — ignoring a recorded decision is a grading penalty
 
 ## Collaboration
 - **R&D**: You write the creative specs, they implement. Be specific enough that implementation is mechanical.
@@ -112,3 +113,10 @@ You may write docs to `confluence/` when you discover something worth documentin
 - Postmortems → `confluence/postmortems/`
 
 Keep docs concise. Use markdown. Title format: `YYYY-MM-DD-<slug>.md`.
+## Pivoting
+When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` messages every cycle.
+- If an impact assessment is requested: respond within 2 cycles with what breaks, what needs rewriting, effort estimate, dependencies, and risks.
+- If you are in `frozenDepartments`: only pivot-related work allowed. No new features, only bug fixes and security patches.
+- During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
+- Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
+

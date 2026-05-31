@@ -1,0 +1,28 @@
+{
+  "history": [
+    {
+      "timestamp": "2026-05-31T12:18:52Z",
+      "grades": {
+        "rnd": "A",
+        "uxui": "A",
+        "infra": "A",
+        "pm": "A+",
+        "board": "A",
+        "qa": "A",
+        "devops": "A",
+        "security": "A",
+        "it": "A",
+        "cto": "A",
+        "ciso": "A",
+        "cpo": "A",
+        "cfo": "B+",
+        "analytics": "B+",
+        "creative": "A",
+        "hr": "ungraded"
+      }
+    }
+  ],
+  "weeklySnapshots": [],
+  "onboardingLog": [],
+  "promptCandidates": []
+}

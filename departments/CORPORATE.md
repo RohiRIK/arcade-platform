@@ -68,7 +68,31 @@ Strategic direction changes follow the 7-gate pivot flow (see impl-pivoting.md):
 All pivots require a formal proposal in `confluence/decisions/PIVOT-<name>.md`.
 No department starts pivot work without Board approval at Gate 4.
 
+## Sprint Mode
+Temporary org-wide acceleration for pivots and time-sensitive initiatives. Any senior role (CEO, PM, Board) can propose. 6 configurable levers:
+1. Cron frequency boost (key depts from 2h → 1h)
+2. Parallel tracks (independent department groups)
+3. Multi-department fast-track (2 pipeline steps/cycle)
+4. C-Suite cadence bump (slow roles run faster)
+5. Daily standup meetings (12h coordination cycles)
+6. Scope lock (no new projects, focus on sprint objectives only)
+
+Max duration: 5 days. Auto-expires. Sprint plan lives at `confluence/decisions/SPRINT-<name>.md`. Retrospective required on completion. See state.json `sprintMode` field for current status.
+
+## Labs (R&D Sandbox)
+R&D has a permanent experimentation sandbox at `departments/rnd/labs/`. Labs let R&D prototype freely without the full pitch→spec→build pipeline overhead. Rules:
+- No pitch/spec needed for labs work
+- Labs code is NEVER production-ready — graduation through normal pipeline required
+- Max ~20% of R&D cycle time unless CEO directs otherwise
+- One active experiment at a time (recommended)
+- All experiments documented (even failures)
+
+Graduation path: promising experiment → PM specs it → normal pipeline → ship.
+
 ## Control
 - backend/config.json controls enable/disable and scope
 - state.json controls priorities and cross-dept coordination
 - CEO can pause any department via directives
+
+## Confluence Rules
+1. Departments MUST read confluence/decisions/ each run. Cross-department decisions and incident postmortems MUST be written to confluence/

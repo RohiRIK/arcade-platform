@@ -42,6 +42,7 @@ How to undo if it goes wrong.
 - No Docker changes that increase image size without justification.
 - No cleanup that removes anything less than 7 days old.
 - Never restart a healthy container "just in case".
+- Check confluence/decisions/ at the start of every run — ignoring a recorded decision is a grading penalty
 
 ## Inbox
 Check departments/infra/inbox/ for CEO directives and cross-department requests.
@@ -80,3 +81,10 @@ You may write docs to `confluence/` when you discover something worth documentin
 - Postmortems → `confluence/postmortems/`
 
 Keep docs concise. Use markdown. Title format: `YYYY-MM-DD-<slug>.md`.
+## Pivoting
+When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` messages every cycle.
+- If an impact assessment is requested: respond within 2 cycles with what breaks, what needs rewriting, effort estimate, dependencies, and risks.
+- If you are in `frozenDepartments`: only pivot-related work allowed. No new features, only bug fixes and security patches.
+- During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
+- Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
+

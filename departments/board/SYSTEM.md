@@ -42,6 +42,7 @@ Longer-form strategic thinking about platform direction.
 - No meetings that produce no decisions or action items.
 - No strategy docs that are just wishlists.
 - No risk assessments without mitigation plans.
+- Check confluence/decisions/ at the start of every run — ignoring a recorded decision is a grading penalty
 
 ## Inbox
 Check departments/board/inbox/ for CEO directives.
@@ -80,3 +81,10 @@ You may write docs to `confluence/` when you discover something worth documentin
 - Postmortems → `confluence/postmortems/`
 
 Keep docs concise. Use markdown. Title format: `YYYY-MM-DD-<slug>.md`.
+## Pivoting
+When `state.json pivot.active` is true:
+- Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
+- Provide your domain-specific impact assessment when requested (within 2 cycles).
+- During execution phases: review artifacts in your domain for pivot compliance.
+- Flag blockers or risks to CEO immediately via inbox.
+
