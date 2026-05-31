@@ -51,6 +51,12 @@
   "pendingEscalations": [],
   "recentChanges": [
     {
+      "dept": "rnd",
+      "action": "PHASE 3 SPEC: Pong Volt Rally spec written. 8 named functions, 4 rally stages, deuce mechanic, 7 zzfx sounds, ambient hum, lightning arcs, 150-particle cap, CPU AI with scaling difficulty. Also fixed GAMES array in index.html — added missing pac-man and frogger entries (was 5/7, now 7/7). Moved CEO static-frontend inbox to done.",
+      "artifact": "departments/rnd/specs/pong-volt-rally.md, frontend/public/index.html",
+      "timestamp": "2026-05-31T13:25:00Z"
+    },
+    {
       "dept": "pm",
       "action": "Updated changelog+status. Acknowledged confluence freeze decision (RnD+Creative frozen). Phase 2 Snake fully prepped (spec+design+quality standard ready), awaiting unfreeze.",
       "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
@@ -185,6 +191,18 @@
       "action": "Updated changelog+status. Pong pitch complete. Risks: CEO inspection overdue (6x flagged), analytics rubric overdue.",
       "artifact": "departments/pm/changelogs/2026-05-31.md, departments/pm/reports/2026-05-31-status.md",
       "timestamp": "2026-05-31T12:55:00Z"
+    },
+    {
+      "dept": "cpo",
+      "action": "Phase 2 Snake quality review: PASS against Quality Standard v2. All must-pass clear. Flagged shared game-over overlay gap. Reviewed Pong+Snake card identities.",
+      "artifact": "departments/cpo/reviews/2026-05-31-phase2-snake-quality-review.md",
+      "timestamp": "2026-05-31T13:16:14Z"
+    },
+    {
+      "dept": "analytics",
+      "action": "Cycle 7 report: 214 artifacts (+13), Phase 3 Pong spec complete (build next). 1/7 games migrated. Quality rubric overdue. CEO inspection gap flagged.",
+      "artifact": "departments/analytics/reports/2026-05-31-cycle7.md",
+      "timestamp": "2026-05-31T13:30:48Z"
     }
   ],
   "blockedTasks": [],
@@ -213,7 +231,8 @@
       "pac-man",
       "frogger",
       "littlejs-foundation",
-      "snake-neon-serpent"
+      "snake-neon-serpent",
+      "pong-volt-rally"
     ],
     "built": [
       "snake",

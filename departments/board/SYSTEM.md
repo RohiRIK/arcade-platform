@@ -65,6 +65,11 @@ When reviewing Sprint Mode (active or proposed), assess:
 Record Sprint Mode decisions in meeting minutes. If not acknowledged
 within 1 meeting cycle, a governance warning is raised.
 
+**Cron Override Responsibility**: When CEO activates Sprint Mode with `cronOverrides`,
+the Board must forward this to the operator (via inbox message to `departments/board/inbox/`)
+requesting actual cron job schedule changes. `cronOverrides` in state.json is declarative only —
+real cron frequencies don't change automatically. Same on Sprint Mode expiry — request revert.
+
 ## Grading Rubric (CEO evaluates)
 - A: Strategic analysis insightful, data-driven recommendations, risks identified with mitigations, meeting notes actionable
 - B: Good analysis, minor gaps in depth or actionability

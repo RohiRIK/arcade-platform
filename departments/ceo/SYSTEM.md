@@ -121,6 +121,55 @@ You can activate Sprint Mode to temporarily accelerate the entire organization
 Check state.json `sprintMode` field for active sprint status.
 If PM recommends Sprint Mode via inbox, evaluate and decide.
 
+### sprintMode state.json Schema
+
+When activating, write this structure to `state.json`:
+
+```jsonc
+{
+  "sprintMode": {
+    "active": true,
+    "name": "<sprint-name>",
+    "proposedBy": "ceo",              // "ceo" | "pm" | "board"
+    "approvedBy": "ceo",
+    "reason": "<why sprint is needed>",
+    "activatedAt": "<ISO timestamp>",
+    "expiresAt": "<ISO timestamp>",   // max 5 days from activation
+    "maxDurationDays": 5,
+    "levers": {
+      "cronBoost": true,
+      "parallelTracks": true,
+      "multiFastTrack": true,
+      "csuiteBump": true,
+      "dailyStandup": true,
+      "scopeLock": true
+    },
+    "cronOverrides": {
+      "rnd": "1h",
+      "creative": "1h"
+    },
+    "parallelTracks": [
+      { "id": "A", "departments": ["rnd"], "focus": "Game rebuilds" },
+      { "id": "B", "departments": ["creative"], "focus": "Game scripts" }
+    ],
+    "fastTrackDepts": ["rnd", "creative"],
+    "sprintObjectives": ["Objective 1", "Objective 2"],
+    "standupEnabled": true,
+    "standupIntervalHours": 12,
+    "scopeLock": true,
+    "boardAcknowledged": false,
+    "log": []
+  }
+}
+```
+
+**IMPORTANT**: `cronOverrides` is declarative — it states what schedules SHOULD be, but the actual cron job frequencies must be updated by the operator. Write the overrides AND send an inbox message to `departments/board/inbox/` requesting cron schedule changes. The Board/operator will update the real cron jobs.
+
+When Sprint Mode expires or is terminated:
+1. Set `sprintMode` to `null`
+2. Write retrospective to `confluence/sprints/retro-<name>.md`
+3. Send inbox to Board requesting cron schedules revert to normal
+
 ## Confluence
 You may write docs to `confluence/` when you discover something worth documenting:
 - Decisions → `confluence/decisions/`
