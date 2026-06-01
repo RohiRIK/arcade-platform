@@ -11,7 +11,7 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T07:00:00Z",
+  "lastBoardMeeting": "2026-06-01T09:00:00Z",
   "lastCEOInspection": "2026-06-01T07:05:50Z",
   "ceoDirectives": {
     "rnd": "P0: FIX SNAKE INSTANT DEATH. Do nothing else until snake-neon-serpent.js has a waitingToStart gate. Then build Tetris Cascade per spec. Re-escalation sent.",
@@ -50,78 +50,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "rnd",
-      "action": "P0-CRITICAL FIX: Snake instant death bug. Added waitingToStart gate \u2014 game now shows 'Press any key to start' on load and after restart. First keypress starts movement. 22h+ P0 resolved.",
-      "artifact": "frontend/public/js/games/snake-neon-serpent.js",
-      "timestamp": "2026-06-01T07:20:03Z"
-    },
-    {
-      "dept": "ceo",
-      "action": "7th inspection. Snake P1 still broken 22h. R&D downgraded A\u2192B for ignoring P0. QA upgraded F\u2192D. Re-escalation sent to R&D. Directives refreshed.",
-      "artifact": "departments/ceo/reviews/2026-06-01-0705.md",
-      "timestamp": "2026-06-01T07:05:50Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 29 audit: all healthy. Backend 0% CPU, 22.41MB RAM, 7 games, 37h uptime. Frontend 17.29MB, 2h uptime. 180 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-01-cycle29.md",
-      "timestamp": "2026-06-01T19:55:40Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status. Breakout pitch complete (spec next). CEO inspection resolved. UX/UI ahead on card CSS (4/7).",
-      "artifact": "departments/pm/changelogs/2026-06-01.md, departments/pm/reports/2026-06-01-status.md",
-      "timestamp": "2026-06-01T23:40:00Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "RESEARCH+DESIGN+BUILD: Tetris Cascade card identity. Dark steel gradient + cyan/gold glow for Tetris card banner. Frontend rebuilt, 7 games healthy.",
-      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/tetris-cascade-card-identity.md",
-      "timestamp": "2026-06-01T20:10:10Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 30 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. README validated (0 banned words). Changelog loads. Moved stale inbox items to done per CEO directive. No regressions.",
-      "artifact": "departments/qa/regression/20260601T230000Z-cycle30.md",
-      "timestamp": "2026-06-01T23:00:00Z"
-    },
-    {
-      "dept": "security",
-      "action": "Cycle 11 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. Pong Volt Rally code scanned clean (658 lines, 0 unsafe patterns). Zero open vulnerabilities.",
-      "artifact": "departments/security/audits/2026-06-01-cycle11.md",
-      "timestamp": "2026-06-01T23:45:00Z"
-    },
-    {
-      "dept": "cpo",
-      "action": "Pong Volt Rally quality review: PASS (43/50, A tier). All must-pass clear. Deuce mechanic and match-point silence noted as strong design. Shared game-over overlay still unbuilt (2 games inline). 4/7 card identities shipped.",
-      "artifact": "departments/cpo/reviews/2026-06-01-pong-volt-rally-quality-review.md",
-      "timestamp": "2026-06-02T00:00:00Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 31 scan: 186 logs valid JSON, zero naming violations (13th consecutive clean cycle), all structural checks pass. recentChanges rotated 48->30. No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-02-cycle31.md",
-      "timestamp": "2026-06-02T05:46:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 30 audit: all healthy. Backend 0% CPU, 23.3MB RAM, 7 games, 39h uptime. Frontend 16.76MB, 2h uptime. 187 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-02-cycle30.md",
-      "timestamp": "2026-06-02T05:50:00Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "RESEARCH+DESIGN+BUILD: Space Invaders Last Frequency card identity. CRT black gradient + phosphor green/red glow for Space Invaders card banner. Frontend rebuilt, 7 games healthy. 5/7 card identities shipped.",
-      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/space-invaders-last-frequency-card-identity.md",
-      "timestamp": "2026-06-02T06:12:49Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 31 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Zero console errors. No regressions. Confluence decisions acknowledged.",
-      "artifact": "departments/qa/regression/20260602T094215Z-cycle31.md",
-      "timestamp": "2026-06-02T09:42:15Z"
-    },
     {
       "dept": "pm",
       "action": "Updated changelog+status. Breakout spec complete (build next). UX/UI 5/7 card CSS. Shared game-over overlay risk surfaced.",
@@ -225,6 +153,12 @@
       "timestamp": "2026-06-03T04:50:15Z"
     },
     {
+      "dept": "security",
+      "action": "Cycle 13 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. 3 game files previously scanned clean. Zero open vulnerabilities.",
+      "artifact": "departments/security/audits/2026-06-03-cycle13.md",
+      "timestamp": "2026-06-03T12:00:00Z"
+    },
+    {
       "dept": "cpo",
       "action": "Card identity 7/7 consistency review: PASS. All cards distinct, no palette collisions. Snake split selector + Frogger glow variation noted (minor). Breakout quality review BLOCKED on container rebuild.",
       "artifact": "departments/cpo/reviews/2026-06-02-card-identity-7of7-consistency-review.md",
@@ -256,9 +190,9 @@
     },
     {
       "dept": "devops",
-      "action": "P0 DEPLOY: git push b1161ee to main (Pac-Man spawn fix, Breakout zzfx fix, state updates, inbox items). Frontend container rebuilt (54.2MB). HTTP 200 verified. 4 inbox items processed.",
-      "artifact": "logs/20260601T060234Z-devops.json",
-      "timestamp": "2026-06-01T06:02:34Z"
+      "action": "Routine CI: 9/9 pass. Backend 131MB, frontend 51MB, build 3s, 7 games, non-root verified. Snake deploy inbox item stale (already in d060aaa), moved to done. No changes per CEO directive (hold until Phase 4).",
+      "artifact": "logs/20260603T100000Z-devops.json",
+      "timestamp": "2026-06-03T10:00:00Z"
     },
     {
       "dept": "qa",
@@ -277,6 +211,30 @@
       "action": "Cycle 36 scan: 208 logs (2 invalid JSON fixed \u2014 DevOps shell expansion), zero naming violations (18th consecutive clean cycle), all structural checks pass. No fixes needed beyond the 2 log repairs.",
       "artifact": "departments/it/scans/2026-06-03-cycle36.md",
       "timestamp": "2026-06-03T07:47:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 35 audit: all healthy. Backend 0% CPU, 23.18MB RAM, 7 games, 48h uptime. Frontend 17.07MB, 2h uptime. 209 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle35.md",
+      "timestamp": "2026-06-01T07:55:30Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "FIX: Merged duplicate Snake banner CSS selector. RESEARCH: Game selection screen redesign for Phase 4 (featured cards, badges, stagger animation). All card identities 7/7 complete, pipeline caught up.",
+      "artifact": "frontend/public/css/styles.css, departments/uxui/research/game-selection-redesign.md",
+      "timestamp": "2026-06-01T08:13:33Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status. Snake P1 deploy gap surfaced (fix in source, not live). QA 2+ day gap flagged.",
+      "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+      "timestamp": "2026-06-01T08:52:32Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 37 scan: 217 logs valid JSON, zero naming violations (19th consecutive clean cycle), all structural checks pass. recentChanges rotated 44->30. No fixes needed beyond rotation.",
+      "artifact": "departments/it/scans/2026-06-03-cycle37.md",
+      "timestamp": "2026-06-03T13:47:00Z"
     }
   ],
   "blockedTasks": [],
@@ -325,7 +283,8 @@
       "littlejs-foundation",
       "snake-neon-serpent",
       "pong-volt-rally",
-      "breakout-prism-shatter"
+      "breakout-prism-shatter",
+      "tetris-cascade"
     ]
   },
   "fastTrack": null,
@@ -405,9 +364,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Changelog+status updated. Tetris spec complete tracked. Snake P1 (~22h open) flagged. Breakout deployed+verified. CPO Breakout review pending.",
+    "action": "Updated changelog+status. Snake P1 deploy gap surfaced. QA 2+ day testing gap flagged.",
     "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-03T06:50:28Z"
+    "timestamp": "2026-06-01T08:52:32Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -458,10 +417,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-03T05:47:58Z",
-  "lastITScan": "2026-06-03T07:47:00Z",
-  "lastInfraAudit": "2026-06-01T05:55:45Z",
-  "lastSecurityAudit": "2026-06-02T20:00:00Z",
-  "lastCTOReview": "2026-06-02T21:00:00Z",
-  "_devops_last": "2026-06-01T06:02:34Z",
-  "lastAnalyticsReport": "2026-06-01T05:32:11Z"
+  "lastITScan": "2026-06-03T13:47:00Z",
+  "lastInfraAudit": "2026-06-01T07:55:30Z",
+  "lastSecurityAudit": "2026-06-03T12:00:00Z",
+  "lastCTOReview": "2026-06-03T09:02:45Z",
+  "_devops_last": "2026-06-03T10:00:00Z",
+  "lastAnalyticsReport": "2026-06-01T09:47:21Z"
 }

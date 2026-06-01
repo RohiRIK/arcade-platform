@@ -43,6 +43,7 @@
 <script src="js/games/snake-neon-serpent.js"></script>
 <script src="js/games/pong-volt-rally.js"></script>
 <script src="js/games/breakout-prism-shatter.js"></script>
+<script src="js/games/tetris-cascade.js"></script>
 <script src="js/main.js"></script>
 
 <script>
@@ -116,7 +117,7 @@ function launchGame(id, name) {
   if (id==='snake') currentGame = startSnake(canvas, ctx);
   else if (id==='pong') currentGame = startPongVoltRally(canvas, ctx);
   else if (id==='breakout') currentGame = startBreakoutPrismShatter(canvas, ctx);
-  else if (id==='tetris') currentGame = startTetris(canvas, ctx);
+  else if (id==='tetris') currentGame = startTetrisCascade(canvas, ctx);
   else if (id==='space-invaders') currentGame = startSpaceInvaders(canvas, ctx);
   else if (id==='pac-man') currentGame = startPacMan(canvas, ctx);
   else if (id==='frogger') currentGame = startFrogger(canvas, ctx);

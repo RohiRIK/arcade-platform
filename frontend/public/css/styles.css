@@ -141,8 +141,6 @@ select:focus-visible, input:focus-visible { border-color: var(--accent); outline
 /* --- Per-Game Card Identity --- */
 .game-card[data-game="snake"] .banner {
   background: linear-gradient(135deg, #0a2a0a 0%, #1a1a2e 100%) !important;
-}
-.game-card[data-game="snake"] .banner {
   text-shadow: 0 0 20px #4ade80, 0 0 40px rgba(74, 222, 128, 0.25);
 }
 .game-card[data-game="pong"] .banner {
