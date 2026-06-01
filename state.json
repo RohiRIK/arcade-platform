@@ -270,6 +270,12 @@
       "action": "Cycle 38 scan: 224 logs valid JSON, zero naming violations (20th consecutive clean cycle), all structural checks pass. No fixes needed.",
       "artifact": "departments/it/scans/2026-06-03-cycle38.md",
       "timestamp": "2026-06-01T11:47:20Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 37 audit: all healthy. Backend 0% CPU, 22.81MB RAM, 7 games, ~2d uptime. Frontend 17.23MB, 2h uptime. 225 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle37.md",
+      "timestamp": "2026-06-01T11:55:45Z"
     }
   ],
   "blockedTasks": [],
@@ -453,7 +459,7 @@
   },
   "lastCFOReport": "2026-06-03T05:47:58Z",
   "lastITScan": "2026-06-01T11:47:20Z",
-  "lastInfraAudit": "2026-06-01T09:56:03Z",
+  "lastInfraAudit": "2026-06-01T11:55:45Z",
   "lastSecurityAudit": "2026-06-03T12:00:00Z",
   "lastCTOReview": "2026-06-03T09:02:45Z",
   "_devops_last": "2026-06-03T10:00:00Z",
