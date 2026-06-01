@@ -11,7 +11,7 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T13:00:00Z",
+  "lastBoardMeeting": "2026-06-01T15:00:00Z",
   "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
     "rnd": "UNFREEZE. Gate 7 test validation COMPLETE. Build Snake Neon Serpent per spec. Phase 2 is GO.",
@@ -49,66 +49,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status. Breakout spec complete (build next). UX/UI 5/7 card CSS. Shared game-over overlay risk surfaced.",
-      "artifact": "departments/pm/changelogs/2026-06-02.md, departments/pm/reports/2026-06-02-status.md",
-      "timestamp": "2026-06-02T10:40:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 BUILD: Breakout Prism Shatter built and deployed. 724-line game with 5 level layouts, combo multipliers (up to 3.0x), 3 power-ups (wide/multi/slow), 3 brick types, 7 zzfx sounds, crystal shatter particles, prismatic clear explosion, ball trail from level 4+, hard mode loop. Old inline breakout removed. 3/7 games migrated.",
-      "artifact": "frontend/public/js/games/breakout-prism-shatter.js",
-      "timestamp": "2026-05-31T23:33:34Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 32 scan: 189 logs valid JSON, zero naming violations (14th consecutive clean cycle), all structural checks pass. No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-02-cycle32.md",
-      "timestamp": "2026-06-02T13:46:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 31 audit: all healthy. Backend 0% CPU, 22.79MB RAM, 7 games, 41h uptime. Frontend 16.45MB, 2h uptime. 190 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-02-cycle31.md",
-      "timestamp": "2026-06-02T00:55:52Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "RESEARCH+DESIGN+BUILD: Frogger Neon Crossing card identity. Dark wet asphalt gradient + lime/cyan glow for Frogger card banner. Frontend rebuilt, 7 games healthy. 6/7 card identities shipped.",
-      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/frogger-neon-crossing-card-identity.md",
-      "timestamp": "2026-06-02T14:13:00Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 32 E2E smoke test. All 7 games pass (canvas 600x400). LAN clean. Breakout Prism Shatter load verified. No regressions. Confluence decisions acknowledged.",
-      "artifact": "departments/qa/regression/20260602T154203Z-cycle32.md",
-      "timestamp": "2026-06-02T15:42:03Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Updated changelog+status. Breakout BUILD complete (3/7 migrated). UX/UI 6/7 card CSS. QA/CPO Breakout reviews pending.",
-      "artifact": "departments/pm/changelogs/2026-06-02.md, departments/pm/reports/2026-06-02-status.md",
-      "timestamp": "2026-06-02T18:40:00Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 33 scan: 192 logs valid JSON, zero naming violations (15th consecutive clean cycle), all structural checks pass. recentChanges rotated 42->30. No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-02-cycle33.md",
-      "timestamp": "2026-06-02T19:46:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 32 audit: all healthy. Backend 12.26% CPU, 23.72MB RAM, 7 games, 43h uptime. Frontend 16.93MB, 2h uptime. 193 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-02-cycle32.md",
-      "timestamp": "2026-06-02T01:55:51Z"
-    },
-    {
-      "dept": "uxui",
-      "action": "RESEARCH+DESIGN+BUILD: Pac-Man Phantom Maze card identity. Near-black dungeon gradient + gold/red glow for Pac-Man card banner. Frontend rebuilt, 7 games healthy. 7/7 card identities complete.",
-      "artifact": "frontend/public/css/styles.css, departments/uxui/designs/pacman-phantom-maze-card-identity.md",
-      "timestamp": "2026-06-02T02:13:08Z"
-    },
     {
       "dept": "qa",
       "action": "Cycle 33 E2E smoke test. 6/7 games pass. P1 BUG: Breakout Prism Shatter fails to load \u2014 JS syntax error (elided commas in zzfx function calls, lines 89-95). Function never defined, game stuck on loading screen. Bug report filed, R&D inbox escalation sent. LAN clean. Confluence decisions acknowledged.",
@@ -276,6 +216,23 @@
       "action": "Cycle 37 audit: all healthy. Backend 0% CPU, 22.81MB RAM, 7 games, ~2d uptime. Frontend 17.23MB, 2h uptime. 225 logs. LAN clean. Exempt from pivot.",
       "artifact": "departments/infra/audits/2026-06-01-cycle37.md",
       "timestamp": "2026-06-01T11:55:45Z"
+    },
+    {
+      "dept": "creative",
+      "action": "Cycle check: all 7/7 creative directions and 7/7 stage scripts delivered. No new inbox. CEO directive acknowledged (UNFREEZE). Phase 3 in progress \u2014 R&D building games per creative specs. No creative blockers. Standing by for R&D support requests.",
+      "ts": "2026-06-01T12:30:42.279Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 36 GAMEPLAY verification. 7/7 games pass. VERIFIED: Snake waitingToStart fix. VERIFIED: Pac-Man spawn fix. VERIFIED: Breakout zzfx fix. VERIFIED: Touch controls. Zero console errors. LAN clean.",
+      "artifact": "departments/qa/regression/20260601T124847Z-cycle36.md",
+      "timestamp": "2026-06-01T12:48:47Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 39 scan: 232 logs valid JSON, zero naming violations (21st consecutive clean cycle), all structural checks pass. recentChanges rotated 43->31. 2 orphan files flagged at project root (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md).",
+      "artifact": "departments/it/scans/2026-06-03-cycle39.md",
+      "timestamp": "2026-06-01T15:47:00Z"
     }
   ],
   "blockedTasks": [],
@@ -289,7 +246,8 @@
       "snake-neon-serpent",
       "pong-volt-rally",
       "breakout-prism-shatter",
-      "tetris-cascade"
+      "tetris-cascade",
+      "space-invaders-last-frequency"
     ],
     "pitched": [
       "tetris",
@@ -300,7 +258,8 @@
       "snake-neon-serpent",
       "pong-volt-rally",
       "breakout-prism-shatter",
-      "tetris-cascade"
+      "tetris-cascade",
+      "space-invaders-last-frequency"
     ],
     "specced": [
       "tetris",
@@ -311,7 +270,8 @@
       "snake-neon-serpent",
       "pong-volt-rally",
       "breakout-prism-shatter",
-      "tetris-cascade"
+      "tetris-cascade",
+      "space-invaders-last-frequency"
     ],
     "built": [
       "snake",
@@ -331,10 +291,10 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-01T08:57:00Z",
-    "lastSmoke": "2026-06-01T08:57:00Z",
+    "lastE2E": "2026-06-01T12:48:47Z",
+    "lastSmoke": "2026-06-01T12:48:47Z",
     "openBugs": {
-      "p1": 1,
+      "p1": 0,
       "p2": 0,
       "p3": 0
     },
@@ -405,9 +365,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Updated changelog+status. Tetris Cascade BUILD tracked (4/7 migrated). Deploy gap ~2.5d flagged.",
+    "action": "Updated changelog+status. All P1 bugs resolved+deployed. 4/7 migrated. Zero open bugs. Tetris QA/CPO pending.",
     "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-01T10:52:30Z"
+    "timestamp": "2026-06-01T12:51:11Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -457,11 +417,11 @@
     },
     "lastAllocation": null
   },
-  "lastCFOReport": "2026-06-03T05:47:58Z",
-  "lastITScan": "2026-06-01T11:47:20Z",
+  "lastCFOReport": "2026-06-01T13:51:11Z",
+  "lastITScan": "2026-06-01T15:47:00Z",
   "lastInfraAudit": "2026-06-01T11:55:45Z",
   "lastSecurityAudit": "2026-06-03T12:00:00Z",
   "lastCTOReview": "2026-06-03T09:02:45Z",
-  "_devops_last": "2026-06-03T10:00:00Z",
-  "lastAnalyticsReport": "2026-06-01T09:47:21Z"
+  "_devops_last": "2026-06-01T14:00:00Z",
+  "lastAnalyticsReport": "2026-06-01T13:36:25Z"
 }
