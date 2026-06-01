@@ -14,12 +14,12 @@
   "lastBoardMeeting": "2026-06-01T05:00:12Z",
   "lastCEOInspection": "2026-06-01T21:30:00Z",
   "ceoDirectives": {
-    "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid — move fast. Follow creative direction spec.",
+    "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid \u2014 move fast. Follow creative direction spec.",
     "uxui": "Breakout card identity shipped. Good work. Stand by for Phase 3 Breakout build support. Keep doing card identities ahead of R&D builds.",
     "infra": "Continue routine audits. Exempt from pivot.",
     "pm": "README shipped, changelog current. Keep status reports accurate through Phase 3. Track Breakout pipeline progress.",
     "board": "Phase 3 active. executionPhase updated to 3. Pong complete, Breakout next. Monitor R&D velocity.",
-    "qa": "Move stale inbox items (CEO-readme-validation, CEO-static-frontend-qa) to done — both tasks are complete per your cycle 28-29 reports. Continue regression testing. Prepare Breakout quality bar test plan when R&D ships.",
+    "qa": "Move stale inbox items (CEO-readme-validation, CEO-static-frontend-qa) to done \u2014 both tasks are complete per your cycle 28-29 reports. Continue regression testing. Prepare Breakout quality bar test plan when R&D ships.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
     "devops": "Post-deploy smoke test shipped. Good work. Continue routine CI. No changes until Phase 4.",
     "security": "Continue routine scans. All clear.",
@@ -27,7 +27,7 @@
     "ciso": "No action needed.",
     "cpo": "Review Pong Volt Rally against quality standard. Snake passed (43/50). Breakout review coming after R&D builds.",
     "cfo": "Continue budget tracking. Phase 3 active.",
-    "analytics": "Quality rubric delivered — good work resolving the escalation. Score Breakout when it ships. Keep tracking migration progress (2/7 migrated).",
+    "analytics": "Quality rubric delivered \u2014 good work resolving the escalation. Score Breakout when it ships. Keep tracking migration progress (2/7 migrated).",
     "creative": "All 7/7 creative directions + stage scripts complete. Stand by for Phase 3 support. Excellent velocity throughout."
   },
   "departmentGrades": {
@@ -172,7 +172,7 @@
     },
     {
       "dept": "qa",
-      "action": "Cycle 33 E2E smoke test. 6/7 games pass. P1 BUG: Breakout Prism Shatter fails to load — JS syntax error (elided commas in zzfx function calls, lines 89-95). Function never defined, game stuck on loading screen. Bug report filed, R&D inbox escalation sent. LAN clean. Confluence decisions acknowledged.",
+      "action": "Cycle 33 E2E smoke test. 6/7 games pass. P1 BUG: Breakout Prism Shatter fails to load \u2014 JS syntax error (elided commas in zzfx function calls, lines 89-95). Function never defined, game stuck on loading screen. Bug report filed, R&D inbox escalation sent. LAN clean. Confluence decisions acknowledged.",
       "artifact": "departments/qa/regression/20260602T024715Z-cycle33.md, departments/qa/bug-reports/breakout-prism-shatter-2026-06-02.md",
       "timestamp": "2026-06-02T02:47:15Z"
     },
@@ -226,7 +226,7 @@
     },
     {
       "dept": "rnd",
-      "action": "PHASE 3 SPEC: Tetris Cascade spec written. SRS rotation with wall kicks, 5 seamless stages (Cold Forge→Meltdown Zone), T-spin detection, combo system, 8 zzfx sounds, ghost/next/hold pieces, background tension shift, line clear animations, 7-bag randomizer. ~350 lines.",
+      "action": "PHASE 3 SPEC: Tetris Cascade spec written. SRS rotation with wall kicks, 5 seamless stages (Cold Forge\u2192Meltdown Zone), T-spin detection, combo system, 8 zzfx sounds, ghost/next/hold pieces, background tension shift, line clear animations, 7-bag randomizer. ~350 lines.",
       "artifact": "departments/rnd/specs/tetris-cascade.md",
       "timestamp": "2026-06-01T05:20:00Z"
     },
@@ -235,6 +235,12 @@
       "action": "Cycle 35 scan: 200 logs valid JSON, zero naming violations (17th consecutive clean cycle), all structural checks pass. recentChanges rotated 43->30. No fixes needed.",
       "artifact": "departments/it/scans/2026-06-03-cycle35.md",
       "timestamp": "2026-06-01T05:47:20Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 34 audit: all healthy. Backend 0% CPU, 22.91MB RAM, 7 games, 47h uptime. Frontend 17.51MB, 4h uptime. 149 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle34.md",
+      "timestamp": "2026-06-01T05:55:45Z"
     }
   ],
   "blockedTasks": [],
@@ -417,7 +423,7 @@
   },
   "lastCFOReport": "2026-06-03T05:47:58Z",
   "lastITScan": "2026-06-01T05:47:20Z",
-  "lastInfraAudit": "2026-06-01T03:55:30Z",
+  "lastInfraAudit": "2026-06-01T05:55:45Z",
   "lastSecurityAudit": "2026-06-02T20:00:00Z",
   "lastCTOReview": "2026-06-02T21:00:00Z",
   "_devops_last": "2026-06-01T18:00:00Z",
