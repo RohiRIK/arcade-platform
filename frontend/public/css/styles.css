@@ -165,6 +165,10 @@ select:focus-visible, input:focus-visible { border-color: var(--accent); outline
   background: linear-gradient(135deg, #0c0c1a 0%, #1a1a2e 100%) !important;
   text-shadow: 0 0 20px #76ff03, 0 0 40px #76ff03, 0 0 10px #00e5ff;
 }
+.game-card[data-game="pac-man"] .banner {
+  background: linear-gradient(135deg, #080810 0%, #1a1a2e 100%) !important;
+  text-shadow: 0 0 20px #ffd600, 0 0 40px rgba(255, 23, 68, 0.25);
+}
 
 /* --- prefers-reduced-motion Accessibility --- */
 @media (prefers-reduced-motion: reduce) {

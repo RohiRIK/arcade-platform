@@ -86,13 +86,13 @@ function startBreakoutPrismShatter(canvas, ctx) {
 
   // === SOUND EFFECTS (7 zzfx sounds) ===
   const SFX = {
-    glass_clink:     function(pitch) { try { zzfx(.3,,pitch||1800,.01,.02,.05,1,2,,,,,,,,,,.3,.01); } catch(e){} },
-    mirror_ping:     function() { try { zzfx(.2,,880,.01,.01,.04,1,1,,,,,,,,,,.3,.01); } catch(e){} },
-    drop_womp:       function() { try { zzfx(.4,,400,.02,.1,.15,2,1,-10,,,,,,,,,.5,.05); } catch(e){} },
-    chime_cascade:   function() { try { zzfx(.3,,1200,.01,.15,.1,1,1,,,,,,,,,,.4,.02); } catch(e){} },
-    heat_sizzle:     function() { try { zzfx(.2,,0,.01,.1,.05,4,2,,,,,,,,,,.2,.01); } catch(e){} },
-    victory_cascade: function() { try { zzfx(.5,,523,.02,.3,.2,1,1,,,,,,,,,,.8,.1); } catch(e){} },
-    gem_pickup:      function() { try { zzfx(.3,,660,.01,.05,.05,1,1,,,990,,,,,,,,,.02); } catch(e){} },
+    glass_clink:     function(pitch) { try { zzfx(...[.3,,pitch||1800,.01,.02,.05,1,2,,,,,,,,,,.3,.01]); } catch(e){} },
+    mirror_ping:     function() { try { zzfx(...[.2,,880,.01,.01,.04,1,1,,,,,,,,,,.3,.01]); } catch(e){} },
+    drop_womp:       function() { try { zzfx(...[.4,,400,.02,.1,.15,2,1,-10,,,,,,,,,.5,.05]); } catch(e){} },
+    chime_cascade:   function() { try { zzfx(...[.3,,1200,.01,.15,.1,1,1,,,,,,,,,,.4,.02]); } catch(e){} },
+    heat_sizzle:     function() { try { zzfx(...[.2,,0,.01,.1,.05,4,2,,,,,,,,,,.2,.01]); } catch(e){} },
+    victory_cascade: function() { try { zzfx(...[.5,,523,.02,.3,.2,1,1,,,,,,,,,,.8,.1]); } catch(e){} },
+    gem_pickup:      function() { try { zzfx(...[.3,,660,.01,.05,.05,1,1,,,990,,,,,,,,,.02]); } catch(e){} },
   };
 
   // === GAME STATE ===
