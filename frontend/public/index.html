@@ -45,6 +45,7 @@
 <script src="js/games/breakout-prism-shatter.js"></script>
 <script src="js/games/tetris-cascade.js"></script>
 <script src="js/games/space-invaders-last-frequency.js"></script>
+<script src="js/games/frogger-neon-crossing.js"></script>
 <script src="js/main.js"></script>
 
 <script>
@@ -121,7 +122,7 @@ function launchGame(id, name) {
   else if (id==='tetris') currentGame = startTetrisCascade(canvas, ctx);
   else if (id==='space-invaders') currentGame = startSpaceInvadersLastFrequency(canvas, ctx);
   else if (id==='pac-man') currentGame = startPacMan(canvas, ctx);
-  else if (id==='frogger') currentGame = startFrogger(canvas, ctx);
+  else if (id==='frogger') currentGame = startFroggerNeonCrossing(canvas, ctx);
   document.getElementById('gameControls').textContent = currentGame?.controls || 'Arrow keys to play';
   // Hide loading overlay after game initializes
   setTimeout(() => overlay.classList.add('hidden'), 400);

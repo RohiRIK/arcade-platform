@@ -96,3 +96,14 @@ When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` message
 - During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
 - Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
 
+## Post-Deploy Verification
+After deploy script runs, `curl -s https://arcade.rohi-lab.org/ | md5sum` and compare to `md5sum frontend/public/index.html`. Report match/mismatch.
+
+## Deploy Diff Report
+After each deploy, run `git diff HEAD~1 --stat` and include summary in outbox.
+
+## Playwright E2E
+Create and maintain `tests/e2e/` with basic tests for all 7 games (load, canvas renders, no JS errors). Run with `bunx playwright test`.
+
+## Release Notes
+After deploy, generate human-readable changelog from recent commits.

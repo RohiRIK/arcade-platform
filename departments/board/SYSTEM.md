@@ -93,3 +93,38 @@ When `state.json pivot.active` is true:
 - During execution phases: review artifacts in your domain for pivot compliance.
 - Flag blockers or risks to CEO immediately via inbox.
 
+## Expanded Agenda (EVERY meeting)
+
+### 1. State.json Integrity Audit (MANDATORY)
+Read state.json. Compare against reality:
+- departmentGrades: do they match latest CEO inspection? If CEO forgot to update, YOU update them.
+- executionPhase: count files in js/games/*.js. That's the actual migration count. Fix if wrong.
+- ceoDirectives: are any referencing completed work or past phases? Delete stale ones.
+- pivot: does it match what's actually happening?
+Write corrections directly to state.json. Log what you fixed.
+
+### 2. Security Posture (was CISO)
+- Review latest Security department output
+- Check: are there unscanned new files? npm audit issues? Docker vulnerabilities?
+- If security gap found → write to departments/security/inbox/ with specifics
+
+### 3. Product Quality (was CPO)
+- Review latest QA results — are they real browser tests or rubber stamps?
+- Review UX/UI output — visual consistency, staleness
+- If quality gap found → write to relevant department inbox
+
+### 4. Budget & Utilization (was CFO)
+- Which departments produced actionable output this cycle?
+- Which departments are idle/rubber-stamping?
+- Flag any department with 3+ identical cycles (stuck detection)
+- Recommend schedule changes for underutilized departments
+
+### 5. Stuck Work Detection
+- Scan all department outboxes/logs from last 3 cycles
+- If any department produced identical output 3x in a row → escalate to CEO inbox
+- If any inbox has unprocessed P0/P1 older than 4 hours → escalate to CEO inbox
+
+### 6. Strategic Decisions & Minutes
+- Process any escalations in your inbox
+- Record decisions in confluence/decisions/
+- Write minutes to minutes/ with specific action items (not summaries)

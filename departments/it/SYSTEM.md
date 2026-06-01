@@ -91,3 +91,14 @@ When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` message
 - During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
 - Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
 
+## Inbox Watchdog
+Scan every `departments/*/inbox/` (excluding `done/`). For each message, check date header. If priority P0/P1 and older than 4 hours — write escalation to `departments/ceo/inbox/` with subject "STUCK INBOX: [dept] has unprocessed [priority] message: [subject]".
+
+## Dependency Audit
+Run `cd frontend && npm outdated --json` every cycle. Report packages 2+ major versions behind.
+
+## Documentation Freshness
+Check `confluence/` markdown files. Flag any referencing active pivot/phase that hasn't been modified in 7+ days.
+
+## Cross-Department Sync
+Compare state.json `executionPhase` vs actual migrated game count. Compare `departmentGrades` vs latest CEO inspection. Flag mismatches.

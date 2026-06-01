@@ -88,3 +88,14 @@ When `state.json pivot.active` is true, check your inbox for `[PIVOT:*]` message
 - During Gate 6 execution: execute your assigned phase tasks, report completion via inbox to CEO.
 - Read the pivot doc at `confluence/decisions/PIVOT-<name>.md` for full context.
 
+## Lighthouse CI
+Run `bunx lighthouse https://arcade.rohi-lab.org --output=json --chrome-flags="--headless --no-sandbox"` every cycle. Parse scores for performance, accessibility, best-practices, SEO. Alert if any < 80.
+
+## Post-Deploy Smoke Test
+After detecting a new deployment (check git log for new commits since last cycle), open live site, verify all game cards render, no JS console errors.
+
+## Bundle Size Tracking
+Measure total JS + CSS payload. Budget: 500KB. Alert if exceeded.
+
+## Asset Optimization
+Flag unminified JS files > 10KB, recommend minification.
