@@ -11,14 +11,14 @@
   "lastUpdated": "2026-06-01T19:02:05Z",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T21:00:00Z",
+  "lastBoardMeeting": "2026-06-01T21:01:50Z",
   "lastCEOInspection": "2026-06-01T19:02:05Z",
   "ceoDirectives": {
-    "rnd": "Phase 3: Build Frogger Neon Crossing next (spec ready). Then Pac-Man (needs spec). 5/7 games migrated.",
+    "rnd": "Phase 3: Build Pac-Man (last game). 6/7 games migrated. Frogger+Space Invaders+Tetris all shipped.",
     "uxui": "Standing by. All 7/7 card identities done. Game selection redesign ready for Phase 4. No action until Phase 4.",
     "infra": "Continue routine audits. Exempt from pivot.",
-    "pm": "Phase 3 at 5/7 games migrated. Track Frogger+Pac-Man builds. Keep status accurate.",
-    "board": "Phase 3 active. 5/7 games migrated. Frogger+Pac-Man remain. Enforce state.json accuracy per C-Level Reform.",
+    "pm": "Phase 3 at 6/7 games migrated. Track Pac-Man build. Keep status accurate.",
+    "board": "Phase 3 active. 6/7 games migrated. Pac-Man remains. Enforce state.json accuracy per C-Level Reform.",
     "qa": "All 7 games passing. Continue regression each cycle. Prepare quality bar tests for Frogger when R&D ships.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
     "devops": "Routine CI. Container rebuild after R&D ships Frogger. Hold CI changes until Phase 4.",
@@ -49,6 +49,18 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
+    {
+      "dept": "rnd",
+      "action": "PHASE 3 SPEC: Pac-Man Phantom Maze. Full migration spec with fog-of-war, 4 ghost AI personalities, 7 difficulty levels, 8 zzfx sounds, particle system, Ghost Train wow moment. Per CTO P1 directive — spec before build.",
+      "artifact": "departments/rnd/specs/pac-man-phantom-maze.md",
+      "timestamp": "2026-06-02T10:25:00Z"
+    },
+    {
+      "dept": "security",
+      "action": "Cycle 15: Scanned 3 unscanned game files (tetris-cascade 328 lines, space-invaders-last-frequency 960 lines, frogger-neon-crossing 665 lines). Zero eval/Function/fetch/external URL patterns. npm audit clean. All 6 game files now scanned. Zero open vulnerabilities.",
+      "artifact": "departments/security/audits/2026-06-03-cycle15.md",
+      "timestamp": "2026-06-03T01:00:00Z"
+    },
     {
       "dept": "it",
       "action": "Cycle 36 scan: 208 logs (2 invalid JSON fixed \u2014 DevOps shell expansion), zero naming violations (18th consecutive clean cycle), all structural checks pass. No fixes needed beyond the 2 log repairs.",
@@ -237,6 +249,30 @@
       "action": "Cycle 42 scan: 255 logs valid JSON, zero naming violations (24th consecutive clean cycle), all structural checks pass. Inbox watchdog escalated 4 stuck P0/P1 messages (QA 2xP0 9-14h old, R&D 2xP1 15h+ old) to CEO. 2 new orphan files (docker-compose.yml, CNAME). npm deps current.",
       "artifact": "departments/it/scans/2026-06-03-cycle42.md",
       "timestamp": "2026-06-01T23:00:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 41 audit: all healthy. Backend 0% CPU, 22.55MB RAM, 7 games, ~2.5d uptime. Frontend 17.46MB, 8h uptime. 256 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle41.md",
+      "timestamp": "2026-06-01T19:56:00Z"
+    },
+    {
+      "dept": "devops",
+      "action": "Routine CI: 9/9 pass. Backend 131MB, frontend 51MB, build 3s, 7 games, non-root verified. Post-deploy verification: live hash matches local (e41fd65a). Deploy diff: 27 files changed (Frogger added, C-level reform processed). Holding CI changes per CEO directive (Phase 4).",
+      "artifact": "logs/20260601T200100Z-devops.json",
+      "timestamp": "2026-06-01T20:01:31Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Changelog+status updated. Frogger build tracked (6/7 migrated). Deploy gap risk (3 undeployed). Stuck inbox escalation noted.",
+      "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+      "timestamp": "2026-06-01T20:53:48Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 43 scan: 264 logs valid JSON, zero naming violations (25th consecutive clean cycle), all structural checks pass. Inbox watchdog escalated 4 NEW stuck P1 messages (CFO/CISO/CPO dept-merged 4.1h, DevOps role-expansion 4.2h) to CEO. Prior QA/R&D escalation unprocessed. npm deps current.",
+      "artifact": "departments/it/scans/2026-06-03-cycle43.md",
+      "timestamp": "2026-06-02T21:50:00Z"
     }
   ],
   "blockedTasks": [],
@@ -278,7 +314,8 @@
       "breakout-prism-shatter",
       "tetris-cascade",
       "space-invaders-last-frequency",
-      "frogger-neon-crossing"
+      "frogger-neon-crossing",
+      "pac-man-phantom-maze"
     ],
     "built": [
       "snake",
@@ -374,9 +411,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Status updated. Frogger pipeline corrected (specced). CEO inspection 34h+ overdue flagged. HR blocker surfaced.",
+    "action": "Changelog+status updated. 6/7 migrated. Pac-Man last. Deploy gap widening.",
     "artifact": "departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-01T18:51:53Z"
+    "timestamp": "2026-06-01T20:53:48Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -427,10 +464,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
-  "lastITScan": "2026-06-01T23:00:00Z",
-  "lastInfraAudit": "2026-06-01T17:56:14Z",
-  "lastSecurityAudit": "2026-06-01T18:00:00Z",
-  "lastCTOReview": "2026-06-01T15:03:06Z",
-  "_devops_last": "2026-06-01T21:00:00Z",
-  "lastAnalyticsReport": "2026-06-01T17:31:09Z"
+  "lastITScan": "2026-06-02T21:50:00Z",
+  "lastInfraAudit": "2026-06-01T19:56:00Z",
+  "lastSecurityAudit": "2026-06-03T01:00:00Z",
+  "lastCTOReview": "2026-06-02T08:00:00Z",
+  "_devops_last": "2026-06-01T20:01:31Z",
+  "lastAnalyticsReport": "2026-06-02T21:32:34Z"
 }
