@@ -736,13 +736,8 @@ function startSnake(canvas, ctx) {
     if (waitingToStart) {
       waitingToStart = false;
       running = true;
-      // If an arrow key was pressed, use it as initial direction
-      const map = {
-        ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 },
-        ArrowLeft: { x: -1, y: 0 }, ArrowRight: { x: 1, y: 0 }
-      };
-      const nd = map[e.key];
-      if (nd) { direction = nd; nextDirection = null; }
+      // Do NOT set direction from first keypress — keep default (right)
+      // On mobile, users naturally press ▲ first, causing instant death
       if (!audioInited) initAmbientAudio();
       e.preventDefault();
       return;

@@ -31,14 +31,29 @@ For each of the 7 games:
 2. Check for JavaScript errors — zero errors is the only acceptable state
 3. Any JS error = **P2 bug**, report with full error message
 
-### Step 5: Regression
+### Step 5: Mobile / Touch Verification (every game)
+1. Test with a mobile viewport (or emulate mobile in browser DevTools)
+2. Verify touch D-pad buttons appear when a game is launched
+3. Tap each touch button — verify the game responds (character moves, bullet fires)
+4. Verify touch **hold** works for continuous movement games (Pong, Breakout, Space Invaders)
+5. Verify touch buttons dispatch both `keydown` (on touchstart) AND `keyup` (on touchend)
+6. If any touch button does nothing — this is a **P1-CRITICAL bug**. Stop and report immediately.
+
+Common mobile pitfalls:
+- Game listens on `window` but touch dispatches to `document` → no response
+- First touch sets direction AND starts game → instant death
+- No `keyup` on touchend → continuous movement never stops
+
+### Step 6: Regression
 - If ANY game was changed, test ALL 7 games (not just the changed one)
 - A change to shared modules (platform-ui, audio, engine-reset) = mandatory full regression
+- Touch controls are shared code — if changed, test ALL games on mobile
 
 ## Output
 QA outbox report MUST include for each game:
 - ✅ or ❌ Launch
-- ✅ or ❌ Input response
+- ✅ or ❌ Input response (desktop keyboard)
+- ✅ or ❌ Input response (mobile touch)
 - ✅ or ❌ Gameplay (score, game over, restart)
 - ✅ or ❌ Console clean
 - Screenshot if any failure

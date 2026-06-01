@@ -151,9 +151,12 @@ function renderTouchControls(gameId) {
   tc.querySelectorAll('.touch-btn').forEach(btn => {
     const keyMap = { up:'ArrowUp', down:'ArrowDown', left:'ArrowLeft', right:'ArrowRight', fire:' ' };
     const key = keyMap[btn.dataset.dir];
-    const fireKey = () => document.dispatchEvent(new KeyboardEvent('keydown', { key }));
-    btn.addEventListener('touchstart', e => { e.preventDefault(); fireKey(); });
-    btn.addEventListener('mousedown', e => { e.preventDefault(); fireKey(); });
+    const fireKeyDown = () => document.dispatchEvent(new KeyboardEvent('keydown', { key }));
+    const fireKeyUp = () => document.dispatchEvent(new KeyboardEvent('keyup', { key }));
+    btn.addEventListener('touchstart', e => { e.preventDefault(); fireKeyDown(); });
+    btn.addEventListener('touchend', e => { e.preventDefault(); fireKeyUp(); });
+    btn.addEventListener('mousedown', e => { e.preventDefault(); fireKeyDown(); });
+    btn.addEventListener('mouseup', e => { e.preventDefault(); fireKeyUp(); });
   });
 }
 
@@ -1045,8 +1048,8 @@ function startSpaceInvaders(canvas, ctx) {
     if (e.key === ' ') canFire = true;
   }
 
-  window.addEventListener('keydown', onKeyDown);
-  window.addEventListener('keyup', onKeyUp);
+  document.addEventListener('keydown', onKeyDown);
+  document.addEventListener('keyup', onKeyUp);
 
   /* --- Init & start --- */
   initGame();
@@ -1056,8 +1059,8 @@ function startSpaceInvaders(canvas, ctx) {
     controls: '← → Move | Space Fire | Enter Restart',
     cleanup: function() {
       cancelAnimationFrame(animId);
-      window.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('keyup', onKeyUp);
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('keyup', onKeyUp);
     }
   };
 }

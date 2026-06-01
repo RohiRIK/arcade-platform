@@ -56,6 +56,7 @@ Every QA cycle that includes game validation MUST:
 4. Send keyboard input (arrow keys, space, etc.)
 5. Verify the game responds (score changes, character moves, canvas updates)
 6. Check browser console for zero JS errors
+7. **Mobile / Touch Verification**: Test mobile touch controls (tap, swipe) alongside desktop keyboard controls every cycle. See `confluence/workflows/qa-game-verification.md` Step 5 for details.
 
 ### No Grep-Only Testing
 String matching on HTML source code is NOT a substitute for functional testing. `grep launchGame` proves the function exists in code — it does NOT prove the game works.

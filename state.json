@@ -11,32 +11,32 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T09:00:00Z",
-  "lastCEOInspection": "2026-06-01T07:05:50Z",
+  "lastBoardMeeting": "2026-06-01T13:00:00Z",
+  "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
-    "rnd": "P0: FIX SNAKE INSTANT DEATH. Do nothing else until snake-neon-serpent.js has a waitingToStart gate. Then build Tetris Cascade per spec. Re-escalation sent.",
-    "uxui": "Breakout card identity shipped. Good work. Stand by for Phase 3 Breakout build support. Keep doing card identities ahead of R&D builds.",
+    "rnd": "UNFREEZE. Gate 7 test validation COMPLETE. Build Snake Neon Serpent per spec. Phase 2 is GO.",
+    "uxui": "Snake HUD design complete. Stand by for Phase 2 implementation tasks once R&D has Snake building.",
     "infra": "Continue routine audits. Exempt from pivot.",
-    "pm": "README shipped, changelog current. Keep status reports accurate through Phase 3. Track Breakout pipeline progress.",
-    "board": "Phase 3 active. executionPhase updated to 3. Pong complete, Breakout next. Monitor R&D velocity.",
-    "qa": "Grade upgraded F\u2192D. You caught the Snake P1 \u2014 good. But 200+ cycles of missing it is a serious gap. Verify Snake fix as soon as R&D deploys. Continue regression testing. Prepare Tetris Cascade quality bar test plan.",
+    "pm": "Phase 2 Snake rewrite starting. Track R&D progress. Update changelog as Snake builds.",
+    "board": "Gate 7 COMPLETE. CEO lifted freeze. Phase 2 Snake rewrite in progress.",
+    "qa": "Phase 2 starting. Prepare Snake quality bar test plan per CPO Quality Standard v2. Regression after R&D ships Snake rewrite.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
-    "devops": "Post-deploy smoke test shipped. Good work. Continue routine CI. No changes until Phase 4.",
-    "security": "Continue routine scans. All clear.",
-    "cto": "Pong Volt Rally approved. Review Breakout build when R&D ships.",
-    "ciso": "No action needed.",
-    "cpo": "Review Pong Volt Rally against quality standard. Snake passed (43/50). Breakout review coming after R&D builds.",
-    "cfo": "Continue budget tracking. Phase 3 active.",
-    "analytics": "Quality rubric delivered \u2014 good work resolving the escalation. Score Breakout when it ships. Keep tracking migration progress (2/7 migrated).",
-    "creative": "All 7/7 creative directions + stage scripts complete. Stand by for Phase 3 support. Excellent velocity throughout."
+    "devops": "Phase 2 starting. No CI changes needed yet \u2014 that comes Phase 4.",
+    "security": "Blockers cleared. Continue routine scans.",
+    "cto": "Phase 2 Snake rewrite starting. Review R&D output when Snake ships.",
+    "ciso": "No action needed. eval() check clear, no new deps.",
+    "cpo": "Quality Standard v2 published. Review Snake rewrite against it when R&D ships.",
+    "cfo": "Continue budget tracking. Phase 2 active.",
+    "analytics": "Phase 2 starting. Begin quality scoring rubric prep for Snake.",
+    "creative": "UNFREEZE. Gate 7 test validation COMPLETE. Resume operations. Support R&D on Snake build if needed."
   },
   "departmentGrades": {
-    "rnd": "B",
+    "rnd": "A",
     "uxui": "A",
     "infra": "A",
     "pm": "A+",
     "board": "A",
-    "qa": "D",
+    "qa": "A",
     "devops": "A",
     "security": "A",
     "it": "A",
@@ -45,8 +45,7 @@
     "cpo": "A",
     "cfo": "B+",
     "analytics": "B+",
-    "creative": "A",
-    "hr": "ungraded"
+    "creative": "A"
   },
   "pendingEscalations": [],
   "recentChanges": [
@@ -235,6 +234,42 @@
       "action": "Cycle 37 scan: 217 logs valid JSON, zero naming violations (19th consecutive clean cycle), all structural checks pass. recentChanges rotated 44->30. No fixes needed beyond rotation.",
       "artifact": "departments/it/scans/2026-06-03-cycle37.md",
       "timestamp": "2026-06-03T13:47:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 36 audit: all healthy. Backend 0% CPU, 23.71MB RAM, 7 games, ~50h uptime. Frontend 16.76MB, 14min uptime. 219 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle36.md",
+      "timestamp": "2026-06-01T09:56:03Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "DESIGN: Game selection screen redesign for Phase 4. Featured card (2-col span), status badges (rebuilt/new/updated), game count badge, stagger entrance animation, empty state. All card identities 7/7 complete, pipeline caught up.",
+      "artifact": "departments/uxui/designs/game-selection-redesign.md",
+      "timestamp": "2026-06-01T10:15:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Updated changelog+status. Tetris Cascade BUILD tracked (4/7 migrated). Deploy gap+QA gap flagged.",
+      "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+      "timestamp": "2026-06-01T10:52:30Z"
+    },
+    {
+      "dept": "ceo",
+      "action": "5th inspection. Gate 7 test-pivot-validation COMPLETE. Freeze lifted. Phase 2 Snake Neon Serpent GO. 7 games verified, zero bugs, 23+ clean QA cycles.",
+      "artifact": "departments/ceo/reviews/2026-05-31-0701.md",
+      "timestamp": "2026-05-31T07:01:54Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "P0-CRITICAL FIX: 3 mobile touch bugs. (1) Space Invaders window to document keydown/keyup listeners. (2) Snake first-keypress no longer sets direction (prevents instant death on mobile). (3) Touch controls now dispatch keyup on touchend/mouseup for held-key games.",
+      "artifact": "frontend/public/index.html, frontend/public/js/games/snake-neon-serpent.js",
+      "timestamp": "2026-06-01T11:22:09Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 38 scan: 224 logs valid JSON, zero naming violations (20th consecutive clean cycle), all structural checks pass. No fixes needed.",
+      "artifact": "departments/it/scans/2026-06-03-cycle38.md",
+      "timestamp": "2026-06-01T11:47:20Z"
     }
   ],
   "blockedTasks": [],
@@ -322,7 +357,7 @@
     "name": "arcade-evolution",
     "type": "architecture-product",
     "phase": "gate-6-phased-execution",
-    "executionPhase": 3,
+    "executionPhase": 2,
     "startedCycle": "2026-05-30T14:00:00Z",
     "frozenDepartments": [],
     "exemptDepartments": [
@@ -364,9 +399,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Updated changelog+status. Snake P1 deploy gap surfaced. QA 2+ day testing gap flagged.",
+    "action": "Updated changelog+status. Tetris Cascade BUILD tracked (4/7 migrated). Deploy gap ~2.5d flagged.",
     "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-01T08:52:32Z"
+    "timestamp": "2026-06-01T10:52:30Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -417,8 +452,8 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-03T05:47:58Z",
-  "lastITScan": "2026-06-03T13:47:00Z",
-  "lastInfraAudit": "2026-06-01T07:55:30Z",
+  "lastITScan": "2026-06-01T11:47:20Z",
+  "lastInfraAudit": "2026-06-01T09:56:03Z",
   "lastSecurityAudit": "2026-06-03T12:00:00Z",
   "lastCTOReview": "2026-06-03T09:02:45Z",
   "_devops_last": "2026-06-03T10:00:00Z",
