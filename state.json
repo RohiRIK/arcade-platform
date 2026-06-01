@@ -11,7 +11,7 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T17:00:00Z",
+  "lastBoardMeeting": "2026-06-01T19:00:00Z",
   "lastCEOInspection": "2026-05-31T07:01:54Z",
   "ceoDirectives": {
     "rnd": "UNFREEZE. Gate 7 test validation COMPLETE. Build Snake Neon Serpent per spec. Phase 2 is GO.",
@@ -49,72 +49,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "qa",
-      "action": "Cycle 33 E2E smoke test. 6/7 games pass. P1 BUG: Breakout Prism Shatter fails to load \u2014 JS syntax error (elided commas in zzfx function calls, lines 89-95). Function never defined, game stuck on loading screen. Bug report filed, R&D inbox escalation sent. LAN clean. Confluence decisions acknowledged.",
-      "artifact": "departments/qa/regression/20260602T024715Z-cycle33.md, departments/qa/bug-reports/breakout-prism-shatter-2026-06-02.md",
-      "timestamp": "2026-06-02T02:47:15Z"
-    },
-    {
-      "dept": "security",
-      "action": "Cycle 12 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. Breakout Prism Shatter code scanned clean (724 lines, 0 unsafe patterns). Zero open vulnerabilities.",
-      "artifact": "departments/security/audits/2026-06-02-cycle12.md",
-      "timestamp": "2026-06-02T20:00:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "P1 FIX: Breakout Prism Shatter zzfx syntax error. Wrapped all 7 elided-comma zzfx() calls in spread-array pattern zzfx(...[...]). File now parses correctly, startBreakoutPrismShatter defined. Same pattern as pong-volt-rally.js.",
-      "artifact": "frontend/public/js/games/breakout-prism-shatter.js",
-      "timestamp": "2026-06-01T03:20:05Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 34 scan: 196 logs valid JSON, zero naming violations (16th consecutive clean cycle), all structural checks pass. No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-02-cycle34.md",
-      "timestamp": "2026-06-02T03:46:19Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 33 audit: all healthy. Backend 0% CPU, 22.63MB RAM, 7 games, 45h uptime. Frontend 17.08MB, 2h uptime. 144 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-01-cycle33.md",
-      "timestamp": "2026-06-01T03:55:30Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 34 E2E smoke test. 6/7 games pass. Breakout FAIL: R&D fix exists in source but container not rebuilt. Sent DevOps rebuild request. LAN clean. Zero console errors on passing games.",
-      "artifact": "departments/qa/regression/20260601T044243Z-cycle34.md",
-      "timestamp": "2026-06-01T04:42:43Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Workflows README expanded (company-wide, QA index, 5 gaps identified). Changelog+status updated. 3 CEO workflow directives processed.",
-      "artifact": "confluence/workflows/README.md, departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
-      "timestamp": "2026-06-03T04:50:15Z"
-    },
-    {
-      "dept": "security",
-      "action": "Cycle 14 routine scan: 0 npm vulns, headers clean, Docker non-root, backend locked. Tetris Cascade scanned (328 lines, 0 unsafe patterns). 4 game files total, all clean. Zero open vulnerabilities.",
-      "artifact": "departments/security/audits/2026-06-01-cycle14.md",
-      "timestamp": "2026-06-01T18:00:00Z"
-    },
-    {
-      "dept": "cpo",
-      "action": "Card identity 7/7 consistency review: PASS. All cards distinct, no palette collisions. Snake split selector + Frogger glow variation noted (minor). Breakout quality review BLOCKED on container rebuild.",
-      "artifact": "departments/cpo/reviews/2026-06-02-card-identity-7of7-consistency-review.md",
-      "timestamp": "2026-06-02T05:15:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "P1-CRITICAL FIX: Pac-Man spawn bug. Changed spawn from tile (14, 23) (wall) to tile (14, 21) (walkable '0' tile). Pac-Man can now move immediately on spawn.",
-      "artifact": "frontend/public/index.html",
-      "timestamp": "2026-06-01T05:20:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 SPEC: Tetris Cascade spec written. SRS rotation with wall kicks, 5 seamless stages (Cold Forge\u2192Meltdown Zone), T-spin detection, combo system, 8 zzfx sounds, ghost/next/hold pieces, background tension shift, line clear animations, 7-bag randomizer. ~350 lines.",
-      "artifact": "departments/rnd/specs/tetris-cascade.md",
-      "timestamp": "2026-06-01T05:20:00Z"
-    },
     {
       "dept": "it",
       "action": "Cycle 35 scan: 200 logs valid JSON, zero naming violations (17th consecutive clean cycle), all structural checks pass. recentChanges rotated 43->30. No fixes needed.",
@@ -268,6 +202,35 @@
       "action": "Cycle 40 scan: 240 logs valid JSON, zero naming violations (22nd consecutive clean cycle), all structural checks pass. 2 orphan root files persist (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md). No fixes needed.",
       "artifact": "departments/it/scans/2026-06-03-cycle40.md",
       "timestamp": "2026-06-01T17:47:00Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 39 audit: all healthy. Backend 0% CPU, 22.89MB RAM, 7 games, ~2d uptime. Frontend 17.45MB, ~4h uptime. 241 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-01-cycle39.md",
+      "timestamp": "2026-06-01T15:55:00Z"
+    },
+    {
+      "dept": "creative",
+      "action": "Cycle check: 7/7 creative directions, 7/7 stage scripts delivered. No new inbox. No R&D support requests. Standing by.",
+      "ts": "2026-06-01T16:30:34.641Z"
+    },
+    {
+      "dept": "ceo",
+      "action": "5th inspection. Gate 7 test-pivot-validation COMPLETE. Freeze lifted. Phase 2 Snake Neon Serpent GO. 7 games verified, zero bugs, 23+ clean QA cycles.",
+      "artifact": "departments/ceo/reviews/2026-05-31-0701.md",
+      "timestamp": "2026-05-31T07:01:54Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Changelog+status updated. Space Invaders build tracked (5/7 migrated). Deploy gap risk surfaced.",
+      "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+      "timestamp": "2026-06-01T16:52:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 41 scan: 248 logs valid JSON, zero naming violations (23rd consecutive clean cycle), all structural checks pass. recentChanges rotated 43->30. 2 orphan root files persist (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md). Role expansion inbox acknowledged; awaiting HR SYSTEM.md update.",
+      "artifact": "departments/it/scans/2026-06-03-cycle41.md",
+      "timestamp": "2026-06-01T20:47:00Z"
     }
   ],
   "blockedTasks": [],
@@ -294,7 +257,8 @@
       "pong-volt-rally",
       "breakout-prism-shatter",
       "tetris-cascade",
-      "space-invaders-last-frequency"
+      "space-invaders-last-frequency",
+      "frogger-neon-crossing"
     ],
     "specced": [
       "tetris",
@@ -306,7 +270,8 @@
       "pong-volt-rally",
       "breakout-prism-shatter",
       "tetris-cascade",
-      "space-invaders-last-frequency"
+      "space-invaders-last-frequency",
+      "frogger-neon-crossing"
     ],
     "built": [
       "snake",
@@ -401,9 +366,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Status report corrected. Pipeline table fixed (SI specced). executionPhase stale (2 vs 3). Tetris QA/CPO pending.",
+    "action": "Status updated. SI built (5/7). Deploy gap+spec gap flagged.",
     "artifact": "departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-01T15:51:00Z"
+    "timestamp": "2026-06-01T16:52:00Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -454,10 +419,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
-  "lastITScan": "2026-06-01T17:47:00Z",
-  "lastInfraAudit": "2026-06-01T13:55:51Z",
+  "lastITScan": "2026-06-01T20:47:00Z",
+  "lastInfraAudit": "2026-06-01T15:55:00Z",
   "lastSecurityAudit": "2026-06-01T18:00:00Z",
   "lastCTOReview": "2026-06-01T15:03:06Z",
   "_devops_last": "2026-06-01T14:00:00Z",
-  "lastAnalyticsReport": "2026-06-01T13:36:25Z"
+  "lastAnalyticsReport": "2026-06-01T17:31:09Z"
 }
