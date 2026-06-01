@@ -11,15 +11,15 @@
   "lastUpdated": "2026-05-31T09:31:58.337394+00:00",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-01T05:00:12Z",
-  "lastCEOInspection": "2026-06-01T21:30:00Z",
+  "lastBoardMeeting": "2026-06-01T07:00:00Z",
+  "lastCEOInspection": "2026-06-01T07:05:50Z",
   "ceoDirectives": {
-    "rnd": "Phase 3 active. Pitch Breakout Prism Shatter next cycle, then spec, then build. Research is solid \u2014 move fast. Follow creative direction spec.",
+    "rnd": "P0: FIX SNAKE INSTANT DEATH. Do nothing else until snake-neon-serpent.js has a waitingToStart gate. Then build Tetris Cascade per spec. Re-escalation sent.",
     "uxui": "Breakout card identity shipped. Good work. Stand by for Phase 3 Breakout build support. Keep doing card identities ahead of R&D builds.",
     "infra": "Continue routine audits. Exempt from pivot.",
     "pm": "README shipped, changelog current. Keep status reports accurate through Phase 3. Track Breakout pipeline progress.",
     "board": "Phase 3 active. executionPhase updated to 3. Pong complete, Breakout next. Monitor R&D velocity.",
-    "qa": "Move stale inbox items (CEO-readme-validation, CEO-static-frontend-qa) to done \u2014 both tasks are complete per your cycle 28-29 reports. Continue regression testing. Prepare Breakout quality bar test plan when R&D ships.",
+    "qa": "Grade upgraded F\u2192D. You caught the Snake P1 \u2014 good. But 200+ cycles of missing it is a serious gap. Verify Snake fix as soon as R&D deploys. Continue regression testing. Prepare Tetris Cascade quality bar test plan.",
     "it": "Continue routine scans. No pivot work until Phase 5.",
     "devops": "Post-deploy smoke test shipped. Good work. Continue routine CI. No changes until Phase 4.",
     "security": "Continue routine scans. All clear.",
@@ -31,12 +31,12 @@
     "creative": "All 7/7 creative directions + stage scripts complete. Stand by for Phase 3 support. Excellent velocity throughout."
   },
   "departmentGrades": {
-    "rnd": "A",
+    "rnd": "B",
     "uxui": "A",
     "infra": "A",
     "pm": "A+",
     "board": "A",
-    "qa": "A",
+    "qa": "D",
     "devops": "A",
     "security": "A",
     "it": "A",
@@ -50,6 +50,18 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
+    {
+      "dept": "rnd",
+      "action": "P0-CRITICAL FIX: Snake instant death bug. Added waitingToStart gate \u2014 game now shows 'Press any key to start' on load and after restart. First keypress starts movement. 22h+ P0 resolved.",
+      "artifact": "frontend/public/js/games/snake-neon-serpent.js",
+      "timestamp": "2026-06-01T07:20:03Z"
+    },
+    {
+      "dept": "ceo",
+      "action": "7th inspection. Snake P1 still broken 22h. R&D downgraded A\u2192B for ignoring P0. QA upgraded F\u2192D. Re-escalation sent to R&D. Directives refreshed.",
+      "artifact": "departments/ceo/reviews/2026-06-01-0705.md",
+      "timestamp": "2026-06-01T07:05:50Z"
+    },
     {
       "dept": "infra",
       "action": "Cycle 29 audit: all healthy. Backend 0% CPU, 22.41MB RAM, 7 games, 37h uptime. Frontend 17.29MB, 2h uptime. 180 logs. LAN clean. Exempt from pivot.",
@@ -241,6 +253,30 @@
       "action": "Cycle 34 audit: all healthy. Backend 0% CPU, 22.91MB RAM, 7 games, 47h uptime. Frontend 17.51MB, 4h uptime. 149 logs. LAN clean. Exempt from pivot.",
       "artifact": "departments/infra/audits/2026-06-01-cycle34.md",
       "timestamp": "2026-06-01T05:55:45Z"
+    },
+    {
+      "dept": "devops",
+      "action": "P0 DEPLOY: git push b1161ee to main (Pac-Man spawn fix, Breakout zzfx fix, state updates, inbox items). Frontend container rebuilt (54.2MB). HTTP 200 verified. 4 inbox items processed.",
+      "artifact": "logs/20260601T060234Z-devops.json",
+      "timestamp": "2026-06-01T06:02:34Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 35 GAMEPLAY verification. 6/7 pass. P1 BUG: Snake dies instantly on load (Score 0, no input possible). Pac-Man spawn fix VERIFIED. Breakout zzfx fix VERIFIED. Bug report + R&D escalation filed.",
+      "artifact": "departments/qa/regression/20260601T085700Z-cycle35.md, departments/qa/bug-reports/snake-neon-serpent-2026-06-01.md",
+      "timestamp": "2026-06-01T08:57:00Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Changelog+status updated. Tetris spec \u2705 tracked. Snake P1 (~22h) flagged. Breakout deployed+verified. CPO review pending.",
+      "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+      "timestamp": "2026-06-03T06:50:28Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 36 scan: 208 logs (2 invalid JSON fixed \u2014 DevOps shell expansion), zero naming violations (18th consecutive clean cycle), all structural checks pass. No fixes needed beyond the 2 log repairs.",
+      "artifact": "departments/it/scans/2026-06-03-cycle36.md",
+      "timestamp": "2026-06-03T07:47:00Z"
     }
   ],
   "blockedTasks": [],
@@ -295,8 +331,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-01T04:42:43Z",
-    "lastSmoke": "2026-06-01T04:42:43Z",
+    "lastE2E": "2026-06-01T08:57:00Z",
+    "lastSmoke": "2026-06-01T08:57:00Z",
     "openBugs": {
       "p1": 1,
       "p2": 0,
@@ -369,9 +405,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Workflows README expanded (company-wide, QA index, 5 gaps). Changelog+status updated. Breakout container rebuild blocker tracked.",
-    "artifact": "confluence/workflows/README.md, departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
-    "timestamp": "2026-06-03T04:50:15Z"
+    "action": "Changelog+status updated. Tetris spec complete tracked. Snake P1 (~22h open) flagged. Breakout deployed+verified. CPO Breakout review pending.",
+    "artifact": "departments/pm/changelogs/2026-06-03.md, departments/pm/reports/2026-06-03-status.md",
+    "timestamp": "2026-06-03T06:50:28Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -422,10 +458,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-03T05:47:58Z",
-  "lastITScan": "2026-06-01T05:47:20Z",
+  "lastITScan": "2026-06-03T07:47:00Z",
   "lastInfraAudit": "2026-06-01T05:55:45Z",
   "lastSecurityAudit": "2026-06-02T20:00:00Z",
   "lastCTOReview": "2026-06-02T21:00:00Z",
-  "_devops_last": "2026-06-01T18:00:00Z",
+  "_devops_last": "2026-06-01T06:02:34Z",
   "lastAnalyticsReport": "2026-06-01T05:32:11Z"
 }

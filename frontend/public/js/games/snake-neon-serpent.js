@@ -43,6 +43,7 @@ function startSnake(canvas, ctx) {
   let zoneReached = localStorage.getItem('arcade_snake_zone_reached') === 'true';
   let foodEaten = 0;
   let running = false;
+  let waitingToStart = true;
   let gameOver = false;
   let currentStage = 1;
   let previousStage = 1;
@@ -375,7 +376,8 @@ function startSnake(canvas, ctx) {
     nextDirection = null;
     score = 0;
     foodEaten = 0;
-    running = true;
+    running = false;
+    waitingToStart = true;
     gameOver = false;
     currentStage = 1;
     previousStage = 1;
@@ -468,6 +470,25 @@ function startSnake(canvas, ctx) {
         isNewBest: score === highScore && score > 0,
         accent: '#39ff14'
       });
+    }
+
+    if (waitingToStart) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const pulse = 0.7 + 0.3 * Math.sin(Date.now() / 400);
+      ctx.fillStyle = `rgba(57, 255, 20, ${pulse})`;
+      ctx.font = 'bold 28px monospace';
+      ctx.fillText('NEON SERPENT', W / 2, H / 2 - 40);
+      ctx.fillStyle = `rgba(255, 255, 255, ${pulse})`;
+      ctx.font = '18px monospace';
+      ctx.fillText('Press any key to start', W / 2, H / 2 + 10);
+      ctx.font = '13px monospace';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.fillText('Arrow keys to move', W / 2, H / 2 + 45);
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
     }
   }
 
@@ -712,6 +733,20 @@ function startSnake(canvas, ctx) {
 
   // === INPUT ===
   const onKey = (e) => {
+    if (waitingToStart) {
+      waitingToStart = false;
+      running = true;
+      // If an arrow key was pressed, use it as initial direction
+      const map = {
+        ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 },
+        ArrowLeft: { x: -1, y: 0 }, ArrowRight: { x: 1, y: 0 }
+      };
+      const nd = map[e.key];
+      if (nd) { direction = nd; nextDirection = null; }
+      if (!audioInited) initAmbientAudio();
+      e.preventDefault();
+      return;
+    }
     if (gameOver && e.key === 'r') { resetGame(); return; }
     const map = {
       ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 },

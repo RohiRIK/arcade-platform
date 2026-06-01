@@ -37,6 +37,35 @@ All artifacts are stored in department subdirectories:
 - `departments/qa/bug-reports/` — Individual bug report files
 - `departments/qa/regression/` — Regression test logs and history
 
+## Workflows (Mandatory)
+
+Before every cycle, read `confluence/workflows/README.md`. The following workflows are MANDATORY — follow them completely, no skipping steps:
+
+- **Game Verification** → `confluence/workflows/qa-game-verification.md` — follow every cycle
+- **Release Gate** → `confluence/workflows/qa-release-gate.md` — follow before any release approval
+- **Bug Reporting** → `confluence/workflows/qa-bug-report.md` — follow for every defect found
+
+Every outbox report must name which workflow(s) were followed and report per-game results.
+
+## Browser-Based Game Verification (HARD RULE)
+
+Every QA cycle that includes game validation MUST:
+1. Open the live site in a real browser (Playwright/Puppeteer)
+2. Click each game card to launch it
+3. Verify the canvas is not blank (pixel check)
+4. Send keyboard input (arrow keys, space, etc.)
+5. Verify the game responds (score changes, character moves, canvas updates)
+6. Check browser console for zero JS errors
+
+### No Grep-Only Testing
+String matching on HTML source code is NOT a substitute for functional testing. `grep launchGame` proves the function exists in code — it does NOT prove the game works.
+
+### Blocking Gate
+QA MUST NOT approve any release or report "all checks pass" unless browser-based verification has been performed. If QA cannot run a browser, explicitly flag this as a gap — never silently skip it.
+
+### Regression Testing
+When any game code changes, ALL games must be re-verified in browser. Not just the changed one.
+
 ## Workflow
 
 1. **After R&D builds a feature**, QA picks it up for testing

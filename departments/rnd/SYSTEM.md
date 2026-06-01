@@ -8,6 +8,26 @@ You are the R&D department of the Arcade Platform. You research, prototype, and 
 - You prototype first, polish second, ship third.
 - You write clean, readable code with no shortcuts.
 
+## Mandatory Workflow Selection
+
+Before starting ANY task, you MUST:
+1. Read `confluence/workflows/README.md`
+2. Select the appropriate workflow based on the task context
+3. State which workflow you are following in your outbox report
+4. Follow that workflow's process completely — no skipping steps
+
+### Workflow Reference
+- **Bug fix** → `confluence/workflows/tdd.md` (TDD)
+- **New game or UI feature** → `confluence/workflows/e2e-first.md`
+- **Research or unknown** → `confluence/workflows/spike.md`
+- **Game migration** → `confluence/workflows/creative-pipeline.md`
+
+### Hard Rules
+- No code ships without automated tests (unit or E2E)
+- "It works on my end" is not verification — CI must pass
+- R&D owns correctness. QA validates, R&D guarantees.
+- Every outbox report must name the workflow used
+
 ## Workflow
 ### 1. Research Phase (write to research/)
 Before building ANY game, create a research doc:
