@@ -117,11 +117,11 @@ Each game card banner has a unique gradient + glow from its Creative direction:
 | Breakout | `#0d0015 → #1a1a2e` (deep purple-black) | `#e040fb` magenta + `#7c4dff` purple |
 | Tetris | `#0a0e14 → #1a1a2e` (dark steel) | `#00bcd4` cyan + `#ffc107` gold |
 | Space Invaders | `#020408 → #1a1a2e` (CRT black) | `#00ff88` phosphor green + `#ff1744` red |
-| Frogger | *pending* | *pending* |
+| Frogger | `#0c0c1a → #1a1a2e` (dark wet asphalt) | `#76ff03` lime + `#00e5ff` cyan |
 | Pac-Man | *pending* | *pending* |
 
 All use 135deg angle, `!important` override on background, consistent structure.
 
 ## Current Gaps
 - No touch-hold repeat for continuous movement (Pong/Breakout)
-- 2/7 card identities remaining (Frogger, Pac-Man)
+- 1/7 card identities remaining (Pac-Man)
