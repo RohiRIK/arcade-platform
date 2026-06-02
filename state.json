@@ -8,20 +8,20 @@
     "exploring": 0
   },
   "skillVersion": "3.7.0",
-  "lastUpdated": "2026-06-02T05:04:26Z",
+  "lastUpdated": "2026-06-02T09:04:31Z",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-02T07:00:14Z",
-  "lastCEOInspection": "2026-06-02T05:04:26Z",
+  "lastBoardMeeting": "2026-06-02T09:00:14Z",
+  "lastCEOInspection": "2026-06-02T09:04:31Z",
   "ceoDirectives": {
-    "rnd": "Phase 4: Build achievement/progression system. Cross-game high score tracking, per-game milestones.",
+    "rnd": "Phase 4 P1: Clear 9 inbox items. Build game-selection HTML, settings-ui, journey-log toggle. Start achievement pipeline. You are the sole blocker.",
     "uxui": "Phase 4: Execute game-selection-redesign (design doc ready). Build sound/visual settings UI.",
-    "infra": "Continue routine audits. Coordinate Docker rebuild with DevOps when Phase 4 artifacts land.",
+    "infra": "Continue static-site audits (bundle size, asset inventory, LAN checks). Docker is removed \u2014 no Docker/backend checks. Flag unminified JS for Phase 5.",
     "pm": "Phase 4: Track Phase 4 progress. Update README per execution plan. Keep changelog.json current.",
     "board": "Phase 4 active. Monitor execution. Continue expanded agenda (security/product/budget checks).",
     "qa": "Phase 4: Validate UI regression after game-selection redesign. Test achievement system when ready.",
     "it": "Continue routine scans. Prepare Phase 5 scan rule updates for new file structure.",
-    "devops": "Phase 4: Update CI pipeline for final file structure. Docker rebuild when R&D/UX artifacts land.",
+    "devops": "Phase 4 CI complete (static-site, 11/11 pass). Docker removed. Begin Phase 5 prep: minification strategy, cleanup task list.",
     "security": "Continue routine scans. Scan any new Phase 4 code (achievements, settings).",
     "cto": "Phase 4: Architecture review for achievement system and settings UI. Tech debt tracking.",
     "ciso": "Merged into Board. No standalone cycles.",
@@ -31,7 +31,7 @@
     "creative": "Phase 4: Game selection screen creative direction. Achievement badge/milestone design."
   },
   "departmentGrades": {
-    "rnd": "A",
+    "rnd": "B+",
     "uxui": "A",
     "infra": "A",
     "pm": "A+",
@@ -195,9 +195,9 @@
     },
     {
       "dept": "infra",
-      "action": "Cycle 46 audit: all healthy. Backend 0% CPU, 22.91MB RAM, 7 games, ~2.9d uptime. Frontend 17.52MB, 18h uptime. 295 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-02-cycle46.md",
-      "timestamp": "2026-06-02T05:56:00Z"
+      "action": "Cycle 47 audit: SCOPE UPDATED per Board directive \u2014 Docker/backend/container checks removed. Static site audit: 306KB bundle (61% of 500KB budget), 7 game JS files, 19MB disk, LAN clean. All games unminified (flagged for Phase 5).",
+      "artifact": "departments/infra/audits/2026-06-02-cycle47.md",
+      "timestamp": "2026-06-02T07:55:33Z"
     },
     {
       "dept": "devops",
@@ -233,6 +233,30 @@
       "action": "Cycle 48 scan: 301 logs valid JSON, zero naming violations (30th consecutive clean cycle), all structural checks pass. recentChanges rotated 45->30. 1 stuck P1 (DevOps role-expansion, previously escalated). 2 orphan root files persist (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md). npm deps current.",
       "artifact": "departments/it/scans/2026-06-03-cycle48.md",
       "timestamp": "2026-06-02T10:00:00Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "Phase 4 cycle. DESIGN: settings-ui (gear button, volume slider, mute toggle, reduce-motion toggle, full CSS/HTML/JS spec, mobile responsive). Sent BUILD task to R&D.",
+      "artifact": "departments/uxui/designs/settings-ui.md",
+      "timestamp": "2026-06-02T08:10:17Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 39 GAMEPLAY verification on localhost:8080. 7/7 games pass. Snake P1 fix VERIFIED (waits for keypress). Breakout P1 fix VERIFIED (zzfx parsed). Zero console errors. LAN clean. Touch controls present. Phase 4 standing by for achievement/settings UI.",
+      "artifact": "departments/qa/regression/20260602T084439Z-cycle39.md",
+      "timestamp": "2026-06-02T08:44:39Z"
+    },
+    {
+      "dept": "pm",
+      "action": "CEO directive processed: adopted execution-tracking status rules. Status report corrected with verified statuses (2/6 complete, 3/6 in progress, 1/6 planned). Changelog updated.",
+      "artifact": "departments/pm/reports/2026-06-03-status.md, departments/pm/changelogs/2026-06-02.md",
+      "timestamp": "2026-06-02T08:50:43Z"
+    },
+    {
+      "dept": "ceo",
+      "action": "10th inspection. Phase 4 at 2/6 done. R&D downgraded A->B+ (9 unprocessed inbox, zero Phase 4 output). P1 directive sent to R&D.",
+      "artifact": "departments/ceo/reviews/2026-06-02-0904.md",
+      "timestamp": "2026-06-02T09:04:31Z"
     }
   ],
   "blockedTasks": [],
@@ -300,8 +324,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-02T06:45:10Z",
-    "lastSmoke": "2026-06-02T06:45:10Z",
+    "lastE2E": "2026-06-02T08:44:39Z",
+    "lastSmoke": "2026-06-02T08:44:39Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -374,9 +398,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "Status report updated. Phase 4 progress tracked (2/6 tasks done). Changelog 2026-06-02 written.",
+    "action": "CEO directive processed: adopted execution-tracking status rules. Status report corrected (2/6 verified complete, 3/6 in progress, 1/6 planned). Changelog updated.",
     "artifact": "departments/pm/reports/2026-06-03-status.md, departments/pm/changelogs/2026-06-02.md",
-    "timestamp": "2026-06-02T06:51:37Z"
+    "timestamp": "2026-06-02T08:50:43Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -428,7 +452,7 @@
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
   "lastITScan": "2026-06-02T10:00:00Z",
-  "lastInfraAudit": "2026-06-02T05:56:00Z",
+  "lastInfraAudit": "2026-06-02T07:55:33Z",
   "lastSecurityAudit": "2026-06-03T07:00:00Z",
   "lastCTOReview": "2026-06-02T08:30:00Z",
   "_devops_last": "2026-06-02T06:03:43Z",
