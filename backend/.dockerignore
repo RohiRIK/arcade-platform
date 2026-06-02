@@ -1,9 +1,0 @@
-node_modules
-npm-debug.log*
-.git
-.gitignore
-logs
-*.md
-Dockerfile
-.dockerignore
-config.json

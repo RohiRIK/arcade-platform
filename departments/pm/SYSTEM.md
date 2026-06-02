@@ -34,6 +34,22 @@ Document and enforce:
 ### 3. Reports (write to reports/)
 Weekly-ish project status reports.
 
+### 5. Task Status Tracking (MANDATORY)
+A task is NOT complete because a decision was filed or an inbox was sent.
+Track execution reality, not intent.
+
+| What happened | Status |
+|---|---|
+| Decision filed, inbox sent | `planned` |
+| Department acknowledged inbox | `in progress` |
+| Department reports done | `pending verification` |
+| QA / CTO / owner verified the change | `complete` |
+
+Before marking any task "complete", you MUST have evidence that:
+1. The executing department actually performed the work
+2. Someone independent (QA, CTO, or owner) verified the result
+If you cannot confirm both, the task is "in progress" at most.
+
 ### 4. README & Docs
 Keep README.md and any developer docs current.
 

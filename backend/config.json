@@ -1,7 +1,0 @@
-{
-  "selfImprovement": {
-    "enabled": true,
-    "mode": "apply",
-    "scope": ["games", "ui", "infra", "docs"]
-  }
-}

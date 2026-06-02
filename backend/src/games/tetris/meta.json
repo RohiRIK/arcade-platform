@@ -1,7 +1,0 @@
-{
-  "name": "Tetris",
-  "description": "Stack falling tetrominoes, clear lines, chase high scores.",
-  "version": "1.0.0",
-  "category": "classic",
-  "color": "#a000f0"
-}

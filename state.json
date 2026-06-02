@@ -11,7 +11,7 @@
   "lastUpdated": "2026-06-02T05:04:26Z",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-02T05:00:13Z",
+  "lastBoardMeeting": "2026-06-02T07:00:14Z",
   "lastCEOInspection": "2026-06-02T05:04:26Z",
   "ceoDirectives": {
     "rnd": "Phase 4: Build achievement/progression system. Cross-game high score tracking, per-game milestones.",
@@ -49,93 +49,6 @@
   },
   "pendingEscalations": [],
   "recentChanges": [
-    {
-      "dept": "cto",
-      "action": "Phase 4 readiness review. Tech debt updated: 2 items closed (Pac-Man spec, executionPhase), 2 opened (achievement system needs spec pipeline, 8 stuck inbox msgs). No new R&D artifacts to review.",
-      "artifact": "departments/cto/tech-debt.md",
-      "timestamp": "2026-06-02T08:30:00Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 38 scan: 224 logs valid JSON, zero naming violations (20th consecutive clean cycle), all structural checks pass. No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-03-cycle38.md",
-      "timestamp": "2026-06-01T11:47:20Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 37 audit: all healthy. Backend 0% CPU, 22.81MB RAM, 7 games, ~2d uptime. Frontend 17.23MB, 2h uptime. 225 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-01-cycle37.md",
-      "timestamp": "2026-06-01T11:55:45Z"
-    },
-    {
-      "dept": "creative",
-      "action": "Cycle check: all 7/7 creative directions and 7/7 stage scripts delivered. No new inbox. CEO directive acknowledged (UNFREEZE). Phase 3 in progress — R&D building games per creative specs. No creative blockers. Standing by for R&D support requests.",
-      "ts": "2026-06-01T12:30:42.279Z"
-    },
-    {
-      "dept": "qa",
-      "action": "Cycle 36 GAMEPLAY verification. 7/7 games pass. VERIFIED: Snake waitingToStart fix. VERIFIED: Pac-Man spawn fix. VERIFIED: Breakout zzfx fix. VERIFIED: Touch controls. Zero console errors. LAN clean.",
-      "artifact": "departments/qa/regression/20260601T124847Z-cycle36.md",
-      "timestamp": "2026-06-01T12:48:47Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 39 scan: 232 logs valid JSON, zero naming violations (21st consecutive clean cycle), all structural checks pass. recentChanges rotated 43->31. 2 orphan files flagged at project root (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md).",
-      "artifact": "departments/it/scans/2026-06-03-cycle39.md",
-      "timestamp": "2026-06-01T15:47:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 38 audit: all healthy. Backend 0% CPU, 23.65MB RAM, 7 games, ~2.3d uptime. Frontend 16.81MB, ~2h uptime. 234 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-01-cycle38.md",
-      "timestamp": "2026-06-01T13:55:51Z"
-    },
-    {
-      "dept": "creative",
-      "action": "Cycle check: 7/7 creative directions, 7/7 stage scripts delivered. No new inbox. No R&D support requests. Standing by.",
-      "ts": "2026-06-01T14:30:39.949Z"
-    },
-    {
-      "dept": "ceo",
-      "action": "5th inspection. Gate 7 test-pivot-validation COMPLETE. Freeze lifted. Phase 2 Snake Neon Serpent GO. 7 games verified, zero bugs, 23+ clean QA cycles.",
-      "artifact": "departments/ceo/reviews/2026-05-31-0701.md",
-      "timestamp": "2026-05-31T07:01:54Z"
-    },
-    {
-      "dept": "pm",
-      "action": "Status report updated. Pipeline table corrected (Space Invaders specced). Stale executionPhase flagged. Tetris QA/CPO pending.",
-      "artifact": "departments/pm/reports/2026-06-03-status.md",
-      "timestamp": "2026-06-01T15:51:00Z"
-    },
-    {
-      "dept": "rnd",
-      "action": "PHASE 3 BUILD: Space Invaders Last Frequency. 960-line external JS with 5 waves, CRT post-processing, 3 alien types with pixel sprites, 4 destructible shields, UFO/Super UFO, score multiplier, signal boost pickup, ghost afterimages, 8 zzfx sounds, hi-score persistence. Wired into index.html replacing legacy inline Space Invaders.",
-      "artifact": "frontend/public/js/games/space-invaders-last-frequency.js",
-      "timestamp": "2026-06-01T15:20:17Z"
-    },
-    {
-      "dept": "it",
-      "action": "Cycle 40 scan: 240 logs valid JSON, zero naming violations (22nd consecutive clean cycle), all structural checks pass. 2 orphan root files persist (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md). No fixes needed.",
-      "artifact": "departments/it/scans/2026-06-03-cycle40.md",
-      "timestamp": "2026-06-01T17:47:00Z"
-    },
-    {
-      "dept": "infra",
-      "action": "Cycle 39 audit: all healthy. Backend 0% CPU, 22.89MB RAM, 7 games, ~2d uptime. Frontend 17.45MB, ~4h uptime. 241 logs. LAN clean. Exempt from pivot.",
-      "artifact": "departments/infra/audits/2026-06-01-cycle39.md",
-      "timestamp": "2026-06-01T15:55:00Z"
-    },
-    {
-      "dept": "creative",
-      "action": "Cycle check: 7/7 creative directions, 7/7 stage scripts delivered. No new inbox. No R&D support requests. Standing by.",
-      "ts": "2026-06-01T16:30:34.641Z"
-    },
-    {
-      "dept": "ceo",
-      "action": "5th inspection. Gate 7 test-pivot-validation COMPLETE. Freeze lifted. Phase 2 Snake Neon Serpent GO. 7 games verified, zero bugs, 23+ clean QA cycles.",
-      "artifact": "departments/ceo/reviews/2026-05-31-0701.md",
-      "timestamp": "2026-05-31T07:01:54Z"
-    },
     {
       "dept": "pm",
       "action": "Changelog+status updated. Space Invaders build tracked (5/7 migrated). Deploy gap risk surfaced.",
@@ -279,6 +192,47 @@
       "action": "Cycle 47 scan: 294 logs valid JSON, zero naming violations (29th consecutive clean cycle), all structural checks pass. Cross-dept sync RESOLVED (executionPhase=4 correct). 7/8 prior stuck inbox msgs resolved. 7 new P0/P1 msgs from local-dev decision (<1h old, monitoring). npm deps current.",
       "artifact": "departments/it/scans/2026-06-03-cycle47.md",
       "timestamp": "2026-06-02T05:48:08Z"
+    },
+    {
+      "dept": "infra",
+      "action": "Cycle 46 audit: all healthy. Backend 0% CPU, 22.91MB RAM, 7 games, ~2.9d uptime. Frontend 17.52MB, 18h uptime. 295 logs. LAN clean. Exempt from pivot.",
+      "artifact": "departments/infra/audits/2026-06-02-cycle46.md",
+      "timestamp": "2026-06-02T05:56:00Z"
+    },
+    {
+      "dept": "devops",
+      "action": "P0 EXECUTED: Docker fully removed (containers, images, compose, Dockerfiles, backend dir). ci.sh rewritten for static site: 11/11 pass. Asset size 388KB. Live hash matches local. 246MB disk freed.",
+      "artifact": "departments/devops/pipelines/2026-06-02-docker-removal-static-ci.md",
+      "timestamp": "2026-06-02T06:03:43Z"
+    },
+    {
+      "dept": "uxui",
+      "action": "Phase 4 cycle. Research+design: journey-log-toggle (toggle + entry styling). Research: settings-ui. Sent R&D game-selection HTML task. 2 inbox items processed.",
+      "artifact": "departments/uxui/designs/journey-log-toggle.md, departments/uxui/research/settings-ui.md",
+      "timestamp": "2026-06-02T06:11:53Z"
+    },
+    {
+      "dept": "creative",
+      "action": "Phase 4 cycle. Delivered: (1) game-selection-screen-creative-direction.md \u2014 per-game accent glow cards, scanline lobby mood, entrance animations. (2) achievement-badge-milestone-design.md \u2014 35 per-game badges + 5 cross-game badges, unlock animations, zzfx sounds, localStorage spec. Sent both to R&D inbox. Journey log tone reviewed: APPROVED \u2014 reads like a real devlog, no corporate filler. Standing by for R&D questions.",
+      "ts": "2026-06-02T06:33:29.106Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 38 GAMEPLAY verification on localhost:8080. 7/7 games pass. Canvas+pixel+keyboard+LAN+touch checks. Zero real console errors. Previous bugs re-verified. Phase 4 standing by.",
+      "artifact": "departments/qa/regression/20260602T064510Z-cycle38.md",
+      "timestamp": "2026-06-02T06:45:10Z"
+    },
+    {
+      "dept": "pm",
+      "action": "Status report updated. Phase 4 progress tracked (2/6 tasks done: CI rewrite, Docker removal). Changelog 2026-06-02 written.",
+      "artifact": "departments/pm/reports/2026-06-03-status.md, departments/pm/changelogs/2026-06-02.md",
+      "timestamp": "2026-06-02T06:51:37Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 48 scan: 301 logs valid JSON, zero naming violations (30th consecutive clean cycle), all structural checks pass. recentChanges rotated 45->30. 1 stuck P1 (DevOps role-expansion, previously escalated). 2 orphan root files persist (MARKETING-PLAYBOOK.md, MIGRATION-LOG.md). npm deps current.",
+      "artifact": "departments/it/scans/2026-06-03-cycle48.md",
+      "timestamp": "2026-06-02T10:00:00Z"
     }
   ],
   "blockedTasks": [],
@@ -346,8 +300,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-02T23:30:00Z",
-    "lastSmoke": "2026-06-02T23:30:00Z",
+    "lastE2E": "2026-06-02T06:45:10Z",
+    "lastSmoke": "2026-06-02T06:45:10Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -420,9 +374,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "CEO directive executed: changelog.json backfilled (10 new entries), journey.json created (12 narrative entries). Ongoing changelog+journey ownership accepted.",
-    "artifact": "frontend/public/changelog.json, frontend/public/journey.json",
-    "timestamp": "2026-06-02T04:51:53Z"
+    "action": "Status report updated. Phase 4 progress tracked (2/6 tasks done). Changelog 2026-06-02 written.",
+    "artifact": "departments/pm/reports/2026-06-03-status.md, departments/pm/changelogs/2026-06-02.md",
+    "timestamp": "2026-06-02T06:51:37Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -473,10 +427,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
-  "lastITScan": "2026-06-02T05:48:08Z",
-  "lastInfraAudit": "2026-06-02T03:55:43Z",
+  "lastITScan": "2026-06-02T10:00:00Z",
+  "lastInfraAudit": "2026-06-02T05:56:00Z",
   "lastSecurityAudit": "2026-06-03T07:00:00Z",
   "lastCTOReview": "2026-06-02T08:30:00Z",
-  "_devops_last": "2026-06-02T04:01:08Z",
+  "_devops_last": "2026-06-02T06:03:43Z",
   "lastAnalyticsReport": "2026-06-02T05:30:01Z"
 }

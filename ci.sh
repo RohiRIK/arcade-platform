@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
-# ci.sh — Local CI pipeline for Arcade Platform
-# 7 stages: lint, audit, build, size, smoke, security, report
+# ci.sh — Local CI pipeline for Arcade Platform (static site)
+# Validates static files served via GitHub Pages. No Docker.
 # Usage: ./ci.sh [build|test]  (default: full pipeline)
 # Exit 0 = all pass, Exit 1 = any failure
 set -euo pipefail
 
 MODE="${1:-full}"
-BACKEND_MAX_MB=150
-FRONTEND_MAX_MB=60
 EXPECTED_GAMES=7
-HEALTH_URL="http://localhost:3001/api/health"
-GAMES_URL="http://localhost:3001/api/games"
+PUBLIC_DIR="frontend/public"
 
 PASS=0
 FAIL=0
@@ -23,159 +20,160 @@ report_stage() {
   if [ "$status" = "FAIL" ]; then FAIL=$((FAIL+1)); fi
   if [ "$status" = "SKIP" ]; then SKIP=$((SKIP+1)); fi
   RESULTS+=("[$status] $name: $detail")
-  printf "  %-20s %s — %s\n" "$name" "$status" "$detail"
+  printf "  %-25s %s — %s\n" "$name" "$status" "$detail"
 }
 
-echo "=== Arcade Platform CI ==="
+echo "=== Arcade Platform CI (static) ==="
 echo "Mode: $MODE"
 echo ""
 
-# ── Stage 1: Lint Dockerfiles ──
-stage_lint() {
-  echo "Stage 1: Lint Dockerfiles"
-  if command -v hadolint &>/dev/null; then
-    local errors=0
-    for df in backend/Dockerfile frontend/Dockerfile; do
-      if ! hadolint "$df" 2>&1; then
-        errors=1
-      fi
-    done
-    if [ "$errors" -eq 0 ]; then
-      report_stage "dockerfile-lint" "PASS" "hadolint clean on both Dockerfiles"
-    else
-      report_stage "dockerfile-lint" "FAIL" "hadolint found issues"
+# ── Stage 1: File Structure Check ──
+stage_structure() {
+  echo "Stage 1: File structure"
+  local errors=0
+
+  # index.html must exist
+  if [ ! -f "$PUBLIC_DIR/index.html" ]; then
+    report_stage "index-html" "FAIL" "missing $PUBLIC_DIR/index.html"
+    errors=1
+  else
+    report_stage "index-html" "PASS" "exists"
+  fi
+
+  # Count game JS files
+  local game_count=0
+  if [ -d "$PUBLIC_DIR/js/games" ]; then
+    game_count=$(find "$PUBLIC_DIR/js/games" -name "*.js" -type f | wc -l)
+  fi
+  if [ "$game_count" -ge "$EXPECTED_GAMES" ]; then
+    report_stage "game-files" "PASS" "$game_count game JS files (expected >=$EXPECTED_GAMES)"
+  else
+    report_stage "game-files" "FAIL" "$game_count game JS files (expected >=$EXPECTED_GAMES)"
+    errors=1
+  fi
+
+  # No Docker artifacts should exist
+  local docker_found=0
+  for f in docker-compose.yml frontend/Dockerfile frontend/nginx.conf; do
+    if [ -f "$f" ]; then
+      echo "  WARNING: Docker artifact still exists: $f"
+      docker_found=1
     fi
-  else
-    # Fallback: validate Dockerfile syntax by checking FROM instruction exists
-    local errors=0
-    for df in backend/Dockerfile frontend/Dockerfile; do
-      if ! grep -q "^FROM " "$df" 2>/dev/null; then
-        echo "  ERROR: $df missing FROM instruction"
-        errors=1
-      fi
-    done
-    if [ "$errors" -eq 0 ]; then
-      report_stage "dockerfile-lint" "PASS" "syntax OK (hadolint not installed)"
-    else
-      report_stage "dockerfile-lint" "FAIL" "Dockerfile syntax errors"
-    fi
+  done
+  if [ -d "backend" ]; then
+    echo "  WARNING: backend/ directory still exists"
+    docker_found=1
   fi
+  if [ "$docker_found" -eq 0 ]; then
+    report_stage "no-docker" "PASS" "no Docker artifacts found"
+  else
+    report_stage "no-docker" "FAIL" "Docker artifacts still in repo"
+    errors=1
+  fi
+
+  return $errors
 }
 
-# ── Stage 2: Dependency Audit ──
-stage_audit() {
-  echo "Stage 2: Dependency audit"
-  local audit_out
-  audit_out=$(cd backend && npm audit --omit=dev 2>&1) || true
-  if echo "$audit_out" | grep -q "found 0 vulnerabilities"; then
-    report_stage "npm-audit" "PASS" "0 vulnerabilities"
-  elif echo "$audit_out" | grep -q "found.*vulnerabilities"; then
-    local vuln_line
-    vuln_line=$(echo "$audit_out" | grep "found.*vulnerabilities" | head -1)
-    report_stage "npm-audit" "FAIL" "$vuln_line"
+# ── Stage 2: No Stale References ──
+stage_stale_refs() {
+  echo "Stage 2: Stale reference check"
+  local errors=0
+
+  # Check index.html for /api/ references
+  if grep -q "/api/" "$PUBLIC_DIR/index.html" 2>/dev/null; then
+    report_stage "no-api-refs" "FAIL" "/api/ references found in index.html"
+    errors=1
   else
-    report_stage "npm-audit" "PASS" "audit clean"
+    report_stage "no-api-refs" "PASS" "no /api/ references"
   fi
+
+  # Check for Backend offline
+  if grep -qi "Backend offline" "$PUBLIC_DIR/index.html" 2>/dev/null; then
+    report_stage "no-backend-offline" "FAIL" "'Backend offline' found in index.html"
+    errors=1
+  else
+    report_stage "no-backend-offline" "PASS" "no 'Backend offline' message"
+  fi
+
+  # Check for Config tab
+  if grep -qi "showSection('config')" "$PUBLIC_DIR/index.html" 2>/dev/null; then
+    report_stage "no-config-tab" "FAIL" "Config tab found in index.html"
+    errors=1
+  else
+    report_stage "no-config-tab" "PASS" "no Config tab"
+  fi
+
+  return $errors
 }
 
-# ── Stage 3: Build Images ──
-stage_build() {
-  echo "Stage 3: Build images"
-  local start_time end_time duration
-  start_time=$(date +%s)
-  if docker compose build --quiet 2>&1; then
-    end_time=$(date +%s)
-    duration=$((end_time - start_time))
-    report_stage "build" "PASS" "completed in ${duration}s"
-  else
-    report_stage "build" "FAIL" "docker compose build failed"
-    return 1
-  fi
-}
-
-# ── Stage 4: Image Size Check ──
+# ── Stage 3: Asset Size Budget ──
 stage_size() {
-  echo "Stage 4: Image size check"
-  local fail=0
+  echo "Stage 3: Asset size check"
+  local total_kb
+  total_kb=$(du -sk "$PUBLIC_DIR" | awk '{print $1}')
+  local total_mb=$((total_kb / 1024))
 
-  backend_size=$(docker image inspect arcade-platform-backend:latest --format='{{.Size}}' 2>/dev/null || echo "0")
-  frontend_size=$(docker image inspect arcade-platform-frontend:latest --format='{{.Size}}' 2>/dev/null || echo "0")
-
-  backend_mb=$((backend_size / 1048576))
-  frontend_mb=$((frontend_size / 1048576))
-
-  if [ "$backend_mb" -gt "$BACKEND_MAX_MB" ]; then
-    report_stage "size-backend" "FAIL" "${backend_mb}MB exceeds ${BACKEND_MAX_MB}MB limit"
-    fail=1
+  if [ "$total_kb" -gt 512000 ]; then
+    report_stage "asset-size" "FAIL" "${total_mb}MB exceeds 500MB budget"
   else
-    report_stage "size-backend" "PASS" "${backend_mb}MB (limit: ${BACKEND_MAX_MB}MB)"
+    report_stage "asset-size" "PASS" "${total_kb}KB total (${total_mb}MB)"
   fi
-
-  if [ "$frontend_mb" -gt "$FRONTEND_MAX_MB" ]; then
-    report_stage "size-frontend" "FAIL" "${frontend_mb}MB exceeds ${FRONTEND_MAX_MB}MB limit"
-    fail=1
-  else
-    report_stage "size-frontend" "PASS" "${frontend_mb}MB (limit: ${FRONTEND_MAX_MB}MB)"
-  fi
-
-  return $fail
 }
 
-# ── Stage 5: Smoke Test ──
+# ── Stage 4: Local Server Smoke Test ──
 stage_smoke() {
-  echo "Stage 5: Smoke test"
+  echo "Stage 4: Local smoke test"
 
-  # Check if containers are running, start if not
-  if ! docker compose ps --status running 2>/dev/null | grep -q backend; then
-    docker compose up -d --wait 2>&1
-    sleep 3
+  # Start a simple HTTP server
+  local port=8787
+  (cd "$PUBLIC_DIR" && python3 -m http.server "$port" &>/dev/null) &
+  local server_pid=$!
+  sleep 1
+
+  # Check HTTP 200
+  local http_code
+  http_code=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:$port/" 2>/dev/null || echo "000")
+  if [ "$http_code" = "200" ]; then
+    report_stage "http-200" "PASS" "localhost:$port returns 200"
+  else
+    report_stage "http-200" "FAIL" "localhost:$port returns $http_code"
   fi
 
-  # Health check
-  local health_status
-  health_status=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_URL" 2>/dev/null || echo "000")
-  if [ "$health_status" != "200" ]; then
-    report_stage "health-check" "FAIL" "GET /api/health returned $health_status"
-    return 1
+  # Check games present in HTML
+  if curl -s "http://localhost:$port/" 2>/dev/null | grep -q "launchGame\|data-game"; then
+    report_stage "games-in-html" "PASS" "game launch mechanism found"
+  else
+    report_stage "games-in-html" "FAIL" "no game launch mechanism"
   fi
-  report_stage "health-check" "PASS" "HTTP 200"
 
-  # Games check
-  local games_count
-  games_count=$(curl -s "$GAMES_URL" 2>/dev/null | jq 'length' 2>/dev/null || echo "0")
-  if [ "$games_count" -ne "$EXPECTED_GAMES" ]; then
-    report_stage "games-check" "FAIL" "expected $EXPECTED_GAMES games, got $games_count"
-    return 1
-  fi
-  report_stage "games-check" "PASS" "$games_count games returned"
+  kill "$server_pid" 2>/dev/null || true
+  wait "$server_pid" 2>/dev/null || true
 }
 
-# ── Stage 6: Security (non-root) Check ──
-stage_security() {
-  echo "Stage 6: Security check"
-  local fail=0
-
-  backend_user=$(docker compose exec -T backend whoami 2>/dev/null || echo "unknown")
-  frontend_user=$(docker compose exec -T frontend whoami 2>/dev/null || echo "unknown")
-
-  if [ "$backend_user" = "root" ]; then
-    report_stage "nonroot-backend" "FAIL" "running as root"
-    fail=1
+# ── Stage 5: Post-Deploy Verification ──
+stage_deploy_verify() {
+  echo "Stage 5: Production verification"
+  local http_code
+  http_code=$(curl -s -o /tmp/arcade-live.html -w "%{http_code}" https://arcade.rohi-lab.org 2>/dev/null || echo "000")
+  if [ "$http_code" = "200" ]; then
+    report_stage "prod-http-200" "PASS" "arcade.rohi-lab.org returns 200"
   else
-    report_stage "nonroot-backend" "PASS" "running as $backend_user"
+    report_stage "prod-http-200" "FAIL" "arcade.rohi-lab.org returns $http_code"
+    return 0
   fi
 
-  if [ "$frontend_user" = "root" ]; then
-    report_stage "nonroot-frontend" "FAIL" "running as root"
-    fail=1
+  # Hash comparison
+  local live_hash local_hash
+  live_hash=$(md5sum /tmp/arcade-live.html 2>/dev/null | awk '{print $1}')
+  local_hash=$(md5sum "$PUBLIC_DIR/index.html" 2>/dev/null | awk '{print $1}')
+  if [ "$live_hash" = "$local_hash" ]; then
+    report_stage "hash-match" "PASS" "live matches local ($live_hash)"
   else
-    report_stage "nonroot-frontend" "PASS" "running as $frontend_user"
+    report_stage "hash-match" "FAIL" "live=$live_hash local=$local_hash"
   fi
-
-  return $fail
 }
 
-# ── Stage 7: Report ──
+# ── Report ──
 stage_report() {
   echo ""
   echo "=== CI RESULTS ==="
@@ -195,15 +193,14 @@ stage_report() {
 
 # ── Run Pipeline ──
 run_build() {
-  stage_lint
-  stage_audit
-  stage_build || { stage_report; exit 1; }
+  stage_structure || true
+  stage_stale_refs || true
   stage_size || true
 }
 
 run_test() {
   stage_smoke || true
-  stage_security || true
+  stage_deploy_verify || true
 }
 
 case "$MODE" in
