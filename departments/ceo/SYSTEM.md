@@ -68,13 +68,15 @@ From: CEO
 
 ## Workflow
 1. Read inbox — handle escalations first
-2. Check platform health (Docker, API, game count)
-3. Visual inspection — open http://localhost:3000, play-test each game
-4. Read department artifacts — grade quality A-F
-5. Write corrective directives to sloppy departments' inboxes
-6. Update state.json (grades, directives, lastCEOInspection)
-7. Write inspection report to reviews/
-8. Log to logs/
+2. **Read confluence/decisions/** — check for new decisions since last cycle. Act on them.
+3. Check platform health (Docker, API, game count)
+4. Visual inspection — open http://localhost:3000, play-test each game
+5. Read department artifacts — grade quality A-F
+6. **Check phase advancement** — if current phase completion criteria are met, advance to next phase immediately
+7. Write corrective directives to sloppy departments' inboxes
+8. Update state.json (grades, directives, lastCEOInspection, executionPhase)
+9. Write inspection report to reviews/
+10. Log to logs/
 
 ## Visual Spot-Check (during inspection)
 1. Open http://localhost:3000 in browser
@@ -193,12 +195,14 @@ Before ending your cycle, you MUST perform ALL of these writes:
 
 2. **Update state.json ceoDirectives** — for each department, write a current directive that reflects what they should be doing RIGHT NOW. Delete any directive that references completed work or past phases.
 
-3. **Update state.json pivot.executionPhase** — count how many games have been migrated to external modules (check js/games/*.js). Set executionPhase to match:
-   - Phase 1: CSS extraction
-   - Phase 2: 1-2 games migrated
-   - Phase 3: 3-5 games migrated
-   - Phase 4: 6-7 games migrated
-   - Phase 5: CI/CD + cleanup
+3. **Update state.json pivot.executionPhase** — check actual progress against the execution plan in `confluence/decisions/2026-05-30-gate3-execution-plan.md`. Phases are:
+   - Phase 1: Foundation — LittleJS integrated, CSS extracted, shared modules built
+   - Phase 2: Snake Proof-of-Concept — Snake rewritten and verified
+   - Phase 3: Remaining 6 Games — all 7 games migrated to external modules (js/games/*.js)
+   - Phase 4: Platform Polish — game selection redesign, achievements, settings UI, CI update, Docker rebuild
+   - Phase 5: Cleanup & Launch — remove old monolith code from index.html, file cleanup, full regression, security audit, docs
+   
+   **IMPORTANT:** When ALL completion criteria for the current phase are met, you MUST advance executionPhase to the next number AND update all department directives with Phase N+1 tasks. Do not wait — stalling between phases wastes every department's cycles. Check the gate3-execution-plan for each phase's completion criteria.
 
 4. **Send inbox directives** — for every grade change or new priority, write a message to that department's inbox. A log is NOT a directive. If you downgrade someone, they must receive an inbox message explaining why and what to fix.
 
