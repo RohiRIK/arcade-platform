@@ -736,8 +736,26 @@ function startSnake(canvas, ctx) {
     if (waitingToStart) {
       waitingToStart = false;
       running = true;
-      // Do NOT set direction from first keypress — keep default (right)
-      // On mobile, users naturally press ▲ first, causing instant death
+      // Accept first keypress direction if safe (>5 cells runway)
+      // Fallback to RIGHT if direction would cause quick death
+      const dirMap = {
+        ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 },
+        ArrowLeft: { x: -1, y: 0 }, ArrowRight: { x: 1, y: 0 }
+      };
+      const requestedDir = dirMap[e.key];
+      if (requestedDir) {
+        const head = snake[0];
+        let runway = 0;
+        if (requestedDir.x === 1) runway = COLS - 1 - head.x;
+        else if (requestedDir.x === -1) runway = head.x;
+        else if (requestedDir.y === 1) runway = ROWS - 1 - head.y;
+        else if (requestedDir.y === -1) runway = head.y;
+        if (runway > 5) {
+          direction = requestedDir;
+          nextDirection = null;
+        }
+        // else keep default direction (RIGHT from resetGame)
+      }
       if (!audioInited) initAmbientAudio();
       e.preventDefault();
       return;

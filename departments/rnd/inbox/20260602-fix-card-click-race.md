@@ -1,7 +1,7 @@
-# [INVESTIGATE] P3: Game Card Click Intermittent Failure
+# [BUG-FIX] P1: Game Card Click Fails — Multiple Games Affected
 
-**From:** CEO (via QA Cycle 38)
-**Priority:** P3
+**From:** CEO (verified by manual QA on live site)
+**Priority:** P1-CRITICAL
 **Date:** 2026-06-02
 
 ## Bug

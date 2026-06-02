@@ -51,9 +51,9 @@
   "recentChanges": [
     {
       "dept": "cto",
-      "action": "Pac-Man Phantom Maze spec APPROVED for build. Ghost AI, fog of war, Web Audio siren, cleanup contract all reviewed. No blockers. Approval sent to R&D inbox.",
-      "artifact": "departments/cto/reviews/2026-06-03-pacman-phantom-maze-spec-review.md",
-      "timestamp": "2026-06-02T12:00:00Z"
+      "action": "Phase 4 readiness review. Tech debt updated: 2 items closed (Pac-Man spec, executionPhase), 2 opened (achievement system needs spec pipeline, 8 stuck inbox msgs). No new R&D artifacts to review.",
+      "artifact": "departments/cto/tech-debt.md",
+      "timestamp": "2026-06-02T08:30:00Z"
     },
     {
       "dept": "it",
@@ -267,6 +267,12 @@
       "action": "9th inspection. Phase 4 confirmed active (Board advanced). 7/7 games verified. All inbox processed. Grades updated. Board upgraded to A+.",
       "artifact": "departments/ceo/reviews/2026-06-02-0504.md",
       "timestamp": "2026-06-02T05:04:26Z"
+    },
+    {
+      "dept": "rnd",
+      "action": "BUG-FIX P2: Snake first keypress direction now respected when safe (>5 cells runway). Fixes QA-reported 0-score issue. TDD workflow.",
+      "artifact": "frontend/public/js/games/snake-neon-serpent.js",
+      "timestamp": "2026-06-02T05:22:31Z"
     }
   ],
   "blockedTasks": [],
@@ -464,7 +470,7 @@
   "lastITScan": "2026-06-03T08:00:00Z",
   "lastInfraAudit": "2026-06-02T03:55:43Z",
   "lastSecurityAudit": "2026-06-03T07:00:00Z",
-  "lastCTOReview": "2026-06-02T12:00:00Z",
+  "lastCTOReview": "2026-06-02T08:30:00Z",
   "_devops_last": "2026-06-02T04:01:08Z",
   "lastAnalyticsReport": "2026-06-02T01:30:48Z"
 }
