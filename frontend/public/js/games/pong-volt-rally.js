@@ -54,7 +54,7 @@ function startPongVoltRally(canvas, ctx) {
   let winner = null;
   let lateGame = false;
   let deuce = false;
-  let keysDown = {};
+  let keysDown = Object.create(null);
   let audioCtx = null;
   let oscillator = null;
   let gainNode = null;
@@ -179,7 +179,7 @@ function startPongVoltRally(canvas, ctx) {
     // Save high score (winning margin)
     try {
       const margin = Math.abs(player.score - cpu.score);
-      const prev = parseInt(localStorage.getItem('arcade_pong_highscore') || '0', 10);
+      const prev = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('arcade_pong_highscore') || '0', 10)));
       if (margin > prev) localStorage.setItem('arcade_pong_highscore', String(margin));
     } catch (e) { /* storage unavailable */ }
   }

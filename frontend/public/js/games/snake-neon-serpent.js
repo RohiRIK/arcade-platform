@@ -39,7 +39,7 @@ function startSnake(canvas, ctx) {
   let nextDirection = null;
 
   let score = 0;
-  let highScore = parseInt(localStorage.getItem('arcade_snake_highscore')) || 0;
+  let highScore = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('arcade_snake_highscore')) || 0));
   let zoneReached = localStorage.getItem('arcade_snake_zone_reached') === 'true';
   let foodEaten = 0;
   let running = false;

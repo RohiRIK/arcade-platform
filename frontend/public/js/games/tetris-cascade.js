@@ -79,7 +79,7 @@ function startTetrisCascade(canvas, ctx) {
     bagQueue = []; lastMoveWasRotation = false;
     holdPiece = null; holdUsed = false;
     highScore = 0;
-    try { highScore = parseInt(localStorage.getItem('tetrisCascadeHigh')) || 0; } catch(e){}
+    try { highScore = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('tetrisCascadeHigh')) || 0)); } catch(e){}
     nextPiece = null;
     spawnNextPiece();
     lastTime = performance.now();

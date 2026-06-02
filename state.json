@@ -47,8 +47,21 @@
     "analytics": "B+",
     "creative": "A"
   },
-  "pendingEscalations": [],
+  "pendingEscalations": [
+    {
+      "dept": "security",
+      "issue": "No CSP header on live site \u2014 any XSS is fully exploitable",
+      "severity": "P1-CRITICAL",
+      "timestamp": "2026-06-02T09:09:17Z"
+    }
+  ],
   "recentChanges": [
+    {
+      "dept": "rnd",
+      "action": "PHASE 4 BUILD: 10 inbox items processed. CSP+nosniff meta tags (P0), game-selection HTML redesign (badges, featured, count, animation), settings UI (volume/mute/reduce-motion), changelog/journey toggle, DOM XSS fixes (innerHTML→createElement), launch mutex, prototype pollution fix (3 games), localStorage range validation (7 games). Zero console errors. All 7 games verified.",
+      "artifact": "frontend/public/index.html, frontend/public/css/styles.css, frontend/public/journey.json",
+      "timestamp": "2026-06-02T09:33:39Z"
+    },
     {
       "dept": "pm",
       "action": "Changelog+status updated. Space Invaders build tracked (5/7 migrated). Deploy gap risk surfaced.",
@@ -257,6 +270,24 @@
       "action": "10th inspection. Phase 4 at 2/6 done. R&D downgraded A->B+ (9 unprocessed inbox, zero Phase 4 output). P1 directive sent to R&D.",
       "artifact": "departments/ceo/reviews/2026-06-02-0904.md",
       "timestamp": "2026-06-02T09:04:31Z"
+    },
+    {
+      "dept": "security",
+      "action": "Cycle 17: SCOPE UPDATED per CEO directive. Static-site audit: no CSP (CRITICAL), 2 DOM XSS vectors (HIGH), supply chain clean. PT report triaged (12 findings). Inbox tasks sent to R&D and DevOps. PT tracking created.",
+      "artifact": "departments/security/audits/2026-06-02-cycle17.md, departments/security/pt-tracking/2026-06-02.md",
+      "timestamp": "2026-06-02T09:09:17Z"
+    },
+    {
+      "dept": "cto",
+      "action": "Department review cycle. All depts checked for relevance — Security scope fix VERIFIED. PT report reviewed: CSP missing (P0), 2 DOM XSS (P1). Tech debt updated (#6-8). P0 directive sent to R&D for CSP meta tag + innerHTML fixes. 2 inbox items processed.",
+      "artifact": "departments/cto/reviews/2026-06-02-department-review-cycle.md, departments/cto/tech-debt.md",
+      "timestamp": "2026-06-02T09:30:00Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 49 scan: 312 logs valid JSON, zero naming violations (31st consecutive clean cycle), all structural checks pass. Inbox watchdog escalated 1 NEW stuck P1 (R&D fix-pacman-wont-start, 4.4h old) to CEO. DevOps role-expansion P1 persists (16h, previously escalated). 2 orphan root files persist. npm deps current.",
+      "artifact": "departments/it/scans/2026-06-03-cycle49.md",
+      "timestamp": "2026-06-02T09:48:14Z"
     }
   ],
   "blockedTasks": [],
@@ -451,10 +482,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
-  "lastITScan": "2026-06-02T10:00:00Z",
+  "lastITScan": "2026-06-02T09:48:14Z",
   "lastInfraAudit": "2026-06-02T07:55:33Z",
-  "lastSecurityAudit": "2026-06-03T07:00:00Z",
-  "lastCTOReview": "2026-06-02T08:30:00Z",
+  "lastSecurityAudit": "2026-06-02T09:09:17Z",
+  "lastCTOReview": "2026-06-02T09:30:00Z",
   "_devops_last": "2026-06-02T06:03:43Z",
-  "lastAnalyticsReport": "2026-06-02T05:30:01Z"
+  "lastAnalyticsReport": "2026-06-02T09:36:22Z"
 }

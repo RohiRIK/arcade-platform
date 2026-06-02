@@ -100,7 +100,7 @@ function startFroggerNeonCrossing(canvas, ctx) {
   let lastTime = 0;
   let frameCount = 0;
 
-  try { hiScore = parseInt(localStorage.getItem('froggerNeonCrossing_hiScore')) || 0; } catch(e) {}
+  try { hiScore = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('froggerNeonCrossing_hiScore')) || 0)); } catch(e) {}
 
   // === DRONE ===
   let drone = { gridX: 7, gridY: ROW_START, pixelX: 7 * CELL_W, pixelY: ROW_START * CELL_H, alive: true, highestRow: ROW_START, ridingLane: null, deathsThisLevel: 0, boostCooldown: 0 };

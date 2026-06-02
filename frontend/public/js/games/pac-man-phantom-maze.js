@@ -183,7 +183,7 @@ function startPacManPhantomMaze(canvas, ctx) {
   let frightTimer = 0;
   let fruitActive = false, fruitTimer = 0;
   let paused = false, gameOver = false, waitingToStart = true;
-  let highScore = parseInt(localStorage.getItem('phantomMazeHigh') || '0');
+  let highScore = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('phantomMazeHigh') || '0')));
   let extraLifeAwarded = false;
   let particles = [];
   let levelConfig = getLevelConfig(1);

@@ -109,7 +109,7 @@ function startBreakoutPrismShatter(canvas, ctx) {
     powerUpTimers: { wide: 0, slow: 0 },
     showTrail: false, hardModeOffset: 0
   };
-  let keysDown = {};
+  let keysDown = Object.create(null);
   let mouseX = W / 2;
   let animFrame = null;
   let transitionTimer = 0;
@@ -118,7 +118,7 @@ function startBreakoutPrismShatter(canvas, ctx) {
   let materializeActive = false;
 
   // Load high score
-  try { state.highScore = parseInt(localStorage.getItem('arcade_breakout_highscore')) || 0; } catch(e) {}
+  try { state.highScore = Math.max(0, Math.min(999999, parseInt(localStorage.getItem('arcade_breakout_highscore')) || 0)); } catch(e) {}
 
   // === LEVEL BUILDER ===
   function buildLevel(levelNum) {

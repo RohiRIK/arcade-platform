@@ -115,7 +115,7 @@ function startSpaceInvadersLastFrequency(canvas, ctx) {
   // === STATE ===
   let player, fleet, playerBullets, bombs, ufo, particles, shields;
   let wave, gameState, lastTime, animId;
-  let keys = {};
+  let keys = Object.create(null);
   let nextBonusLife, lastFireTime, ufoTimer, ufoSpawnAt;
   let ghostImages, transitionTimer, dyingTimer;
   let signalBoost, signalBoostPickup;
@@ -404,7 +404,7 @@ function startSpaceInvadersLastFrequency(canvas, ctx) {
       x: W / 2 - PLAYER_W / 2,
       lives: STARTING_LIVES,
       score: 0,
-      hiScore: parseInt(localStorage.getItem('spaceInvadersLastFrequency_hiScore') || '0'),
+      hiScore: Math.max(0, Math.min(999999, parseInt(localStorage.getItem('spaceInvadersLastFrequency_hiScore') || '0'))),
       invincibleUntil: 0,
       maxBullets: 1,
       fireCooldown: FIRE_COOLDOWN_BASE,

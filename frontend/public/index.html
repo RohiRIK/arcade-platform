@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
 <title>Arcade Platform</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,6 +16,30 @@
   <div class="nav">
     <button class="active" onclick="showSection('games')">Games</button>
     <button onclick="showSection('logs')">Changelog</button>
+    <button id="settingsBtn" class="settings-btn" aria-label="Settings" title="Settings">⚙️</button>
+  </div>
+  <div id="settingsPanel" class="settings-panel hidden" role="dialog" aria-labelledby="settingsTitle">
+    <h3 class="settings-title" id="settingsTitle">SETTINGS</h3>
+    <div class="settings-section">
+      <label class="settings-label">🔊 Sound</label>
+      <div class="settings-slider-row">
+        <input type="range" id="volumeSlider" min="0" max="100" value="70" class="settings-slider">
+        <span id="volumeValue" class="settings-value">70%</span>
+      </div>
+      <label class="settings-checkbox">
+        <input type="checkbox" id="muteToggle">
+        <span>Mute all sounds</span>
+      </label>
+    </div>
+    <div class="settings-divider"></div>
+    <div class="settings-section">
+      <label class="settings-label">👁 Visual</label>
+      <label class="settings-checkbox">
+        <input type="checkbox" id="reduceMotionToggle">
+        <span>Reduce motion</span>
+      </label>
+      <span class="settings-hint">Disables animations and transitions</span>
+    </div>
   </div>
 </div>
 <div class="content">
@@ -33,7 +59,14 @@
     <button class="restart-btn" id="restartBtn" onclick="restartGame()" style="display:none">🔄 Restart</button>
     <div class="touch-controls" id="touchControls"></div>
   </div>
-  <div class="logs-view" id="logsView"></div>
+  <div class="logs-view" id="logsView">
+    <div class="changelog-toggle">
+      <button class="toggle-btn active" onclick="showChangelog()">📋 Changelog</button>
+      <button class="toggle-btn" onclick="showJourney()">📖 Journey</button>
+    </div>
+    <div id="changelogEntries"></div>
+    <div id="journeyEntries" style="display:none"></div>
+  </div>
 </div>
 
 <script src="lib/littlejs.min.js"></script>
@@ -53,36 +86,83 @@
 const ICONS = { snake: '🐍', pong: '🏓', breakout: '🧱', tetris: '🟪', 'space-invaders': '👾', 'pac-man': '🟡', frogger: '🐸' };
 
 const GAMES = [
-  {id:'snake',name:'Snake',description:'Classic snake game. Eat food, grow longer, don\'t hit walls or yourself.',version:'1.0.0',color:'#4ade80'},
-  {id:'pong',name:'Pong',description:'The original arcade classic. Play against the CPU.',version:'1.0.0',color:'#60a5fa'},
-  {id:'breakout',name:'Breakout',description:'Break all the bricks with a bouncing ball.',version:'1.0.0',color:'#f97316'},
-  {id:'tetris',name:'Tetris',description:'Stack falling tetrominoes, clear lines, chase high scores.',version:'1.0.0',color:'#a000f0'},
-  {id:'space-invaders',name:'Space Invaders',description:'Defend Earth from waves of descending aliens. Classic 1978 arcade action.',version:'1.0.0',color:'#22c55e'},
-  {id:'pac-man',name:'Pac-Man',description:'Navigate the maze, eat all dots, and outsmart four ghosts with unique personalities.',version:'1.0.0',color:'#ffff00'},
-  {id:'frogger',name:'Frogger',description:'Guide your frog across busy roads and treacherous rivers to reach home. Classic 1981 Konami arcade action.',version:'1.0.0',color:'#4ade80'}
+  {id:'snake',name:'Snake',description:'Classic snake game. Eat food, grow longer, don\'t hit walls or yourself.',version:'1.0.0',color:'#4ade80',status:'rebuilt'},
+  {id:'pong',name:'Pong',description:'The original arcade classic. Play against the CPU.',version:'1.0.0',color:'#60a5fa',status:'rebuilt'},
+  {id:'breakout',name:'Breakout',description:'Break all the bricks with a bouncing ball.',version:'1.0.0',color:'#f97316',status:'rebuilt'},
+  {id:'tetris',name:'Tetris',description:'Stack falling tetrominoes, clear lines, chase high scores.',version:'1.0.0',color:'#a000f0',status:'rebuilt'},
+  {id:'space-invaders',name:'Space Invaders',description:'Defend Earth from waves of descending aliens. Classic 1978 arcade action.',version:'1.0.0',color:'#22c55e',status:'rebuilt'},
+  {id:'pac-man',name:'Pac-Man',description:'Navigate the maze, eat all dots, and outsmart four ghosts with unique personalities.',version:'1.0.0',color:'#ffff00',status:'rebuilt'},
+  {id:'frogger',name:'Frogger',description:'Guide your frog across busy roads and treacherous rivers to reach home. Classic 1981 Konami arcade action.',version:'1.0.0',color:'#4ade80',status:'rebuilt'}
 ];
 
 function init() {
   renderGames(GAMES);
-  document.getElementById('health').innerHTML =
-    `<span class="ok">● Online</span><span>${GAMES.length} games</span>`;
+  const health = document.getElementById('health');
+  health.textContent = '';
+  const dot = document.createElement('span');
+  dot.className = 'ok';
+  dot.textContent = '● Online';
+  const count = document.createElement('span');
+  count.textContent = GAMES.length + ' games';
+  health.appendChild(dot);
+  health.appendChild(count);
+  initSettings();
 }
 
 function renderGames(games) {
-  document.getElementById('gameGrid').innerHTML = games.map(g => `
-    <div class="game-card" data-game="${g.id}" tabindex="0" role="button" aria-label="${g.name}" onclick="launchGame('${g.id}','${g.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();launchGame('${g.id}','${g.name}')}">
-      <div class="banner" style="background:${g.color||'#333'}20">${ICONS[g.id]||'🎮'}</div>
-      <div class="info">
-        <h3>${g.name}</h3>
-        <p>${g.description}</p>
-        <span class="version">v${g.version}</span>
-      </div>
-    </div>
-  `).join('');
+  const grid = document.getElementById('gameGrid');
+  grid.textContent = '';
+  if (games.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'No games available.';
+    grid.appendChild(empty);
+    return;
+  }
+  games.forEach((g, i) => {
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    if (g.id === 'snake') card.classList.add('featured');
+    card.dataset.game = g.id;
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', g.name);
+    card.style.animationDelay = (i * 0.05) + 's';
+    card.addEventListener('click', () => launchGame(g.id, g.name));
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); launchGame(g.id, g.name); } });
+
+    const banner = document.createElement('div');
+    banner.className = 'banner';
+    banner.style.background = (g.color || '#333') + '20';
+    banner.textContent = ICONS[g.id] || '🎮';
+    if (g.status) {
+      const badge = document.createElement('span');
+      badge.className = 'card-badge ' + g.status;
+      badge.textContent = g.status.toUpperCase();
+      banner.style.position = 'relative';
+      banner.appendChild(badge);
+    }
+    card.appendChild(banner);
+
+    const info = document.createElement('div');
+    info.className = 'info';
+    const h3 = document.createElement('h3');
+    h3.textContent = g.name;
+    const p = document.createElement('p');
+    p.textContent = g.description;
+    const ver = document.createElement('span');
+    ver.className = 'version';
+    ver.textContent = 'v' + g.version;
+    info.appendChild(h3);
+    info.appendChild(p);
+    info.appendChild(ver);
+    card.appendChild(info);
+    grid.appendChild(card);
+  });
 }
 
 function showSection(s) {
-  document.querySelectorAll('.nav button').forEach((b,i) => b.classList.toggle('active', ['games','logs'][i]===s));
+  document.querySelectorAll('.nav button:not(.settings-btn)').forEach((b,i) => b.classList.toggle('active', ['games','logs'][i]===s));
   document.getElementById('gameGrid').style.display = s==='games'?'grid':'none';
   document.getElementById('gameView').style.display = 'none';
   document.getElementById('logsView').style.display = s==='logs'?'block':'none';
@@ -91,21 +171,135 @@ function showSection(s) {
 
 async function loadLogs() {
   try {
-    const text = await fetch('changelog.json').then(r=>r.json());
-    document.getElementById('logsView').innerHTML = text.length ? text.map(l => `
-      <div class="log-entry">
-        <h4>${l.date || ''} — ${l.title || 'Update'}</h4>
-        <p>${l.description || ''}</p>
-      </div>
-    `).join('') : '<p style="color:#888;text-align:center">No changelog entries yet.</p>';
+    const text = await fetch('changelog.json').then(r => { if (!r.ok || !r.headers.get('content-type')?.includes('json')) throw new Error('bad'); return r.json(); });
+    const container = document.getElementById('changelogEntries');
+    container.textContent = '';
+    if (text.length === 0) {
+      const p = document.createElement('p');
+      p.style.cssText = 'color:#888;text-align:center';
+      p.textContent = 'No changelog entries yet.';
+      container.appendChild(p);
+      return;
+    }
+    text.forEach(l => {
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      const h4 = document.createElement('h4');
+      h4.textContent = (l.date || '') + ' — ' + (l.title || 'Update');
+      const p = document.createElement('p');
+      p.textContent = l.description || '';
+      entry.appendChild(h4);
+      entry.appendChild(p);
+      container.appendChild(entry);
+    });
   } catch(e) {
-    document.getElementById('logsView').innerHTML = '<p style="color:#888;text-align:center">No changelog entries yet.</p>';
+    const container = document.getElementById('changelogEntries');
+    container.textContent = '';
+    const p = document.createElement('p');
+    p.style.cssText = 'color:#888;text-align:center';
+    p.textContent = 'No changelog entries yet.';
+    container.appendChild(p);
   }
+}
+
+/* --- Changelog / Journey Toggle --- */
+function showChangelog() {
+  document.querySelectorAll('.changelog-toggle .toggle-btn').forEach((b,i) => b.classList.toggle('active', i===0));
+  document.getElementById('changelogEntries').style.display = '';
+  document.getElementById('journeyEntries').style.display = 'none';
+}
+function showJourney() {
+  document.querySelectorAll('.changelog-toggle .toggle-btn').forEach((b,i) => b.classList.toggle('active', i===1));
+  document.getElementById('changelogEntries').style.display = 'none';
+  document.getElementById('journeyEntries').style.display = '';
+  loadJourney();
+}
+let journeyLoaded = false;
+async function loadJourney() {
+  if (journeyLoaded) return;
+  const container = document.getElementById('journeyEntries');
+  try {
+    const data = await fetch('journey.json').then(r => { if (!r.ok) throw new Error('not found'); return r.json(); });
+    container.textContent = '';
+    data.forEach(j => {
+      const entry = document.createElement('div');
+      entry.className = 'journey-entry';
+      const date = document.createElement('div');
+      date.className = 'journey-date';
+      date.textContent = j.date || '';
+      const title = document.createElement('div');
+      title.className = 'journey-title';
+      title.textContent = j.title || '';
+      const narrative = document.createElement('div');
+      narrative.className = 'journey-narrative';
+      narrative.textContent = j.narrative || '';
+      entry.appendChild(date);
+      entry.appendChild(title);
+      entry.appendChild(narrative);
+      container.appendChild(entry);
+    });
+    journeyLoaded = true;
+  } catch(e) {
+    container.textContent = '';
+    const p = document.createElement('p');
+    p.style.cssText = 'color:#888;text-align:center';
+    p.textContent = 'Journey log coming soon...';
+    container.appendChild(p);
+  }
+}
+
+/* --- Settings UI --- */
+function initSettings() {
+  const btn = document.getElementById('settingsBtn');
+  const panel = document.getElementById('settingsPanel');
+  const volumeSlider = document.getElementById('volumeSlider');
+  const volumeValue = document.getElementById('volumeValue');
+  const muteToggle = document.getElementById('muteToggle');
+  const reduceMotionToggle = document.getElementById('reduceMotionToggle');
+
+  // Load saved settings
+  const savedVol = localStorage.getItem('arcade-volume');
+  const savedMute = localStorage.getItem('arcade-mute');
+  const savedMotion = localStorage.getItem('arcade-reduce-motion');
+
+  if (savedVol !== null) { volumeSlider.value = savedVol; volumeValue.textContent = savedVol + '%'; }
+  if (savedMute === 'true') { muteToggle.checked = true; volumeSlider.style.opacity = '0.4'; if (typeof zzfxV !== 'undefined') zzfxV = 0; }
+  else if (savedVol !== null && typeof zzfxV !== 'undefined') { zzfxV = parseInt(savedVol) / 100; }
+  if (savedMotion === 'true') { reduceMotionToggle.checked = true; document.documentElement.classList.add('reduce-motion'); }
+
+  // Toggle panel
+  btn.addEventListener('click', (e) => { e.stopPropagation(); panel.classList.toggle('hidden'); });
+  document.addEventListener('click', (e) => { if (!panel.contains(e.target) && e.target !== btn) panel.classList.add('hidden'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.classList.contains('hidden')) { panel.classList.add('hidden'); btn.focus(); } });
+
+  // Volume
+  volumeSlider.addEventListener('input', () => {
+    const v = volumeSlider.value;
+    volumeValue.textContent = v + '%';
+    localStorage.setItem('arcade-volume', v);
+    if (!muteToggle.checked && typeof zzfxV !== 'undefined') zzfxV = parseInt(v) / 100;
+  });
+
+  // Mute
+  muteToggle.addEventListener('change', () => {
+    localStorage.setItem('arcade-mute', muteToggle.checked);
+    if (muteToggle.checked) { volumeSlider.style.opacity = '0.4'; if (typeof zzfxV !== 'undefined') zzfxV = 0; }
+    else { volumeSlider.style.opacity = '1'; if (typeof zzfxV !== 'undefined') zzfxV = parseInt(volumeSlider.value) / 100; }
+  });
+
+  // Reduce motion
+  reduceMotionToggle.addEventListener('change', () => {
+    localStorage.setItem('arcade-reduce-motion', reduceMotionToggle.checked);
+    document.documentElement.classList.toggle('reduce-motion', reduceMotionToggle.checked);
+  });
 }
 
 // Game launcher
 let currentGame = null;
+let launching = false;
 function launchGame(id, name) {
+  if (launching) return;
+  launching = true;
   document.getElementById('gameGrid').style.display = 'none';
   document.getElementById('gameView').style.display = 'block';
   document.getElementById('gameTitle').textContent = name;
@@ -126,7 +320,7 @@ function launchGame(id, name) {
   else if (id==='frogger') currentGame = startFroggerNeonCrossing(canvas, ctx);
   document.getElementById('gameControls').textContent = currentGame?.controls || 'Arrow keys to play';
   // Hide loading overlay after game initializes
-  setTimeout(() => overlay.classList.add('hidden'), 400);
+  setTimeout(() => { overlay.classList.add('hidden'); launching = false; }, 400);
   renderTouchControls(id);
 }
 
@@ -166,6 +360,7 @@ function renderTouchControls(gameId) {
 function backToGrid() {
   if (currentGame?.cleanup) currentGame.cleanup();
   currentGame = null;
+  launching = false;
   document.getElementById('gameView').style.display = 'none';
   document.getElementById('gameGrid').style.display = 'grid';
   document.getElementById('restartBtn').style.display = 'none';

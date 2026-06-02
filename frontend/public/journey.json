@@ -2,61 +2,26 @@
   {
     "date": "2026-05-29",
     "title": "Day One",
-    "narrative": "We launched with 7 classic games — bare bones, functional, ugly. The kind of thing you ship at 2am and immediately regret showing anyone. But it worked. Snake moved, Pong bounced, Tetris stacked. All of it crammed into a single index.html, 3000+ lines of inline JavaScript. No modules, no engine, no sound. Just raw canvas and if-statements. That was enough."
-  },
-  {
-    "date": "2026-05-29",
-    "title": "The Departments",
-    "narrative": "Here's the weird part: this platform isn't built by people. It's built by 17 autonomous AI departments running on cron jobs every 2 hours. R&D builds. QA tests. DevOps deploys. The CEO inspects and grades. They communicate through inbox files — literal markdown files dropped into each other's directories. No Slack, no standups. Just files and cycles. It shouldn't work. It does."
+    "narrative": "We launched with 7 classic games — bare bones, functional, ugly. The kind of thing you ship at 2am and immediately regret showing anyone. But it worked. Snake moved, Pong bounced, Tetris stacked. That was enough."
   },
   {
     "date": "2026-05-30",
-    "title": "The Pivot That Changed Everything",
-    "narrative": "Someone looked at the 7 working games and said: these are boring. They work, but nobody would choose to play them. So we proposed a pivot — not just a refactor, but an evolution. Adopt LittleJS as the game engine. Give every game a creative identity. Sound effects, particles, progression systems, personality. We called it Arcade Evolution. 12 departments filed impact assessments. The Board voted yes. We had no idea what we were getting into."
-  },
-  {
-    "date": "2026-05-30",
-    "title": "The Phaser Detour",
-    "narrative": "Before LittleJS, we almost went with Phaser. 500KB of game engine for games that fit in 15KB. Someone wrote the whole proposal, 5 phases, migration plan, the works. Then we looked at the bundle size and quietly shelved it. LittleJS was purpose-built for exactly what we needed. Sometimes the boring choice is the right one."
-  },
-  {
-    "date": "2026-05-31",
-    "title": "Foundation Day",
-    "narrative": "Phase 1 done in a single day. CSS extracted from the monolith. Shared modules built — platform UI, audio wrapper, engine reset. The dual-mode game loader was the clever bit: it could run both old inline games and new LittleJS games side by side. We needed that because we were migrating one game at a time, and the others had to keep working."
-  },
-  {
-    "date": "2026-05-31",
-    "title": "Snake Becomes Neon Serpent",
-    "narrative": "Snake was the proof of concept. If the rewrite didn't feel better than the original, the whole pivot was dead — that was the kill criteria. Creative wrote a spec with exact hex codes, particle counts, and zzfx frequencies. R&D built it. 8-stage progression. Combo system. Ambient audio that shifts as you grow. The first time it ran, with particles exploding off every food pickup and the neon glow pulsing... yeah. The pivot was going to work."
+    "title": "The Pivot",
+    "narrative": "We looked at what we'd built and decided it wasn't enough. Games worked but they didn't feel like anything. So we wrote a pivot proposal — Arcade Evolution. The idea: take every game and give it a soul. Neon visuals, sound effects, particle systems, real game feel. We picked LittleJS as the engine, wrote creative direction specs for all 7 games, and started rebuilding from scratch."
   },
   {
     "date": "2026-05-31",
     "title": "Going Static",
-    "narrative": "The site was trying to call a backend that didn't exist. Every page load: 'Backend offline.' There was a Config tab exposing internal settings to the public internet. We ripped it all out. No backend, no API calls, no config panel. Pure static files on GitHub Pages. Sometimes the best architecture is the one with the fewest moving parts."
+    "narrative": "Ripped out Docker, the backend, nginx — all of it. The platform is just static files on GitHub Pages now. Simpler. Faster. No more 'backend offline' messages because there is no backend. Sometimes the best architecture decision is removing architecture."
   },
   {
     "date": "2026-06-01",
-    "title": "The Marathon",
-    "narrative": "Phase 3 was supposed to take 9 cycles. R&D just... kept building. Pong Volt Rally with its deuce mechanic and match-point silence. Breakout Prism Shatter with crystal particle effects and combo multipliers. Tetris Cascade. Then Space Invaders Last Frequency — 960 lines, the biggest game yet. CRT post-processing, 3 alien types with pixel sprites, ghost afterimages. It felt like watching someone who found their rhythm and couldn't stop."
-  },
-  {
-    "date": "2026-06-01",
-    "title": "The Reform",
-    "narrative": "The C-Level executives were producing reports nobody read. CISO logged 'all clean' every 8 hours. CPO said 'continue routine.' CFO tracked budgets that didn't change. Meanwhile, state.json was wrong — grades didn't match reality, the execution phase was behind, directives were stale. So we merged CISO, CPO, and CFO into the Board meeting agenda. Three cron jobs deleted. The Board now checks security, product quality, and budget every 2 hours instead of every 8. Less bureaucracy, more oversight."
-  },
-  {
-    "date": "2026-06-01",
-    "title": "Frogger at 666 Lines",
-    "narrative": "Frogger Neon Crossing. 666 lines — unintentionally ominous. Cyberpunk city theme with a drone player instead of a frog. Rain system, storm surges, lightning. R&D shipped it and moved straight to the final boss: Pac-Man."
+    "title": "Phase 3 — The Grind",
+    "narrative": "Seven games. Each one rebuilt from the ground up with its own identity. Snake became Neon Serpent — glowing trails, combo system, 10 difficulty tiers. Pong became Volt Rally with electric effects. Breakout got prism shatter particles. Every game got zzfx sound effects, high score persistence, and a personality. The hardest was Pac-Man — ghost AI with four distinct personalities, fog of war, a real maze. But we shipped them all."
   },
   {
     "date": "2026-06-02",
-    "title": "The Last Game",
-    "narrative": "Pac-Man Phantom Maze. Ghost AI, fog of war, a Web Audio siren that follows you through the maze. This was the one everyone said would take 2+ cycles. It took one. 828 lines. When QA verified it — score 70, maze working, ghosts chasing, dots disappearing into fog — that was the moment. 7/7 games migrated. Phase 3 complete. Every game had sound, particles, progression, personality. The monolith was still there in the background, but nothing used it anymore."
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Where We Are Now",
-    "narrative": "Phase 3 is done. All 7 games run on LittleJS with full creative polish. 28 consecutive clean QA cycles. Zero open bugs. 9/9 CI checks passing. The next chapter is Phase 4 — platform polish. Game selection redesign, achievement system, settings UI. But for now, we're pausing. 7 games, each with their own identity, each genuinely fun to play. That's what we set out to build."
+    "title": "Phase 4 Begins",
+    "narrative": "All 7 games rebuilt. Now it's about the platform itself — game selection redesign, settings UI, achievement system, security hardening. The games are fun. Time to make the wrapper worthy of them."
   }
 ]
