@@ -1,8 +1,8 @@
-# Test Plan: Pac-Man
+# Test Plan: Pac-Man Phantom Maze
 
 ## Game ID: pac-man
-## Version: 1.0.0
-## Date: 2026-05-30
+## Version: Phase 3 arcade-evolution
+## Date: 2026-06-02
 
 ## Acceptance Criteria
 
@@ -32,13 +32,26 @@
 - All lives lost = game over
 - Score displayed on game over
 
-### TC-6: Mobile/Touch
+### TC-6: Fog of War
+- Radial gradient visible around player position
+- Limits visibility of distant maze sections
+
+### TC-7: Mobile/Touch
 - Touch controls functional on mobile viewport
 
-## Results (2026-05-30)
-- TC-1: PASS — Canvas 600x400, blue maze, dots, power pellets in corners, score 0, LV 1, 2 lives shown
-- TC-2: Not tested (automated browser)
-- TC-3: PASS — Four colored ghosts visible (red, cyan, others near bottom)
-- TC-4: Not tested (requires gameplay)
-- TC-5: Not tested (requires gameplay)
-- TC-6: Not tested this cycle
+### TC-8: No Hardcoded localhost
+- Zero localhost/127.0.0.1 references in game JS
+
+### TC-9: Zero Console Errors
+- No JS errors in browser console during gameplay
+
+## Results (2026-06-02)
+- TC-1: PASS — Canvas 600x400, blue maze, dots, power pellets, SCORE 0, LV 1, 2 lives
+- TC-2: PASS — Arrow keys move Pac-Man, gameplay responds to input
+- TC-3: PASS — Red, pink, cyan ghosts visible with distinct behaviors
+- TC-4: PARTIAL — Dots collectible (score reached 70), power pellet/frightened mode not verified
+- TC-5: PASS — Ghost collision triggers game over, score displayed
+- TC-6: PASS — Fog-of-war radial gradient visible around player
+- TC-7: Not tested this cycle
+- TC-8: PASS — Zero hardcoded localhost
+- TC-9: PASS — Zero console errors
