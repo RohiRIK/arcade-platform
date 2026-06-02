@@ -273,6 +273,12 @@
       "action": "BUG-FIX P2: Snake first keypress direction now respected when safe (>5 cells runway). Fixes QA-reported 0-score issue. TDD workflow.",
       "artifact": "frontend/public/js/games/snake-neon-serpent.js",
       "timestamp": "2026-06-02T05:22:31Z"
+    },
+    {
+      "dept": "it",
+      "action": "Cycle 47 scan: 294 logs valid JSON, zero naming violations (29th consecutive clean cycle), all structural checks pass. Cross-dept sync RESOLVED (executionPhase=4 correct). 7/8 prior stuck inbox msgs resolved. 7 new P0/P1 msgs from local-dev decision (<1h old, monitoring). npm deps current.",
+      "artifact": "departments/it/scans/2026-06-03-cycle47.md",
+      "timestamp": "2026-06-02T05:48:08Z"
     }
   ],
   "blockedTasks": [],
@@ -467,10 +473,10 @@
     "lastAllocation": null
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
-  "lastITScan": "2026-06-03T08:00:00Z",
+  "lastITScan": "2026-06-02T05:48:08Z",
   "lastInfraAudit": "2026-06-02T03:55:43Z",
   "lastSecurityAudit": "2026-06-03T07:00:00Z",
   "lastCTOReview": "2026-06-02T08:30:00Z",
   "_devops_last": "2026-06-02T04:01:08Z",
-  "lastAnalyticsReport": "2026-06-02T01:30:48Z"
+  "lastAnalyticsReport": "2026-06-02T05:30:01Z"
 }

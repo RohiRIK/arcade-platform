@@ -31,6 +31,20 @@ For QA — standard procedures for testing, bug filing, and release approval.
 | Bug Report | [qa-bug-report.md](qa-bug-report.md) | Any defect found during verification |
 | Release Gate | [qa-release-gate.md](qa-release-gate.md) | Before any merge to main or deploy to production |
 
+## Infrastructure & Deployment Workflows
+
+For DevOps, R&D, and QA — the build-test-deploy pipeline.
+
+| Workflow | File | Use When |
+|----------|------|----------|
+| Local Dev Server | [local-dev-server.md](local-dev-server.md) | Any code change — start here, test before push |
+| Build → Test → Deploy | [build-test-deploy.md](build-test-deploy.md) | Full pipeline: localhost → QA approve → push → production verify |
+
+### Selection Rules
+1. **Editing game code?** → Start local dev server, self-test, hand to QA
+2. **QA approved on localhost?** → Follow build-test-deploy pipeline to push
+3. **Never push without QA approval on localhost**
+
 ## Identified Gaps (Future Workflows Needed)
 
 | Workflow | Department(s) | Why |
