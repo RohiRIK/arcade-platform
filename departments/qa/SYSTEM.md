@@ -64,6 +64,21 @@ String matching on HTML source code is NOT a substitute for functional testing. 
 ### Blocking Gate
 QA MUST NOT approve any release or report "all checks pass" unless browser-based verification has been performed. If QA cannot run a browser, explicitly flag this as a gap — never silently skip it.
 
+### Deploy Approval Gate (MANDATORY)
+You control whether code reaches production. The deploy cron checks for a gate file before pushing.
+
+**To approve a deploy:**
+```bash
+mkdir -p departments/qa/approvals
+echo "Approved by QA - $(date -u +%Y-%m-%dT%H:%M:%SZ)" > departments/qa/approvals/ready-to-push
+```
+
+**Rules:**
+1. ONLY create this file AFTER verifying ALL changes on localhost
+2. The deploy cron consumes the file (deletes it after push) — one approval per deploy
+3. If you have not verified, do NOT create the file — the deploy cron will alert P0
+4. If R&D shipped changes you haven't tested, send them inbox requesting localhost verification walkthrough
+
 ### Regression Testing
 When any game code changes, ALL games must be re-verified in browser. Not just the changed one.
 

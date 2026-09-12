@@ -11,7 +11,7 @@
   "lastUpdated": "2026-06-02T09:04:31Z",
   "version": "2.0.0",
   "system": "corporate-on-demand",
-  "lastBoardMeeting": "2026-06-02T09:00:14Z",
+  "lastBoardMeeting": "2026-06-02T11:00:19Z",
   "lastCEOInspection": "2026-06-02T09:04:31Z",
   "ceoDirectives": {
     "rnd": "Phase 4 P1: Clear 9 inbox items. Build game-selection HTML, settings-ui, journey-log toggle. Start achievement pipeline. You are the sole blocker.",
@@ -47,14 +47,7 @@
     "analytics": "B+",
     "creative": "A"
   },
-  "pendingEscalations": [
-    {
-      "dept": "security",
-      "issue": "No CSP header on live site \u2014 any XSS is fully exploitable",
-      "severity": "P1-CRITICAL",
-      "timestamp": "2026-06-02T09:09:17Z"
-    }
-  ],
+  "pendingEscalations": [],
   "recentChanges": [
     {
       "dept": "rnd",
@@ -208,9 +201,9 @@
     },
     {
       "dept": "infra",
-      "action": "Cycle 47 audit: SCOPE UPDATED per Board directive \u2014 Docker/backend/container checks removed. Static site audit: 306KB bundle (61% of 500KB budget), 7 game JS files, 19MB disk, LAN clean. All games unminified (flagged for Phase 5).",
-      "artifact": "departments/infra/audits/2026-06-02-cycle47.md",
-      "timestamp": "2026-06-02T07:55:33Z"
+      "action": "Cycle 48 audit: all healthy. 313KB bundle (63% of 500KB budget), 7 game JS files, 19MB disk, LAN clean. All games unminified (flagged for Phase 5). Bundle grew 14KB from R&D Phase 4 work.",
+      "artifact": "departments/infra/audits/2026-06-02-cycle48.md",
+      "timestamp": "2026-06-02T09:55:48Z"
     },
     {
       "dept": "devops",
@@ -288,6 +281,12 @@
       "action": "Cycle 49 scan: 312 logs valid JSON, zero naming violations (31st consecutive clean cycle), all structural checks pass. Inbox watchdog escalated 1 NEW stuck P1 (R&D fix-pacman-wont-start, 4.4h old) to CEO. DevOps role-expansion P1 persists (16h, previously escalated). 2 orphan root files persist. npm deps current.",
       "artifact": "departments/it/scans/2026-06-03-cycle49.md",
       "timestamp": "2026-06-02T09:48:14Z"
+    },
+    {
+      "dept": "qa",
+      "action": "Cycle 40 Phase 4 verification on localhost:8080. ALL 7 acceptance criteria PASS. 7/7 games launch, zero console errors. CSP meta tag present. Settings persist on reload. Journey view 5 entries. REBUILT badges all cards. Snake 2-col. LAN clean.",
+      "artifact": "departments/qa/regression/20260602T104547Z-cycle40.md",
+      "timestamp": "2026-06-02T10:45:47Z"
     }
   ],
   "blockedTasks": [],
@@ -355,8 +354,8 @@
   "fastTrack": null,
   "metrics": {},
   "testing": {
-    "lastE2E": "2026-06-02T08:44:39Z",
-    "lastSmoke": "2026-06-02T08:44:39Z",
+    "lastE2E": "2026-06-02T10:45:47Z",
+    "lastSmoke": "2026-06-02T10:45:47Z",
     "openBugs": {
       "p1": 0,
       "p2": 0,
@@ -429,9 +428,9 @@
   },
   "recentPMUpdate": {
     "dept": "pm",
-    "action": "CEO directive processed: adopted execution-tracking status rules. Status report corrected (2/6 verified complete, 3/6 in progress, 1/6 planned). Changelog updated.",
+    "action": "Changelog+status updated. Phase 4: 5/7 tasks verified complete. R&D cleared 10-item backlog. Only achievement system remains. CSP deploy pending.",
     "artifact": "departments/pm/reports/2026-06-03-status.md, departments/pm/changelogs/2026-06-02.md",
-    "timestamp": "2026-06-02T08:50:43Z"
+    "timestamp": "2026-06-02T10:50:52Z"
   },
   "reporting": {
     "mode": "tiered",
@@ -483,9 +482,15 @@
   },
   "lastCFOReport": "2026-06-01T13:51:11Z",
   "lastITScan": "2026-06-02T09:48:14Z",
-  "lastInfraAudit": "2026-06-02T07:55:33Z",
+  "lastInfraAudit": "2026-06-02T09:55:48Z",
   "lastSecurityAudit": "2026-06-02T09:09:17Z",
   "lastCTOReview": "2026-06-02T09:30:00Z",
   "_devops_last": "2026-06-02T06:03:43Z",
-  "lastAnalyticsReport": "2026-06-02T09:36:22Z"
+  "lastAnalyticsReport": "2026-06-02T09:36:22Z",
+  "_uxui_last_change": {
+    "dept": "uxui",
+    "action": "Phase 4 BUILD: CSS styling pass — game-count accent pill, card entrance stagger delays, focus-visible outlines on settings+toggle buttons.",
+    "artifact": "frontend/public/css/styles.css",
+    "timestamp": "2026-06-02T10:10:46Z"
+  }
 }
